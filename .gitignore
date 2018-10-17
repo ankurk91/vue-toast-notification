@@ -1,0 +1,58 @@
+# http://git-scm.com/docs/gitignore
+
+# different IDEs
+.idea
+.project
+*.sublime-*
+.brackets.json
+.vscode
+
+# logs and cache
+/logs/
+*.log
+npm-debug.log*
+.sass-cache
+.cache
+.php_cs.cache
+
+# OS generated files
+[Tt]humbs.db
+ehthumbs.db
+*~
+.*~
+._*
+*.bak
+*.save
+*.swp
+
+# Recycle bin folder used by different os
+.Trash-*
+$RECYCLE.BIN/
+
+# Windows shortcuts
+*.lnk
+
+# Folder config file
+[Dd]esktop.ini
+*.DS_Store
+.DS_Store?
+
+# node packages
+node_modules/
+
+# Composer, exclude on root vendor folder
+/vendor/
+composer.phar
+
+# Security tokens
+*.pem
+*.pub
+*.crt
+*.key
+
+# Project related
+*.tgz
+/dist/
+/docs/
+/tmp/
+/coverage/
