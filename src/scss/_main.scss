@@ -1,0 +1,84 @@
+
+.notices {
+  position: fixed;
+  display: flex;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 2em;
+  overflow: hidden;
+  z-index: 1052;
+  pointer-events: none;
+
+  .toast {
+    display: inline-flex;
+    align-items: center;
+    animation-duration: 150ms;
+    margin: 0.5em 0;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
+    border-radius: 0.25em;
+    //padding: 0.75em 1.5em;
+    pointer-events: auto;
+    opacity: 0.92;
+    color: #fff;
+    min-height: 3em;
+    .text {
+      margin: 0;
+      padding: 0.5em 1em;
+    }
+    .action {
+      margin-left: auto;
+      padding: 0.5em;
+      padding-left: 0;
+    }
+
+    // colors
+    &.success {
+      background: rgba(0, 128, 0, 0.61);
+    }
+    &.error {
+
+    }
+    &.info {
+
+    }
+    &.warning {
+
+    }
+    &.default {
+
+    }
+  }
+  .toast {
+    // Modifiers
+    &.is-top, &.is-bottom {
+      align-self: center;
+    }
+    &.is-top-right, &.is-bottom-right {
+      align-self: flex-end;
+    }
+    &.is-top-left, &.is-bottom-left {
+      align-self: flex-start;
+    }
+    &.is-toast {
+      opacity: 0.92;
+    }
+  }
+
+  // Modifiers
+  &.is-top {
+    flex-direction: column;
+  }
+  &.is-bottom {
+    flex-direction: column-reverse;
+  }
+  &.has-custom-container {
+    position: absolute;
+  }
+
+  @media screen and (max-width: 769px - 1px) {
+    padding: 0;
+    position: fixed !important;
+  }
+}

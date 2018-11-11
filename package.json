@@ -1,0 +1,83 @@
+{
+  "name": "vue-toast",
+  "version": "1.0.0",
+  "description": "Vue.js toast plugin",
+  "main": "dist/vue-toast.js",
+  "browser": "dist/vue-toast.min.js",
+  "style": "dist/vue-toast.css",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ankurk91/vue-toast.git"
+  },
+  "keywords": [
+    "vue",
+    "toast",
+    "notification"
+  ],
+  "author": "ankurk91",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ankurk91/vue-toast/issues"
+  },
+  "homepage": "https://github.com/ankurk91/vue-toast",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "cross-env NODE_ENV=development webpack-serve --config=webpack.config.dev.js",
+    "docs": "cross-env NODE_ENV=production webpack --config=webpack.config.dev.js --progress --mode production",
+    "build": "cross-env NODE_ENV=production webpack --progress --mode production",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "babel-core": "^6.26.3",
+    "babel-loader": "^7",
+    "babel-preset-env": "^1.7.0",
+    "bootstrap": "^4.1.3",
+    "clean-webpack-plugin": "^0.1.19",
+    "cross-env": "^5.2.0",
+    "css-loader": "^1.0.0",
+    "file-loader": "^2.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "mini-css-extract-plugin": "^0.4.4",
+    "node-sass": "^4.9.4",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "unminified-webpack-plugin": "^2.0.0",
+    "vue": "^2.5.17",
+    "vue-loader": "^15.4.2",
+    "vue-template-compiler": "^2.5.17",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-serve": "^2.0.2"
+  },
+  "peerDependencies": {
+    "vue": "^2.0.0"
+  },
+  "engines": {
+    "node": ">=6.9.0",
+    "npm": ">=3.10.0"
+  },
+  "jest": {
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx",
+      "node",
+      "vue",
+      "css"
+    ],
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest"
+    },
+    "moduleNameMapper": {
+      "\\.(css|less|scss)$": "<rootDir>/__test__/__mocks__/styleMock.js"
+    },
+    "collectCoverage": false,
+    "testURL": "http://localhost"
+  }
+}
