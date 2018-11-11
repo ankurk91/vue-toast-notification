@@ -1,22 +1,24 @@
 # Vue Toast Component
 
 [![vue-js](https://img.shields.io/badge/vue.js-2.x-brightgreen.svg?maxAge=604800)](https://vuejs.org/)
-[![downloads](https://img.shields.io/npm/dt/vue-toast.svg)](http://npm-stats.com/~packages/vue-toast)
-[![npm-version](https://img.shields.io/npm/v/vue-toast.svg)](https://www.npmjs.com/package/vue-toast)
-[![github-tag](https://img.shields.io/github/tag/ankurk91/vue-toast.svg?maxAge=1800)](https://github.com/ankurk91/vue-toast/)
-[![license](https://img.shields.io/github/license/ankurk91/vue-toast.svg?maxAge=1800)](https://yarnpkg.com/en/package/vue-toast)
+[![downloads](https://img.shields.io/npm/dt/vue-toast-package.svg)](http://npm-stats.com/~packages/vue-toast-package)
+[![npm-version](https://img.shields.io/npm/v/vue-toast-package.svg)](https://www.npmjs.com/package/vue-toast-package)
+[![github-tag](https://img.shields.io/github/tag/ankurk91/vue-toast-package.svg?maxAge=1800)](https://github.com/ankurk91/vue-toast-package/)
+[![license](https://img.shields.io/github/license/ankurk91/vue-toast-package.svg?maxAge=1800)](https://yarnpkg.com/en/package/vue-toast-package)
 
 Yet another Vue.js Toast plugin.
+
+:warning: This package has not been released yet. Package name and API is subject to change.
 
 ## Demo on [JSFiddle](https://jsfiddle.net)
 
 ## Installation
 ```bash
 # npm
-npm install vue-toast --save
+npm install vue-toast-package --save
 
 # Yarn
-yarn add vue-toast
+yarn add vue-toast-package
 ```
 
 ## Usage
@@ -37,8 +39,8 @@ The component accepts these props:
 <!-- Vue js -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5/dist/vue.min.js"></script>
 <!-- Lastly add this package -->
-<script src="https://cdn.jsdelivr.net/npm/vue-toast@1"></script>
-<link href="https://cdn.jsdelivr.net/npm/vue-toast@1/dist/vue-toast.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/vue-toast-package@1"></script>
+<link href="https://cdn.jsdelivr.net/npm/vue-toast-package@1/dist/vue-toast-package.css" rel="stylesheet">
 <!-- Init the plugin -->
 <script>
 Vue.use(VueToast);
@@ -54,6 +56,9 @@ Vue.use(VueToast);
 * Install dependencies - `yarn install`
 * Run webpack dev server - `yarn start`
 * This should open the demo page at `http://localhost:9000` in your default web browser 
+
+## Credits
+* Buefy [Toast](https://buefy.github.io/documentation/toast) component
 
 ## License
 [MIT](LICENSE.txt) License
