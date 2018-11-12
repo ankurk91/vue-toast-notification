@@ -6,12 +6,9 @@
       role="alert"
       v-show="isActive"
       class="toast"
-      :class="[type, position]">
-      <p class="text">{{message}}</p>
-      <div class="action"
-           @click="onClick">
-        <button><span aria-hidden="true">&times;</span></button>
-      </div>
+      :class="[`toast-${type}`, position]"
+      @click="onClick">
+      <p class="toast-text">{{message}}</p>
     </div>
   </transition>
 </template>
@@ -125,6 +122,7 @@
         }
       },
       onClick() {
+        if (!this.dismissible) return;
         this.onClose.apply(null, arguments);
         this.close()
       }

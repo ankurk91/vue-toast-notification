@@ -18,40 +18,26 @@
     margin: 0.5em 0;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
     border-radius: 0.25em;
-    //padding: 0.75em 1.5em;
     pointer-events: auto;
     opacity: 0.92;
     color: #fff;
     min-height: 3em;
-    .text {
+    cursor: pointer;
+    .toast-text {
       margin: 0;
       padding: 0.5em 1em;
     }
-    .action {
-      margin-left: auto;
-      padding: 0.5em;
-      padding-left: 0;
-    }
+  }
 
-    // colors
-    &.success {
-      background: rgba(0, 128, 0, 0.61);
-    }
-    &.error {
-
-    }
-    &.info {
-
-    }
-    &.warning {
-
-    }
-    &.default {
-
+  // Colors
+  @each $color, $value in $toast-colors {
+    .toast-#{$color} {
+      background-color: $value;
     }
   }
+
+  // Individual toast position
   .toast {
-    // Modifiers
     &.is-top, &.is-bottom {
       align-self: center;
     }
@@ -61,12 +47,9 @@
     &.is-top-left, &.is-bottom-left {
       align-self: flex-start;
     }
-    &.is-toast {
-      opacity: 0.92;
-    }
   }
 
-  // Modifiers
+  // Notice container positions
   &.is-top {
     flex-direction: column;
   }
@@ -77,7 +60,7 @@
     position: absolute;
   }
 
-  @media screen and (max-width: 769px - 1px) {
+  @media screen and (max-width: 768px) {
     padding: 0;
     position: fixed !important;
   }
