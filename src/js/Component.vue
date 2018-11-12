@@ -6,7 +6,7 @@
       role="alert"
       v-show="isActive"
       class="toast"
-      :class="[`toast-${type}`, position]"
+      :class="[`toast-${type}`, `is-${position}`]"
       @click="onClick">
       <p class="toast-text">{{message}}</p>
     </div>
@@ -19,9 +19,6 @@
   export default {
     name: 'toast',
     props: {
-      indefinite: {
-        type: Boolean,
-      },
       onClose: {
         default: Function
       },
@@ -43,7 +40,7 @@
       },
       position: {
         type: String,
-        default: 'is-bottom-right',
+        default: 'bottom-right',
       },
       container: String
     },
@@ -82,7 +79,7 @@
         container.appendChild(this.parentTop);
         container.appendChild(this.parentBottom);
 
-        if (this.newContainer) {
+        if (this.container) {
           this.parentTop.classList.add('has-custom-container');
           this.parentBottom.classList.add('has-custom-container')
         }
@@ -117,9 +114,7 @@
         this.correctParent.insertAdjacentElement('afterbegin', this.$el);
         this.isActive = true;
 
-        if (!this.indefinite) {
-          this.timer = setTimeout(() => this.close(), this.duration)
-        }
+        this.timer = setTimeout(() => this.close(), this.duration)
       },
       onClick() {
         if (!this.dismissible) return;
@@ -130,29 +125,29 @@
     computed: {
       correctParent() {
         switch (this.position) {
-          case 'is-top-right':
-          case 'is-top':
-          case 'is-top-left':
+          case 'top-right':
+          case 'top':
+          case 'top-left':
             return this.parentTop;
 
-          case 'is-bottom-right':
-          case 'is-bottom':
-          case 'is-bottom-left':
+          case 'bottom-right':
+          case 'bottom':
+          case 'bottom-left':
             return this.parentBottom;
         }
       },
       transition() {
         switch (this.position) {
-          case 'is-top-right':
-          case 'is-top':
-          case 'is-top-left':
+          case 'top-right':
+          case 'top':
+          case 'top-left':
             return {
               enter: 'fadeInDown',
               leave: 'fadeOut'
             };
-          case 'is-bottom-right':
-          case 'is-bottom':
-          case 'is-bottom-left':
+          case 'bottom-right':
+          case 'bottom':
+          case 'bottom-left':
             return {
               enter: 'fadeInUp',
               leave: 'fadeOut'
