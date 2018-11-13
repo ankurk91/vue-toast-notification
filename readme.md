@@ -5,12 +5,12 @@
 [![npm-version](https://img.shields.io/npm/v/vue-toast-package.svg)](https://www.npmjs.com/package/vue-toast-package)
 [![github-tag](https://img.shields.io/github/tag/ankurk91/vue-toast-package.svg?maxAge=1800)](https://github.com/ankurk91/vue-toast-package/)
 [![license](https://img.shields.io/github/license/ankurk91/vue-toast-package.svg?maxAge=1800)](https://yarnpkg.com/en/package/vue-toast-package)
-
+[![build-status](https://travis-ci.com/ankurk91/vue-toast.svg?branch=master)](https://travis-ci.com/ankurk91/vue-toast)
 Yet another Vue.js Toast plugin.
 
 :warning: This package has not been released yet. Package name and API is subject to change.
 
-## Demo on [JSFiddle](https://jsfiddle.net)
+## [Demo](https://ankurk91.github.io/vue-toast) or [JSFiddle](https://jsfiddle.net)
 
 ## Installation
 ```bash
