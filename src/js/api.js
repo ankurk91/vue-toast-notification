@@ -16,6 +16,36 @@ const Api = (Vue, globalOptions = {}) => {
         el: document.createElement('div'),
         propsData
       })
+    },
+    success(message, options = {}) {
+      return this.open(Object.assign({}, {
+        message: message,
+        type: 'success'
+      }, options))
+    },
+    error(message, options = {}) {
+      return this.open(Object.assign({}, {
+        message: message,
+        type: 'error'
+      }, options))
+    },
+    info(message, options = {}) {
+      return this.open(Object.assign({}, {
+        message: message,
+        type: 'info'
+      }, options))
+    },
+    warning(message, options = {}) {
+      return this.open(Object.assign({}, {
+        message: message,
+        type: 'warning'
+      }, options))
+    },
+    default(message, options = {}) {
+      return this.open(Object.assign({}, {
+        message: message,
+        type: 'default'
+      }, options))
     }
   }
 };

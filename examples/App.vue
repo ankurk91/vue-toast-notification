@@ -15,7 +15,7 @@
             <div class="card-body">
 
               <div class="form-group">
-                <label>Message</label>
+                <label>Message <code>(required)</code></label>
                 <input type="text" class="form-control" v-model.trim="form.message" name="message"/>
               </div>
 
@@ -109,14 +109,15 @@
           dismissible: true,
           queue: false,
           position: 'bottom-right',
-          indefinite: false
+          indefinite: false,
+          onClose: this.onClose,
         },
         types: [
           'success',
           'error',
           'warning',
           'info',
-          'default'
+          'default',
         ],
         positions: [
           'top',
@@ -124,15 +125,18 @@
           'top-right',
           'bottom-right',
           'top-left',
-          'bottom-left'
+          'bottom-left',
         ]
       }
     },
     components: {},
     methods: {
+      onClose() {
+        console.log("User closed the toast.")
+      },
       show() {
         this.$toast.open(this.form);
-      }
+      },
     }
   }
 </script>

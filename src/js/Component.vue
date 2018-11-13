@@ -19,25 +19,24 @@
   export default {
     name: 'toast',
     props: {
-      onClose: {
-        default: Function
-      },
-      dismissible: {
-        type: Boolean,
-        default: true
+      message: {
+        type: String,
+        required: true
       },
       type: {
         type: String,
         default: 'success'
       },
-      message: String,
       duration: {
         type: Number,
         default: 3000
       },
-      queue: {
+      onClose: Function,
+      dismissible: {
         type: Boolean,
+        default: true
       },
+      queue: Boolean,
       position: {
         type: String,
         default: 'bottom-right',
