@@ -22,16 +22,26 @@ yarn add vue-toast-package
 ```
 
 ## Usage
-```html
+```js
+import Vue from 'vue';
+import VueToast from 'vue-toast-package';
+import 'vue-toast-package/dist/vue-toast.css';
 
+Vue.use(VueToast);
+Vue.$toast.open('message text');
+Vue.$toast.open({/* options */});
 ```
 
-## Available props
-The component accepts these props:
+## Available options
+The API methods accepts these options:
 
 | Attribute        | Type                | Default              | Description      |
 | :---             | :---:               | :---:                | :---             |
-
+|  message         | String              | --                   |  Message text (required)   |
+|  type            | String              | `success`            |  One of `success`, `info`, `warning`, `error`, `default`  |
+|  position        | String              | `bottom-right`       |  One of `top`, `bottom`, `top-right`, `bottom-right`, `top-left`, `bottom-left`  |
+|  duration        | Number              | `3000`               |  Visibility duration in milliseconds    |
+         
 ## API methods
 
 ## Install in non-module environments (without webpack)
@@ -40,7 +50,7 @@ The component accepts these props:
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5/dist/vue.min.js"></script>
 <!-- Lastly add this package -->
 <script src="https://cdn.jsdelivr.net/npm/vue-toast-package@1"></script>
-<link href="https://cdn.jsdelivr.net/npm/vue-toast-package@1/dist/vue-toast-package.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/vue-toast-package@1/dist/vue-toast.css" rel="stylesheet">
 <!-- Init the plugin -->
 <script>
 Vue.use(VueToast);
