@@ -6,11 +6,11 @@ const Api = (Vue, globalOptions = {}) => {
       let message;
       if (typeof options === 'string') message = options;
 
-      const defaultParams = {
+      const defaultOptions = {
         message
       };
 
-      const propsData = Object.assign({}, defaultParams, globalOptions, options);
+      const propsData = Object.assign({}, defaultOptions, globalOptions, options);
 
       return new (Vue.extend(Component))({
         el: document.createElement('div'),
@@ -19,31 +19,31 @@ const Api = (Vue, globalOptions = {}) => {
     },
     success(message, options = {}) {
       return this.open(Object.assign({}, {
-        message: message,
+        message,
         type: 'success'
       }, options))
     },
     error(message, options = {}) {
       return this.open(Object.assign({}, {
-        message: message,
+        message,
         type: 'error'
       }, options))
     },
     info(message, options = {}) {
       return this.open(Object.assign({}, {
-        message: message,
+        message,
         type: 'info'
       }, options))
     },
     warning(message, options = {}) {
       return this.open(Object.assign({}, {
-        message: message,
+        message,
         type: 'warning'
       }, options))
     },
     default(message, options = {}) {
       return this.open(Object.assign({}, {
-        message: message,
+        message,
         type: 'default'
       }, options))
     }

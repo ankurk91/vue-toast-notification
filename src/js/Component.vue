@@ -27,20 +27,20 @@
         type: String,
         default: 'success'
       },
-      duration: {
-        type: Number,
-        default: 3000
-      },
-      onClose: Function,
-      dismissible: {
-        type: Boolean,
-        default: true
-      },
-      queue: Boolean,
       position: {
         type: String,
         default: 'bottom-right',
       },
+      duration: {
+        type: Number,
+        default: 3000
+      },
+      dismissible: {
+        type: Boolean,
+        default: true
+      },
+      onClose: Function,
+      queue: Boolean,
       container: String
     },
     data() {

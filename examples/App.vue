@@ -12,11 +12,11 @@
       <div class="row">
         <div class="col-md-8 mb-3">
           <div class="card">
-            <div class="card-body">
+            <form class="card-body" method="post" @submit.prevent="show">
 
               <div class="form-group">
                 <label>Message <code>(required)</code></label>
-                <input type="text" class="form-control" v-model.trim="form.message" name="message"/>
+                <input type="text" required class="form-control" v-model.trim="form.message" name="message"/>
               </div>
 
               <div class="form-group">
@@ -50,7 +50,7 @@
                 <div class="custom-control custom-checkbox">
                   <input v-model="form.queue" type="checkbox" class="custom-control-input"
                          id="checkbox-queue">
-                  <label class="custom-control-label" for="checkbox-queue">Wait for previous toast to close before
+                  <label class="custom-control-label" for="checkbox-queue">Wait for previous to close before
                     showing new</label>
                 </div>
               </div>
@@ -66,9 +66,9 @@
                 </div>
               </div>
 
-              <button class="btn btn-secondary" @click.prevent="show">Show toast</button>
+              <button type="submit" class="btn btn-secondary">Show notification</button>
 
-            </div>
+            </form>
           </div>
         </div>
 
@@ -109,7 +109,6 @@
           dismissible: true,
           queue: false,
           position: 'bottom-right',
-          indefinite: false,
           onClose: this.onClose,
         },
         types: [
@@ -132,7 +131,7 @@
     components: {},
     methods: {
       onClose() {
-        console.log("User closed the toast.")
+        console.log("User closed the notification.")
       },
       show() {
         this.$toast.open(this.form);

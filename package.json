@@ -1,6 +1,6 @@
 {
   "name": "vue-toast",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "Vue.js toast plugin",
   "main": "dist/vue-toast.js",
   "browser": "dist/vue-toast.min.js",
@@ -16,6 +16,8 @@
   "keywords": [
     "vue",
     "toast",
+    "growl",
+    "notice",
     "notification"
   ],
   "author": "ankurk91",
@@ -25,11 +27,11 @@
   },
   "homepage": "https://github.com/ankurk91/vue-toast",
   "scripts": {
-    "start": "npm run dev",
+    "start": "yarn run dev",
     "dev": "cross-env NODE_ENV=development webpack-serve --config=webpack.config.dev.js",
     "docs": "cross-env NODE_ENV=production webpack --config=webpack.config.dev.js --progress --mode production",
     "build": "cross-env NODE_ENV=production webpack --progress --mode production",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "yarn run build"
   },
   "dependencies": {},
   "devDependencies": {

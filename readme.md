@@ -29,7 +29,7 @@ import VueToast from 'vue-toast-package';
 import 'vue-toast-package/dist/vue-toast.css';
 
 Vue.use(VueToast);
-Vue.$toast.open('message text');
+Vue.$toast.open('You did it!');
 Vue.$toast.open({/* options */});
 ```
 
@@ -42,8 +42,52 @@ The API methods accepts these options:
 |  type            | String              | `success`            |  One of `success`, `info`, `warning`, `error`, `default`  |
 |  position        | String              | `bottom-right`       |  One of `top`, `bottom`, `top-right`, `bottom-right`, `top-left`, `bottom-left`  |
 |  duration        | Number              | `3000`               |  Visibility duration in milliseconds    |
+|  dismissible     | Boolean             | `true`               |  Allow user close by clicking    |
+|  onClose         | Function            | --                   |  Do something when user clicks    |
+|  queue           | Boolean             | `false`              |  Wait for existing to close before showing new     |
+|  container       | String              | --                   |  The DOM selector element on where to append the messages, defaults to `document.body`     |
          
 ## API methods
+### `Vue.$toast.open(options)`
+This is generic method, you can use this method to make any kind of toast.
+```js
+// Can accept a message as string and take rest of options as default
+Vue.$toast.open('message string');
+
+// Can accept an Object of options
+Vue.$toast.open({
+    message: 'message string',
+    type: 'error',
+    // all other options
+});
+```
+### `Vue.$toast.success(message,?options)`
+There are some proxy method to make it more readable.
+```js
+Vue.$toast.success("message string", {
+  // optional options Object
+})
+```
+### `Vue.$toast.error(message,?options)`
+### `Vue.$toast.warning(message,?options)`
+### `Vue.$toast.info(message,?options)`
+### `Vue.$toast.default(message,?options)`
+
+## Global options
+You can set options for all future instances when using as plugin
+```js
+Vue.use(VueToast, {
+  // any option
+  position: 'top'
+})
+```
+Further you can override option when creating new instances
+```js
+Vue.$toast.success("message string", {
+  // override the global option
+  position: 'bottom'
+})
+```
 
 ## Install in non-module environments (without webpack)
 ```html
