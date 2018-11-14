@@ -71,15 +71,6 @@
                 </div>
               </div>
 
-              <div class="form-group">
-                <label>Custom container</label>
-                <div class="custom-control custom-checkbox">
-                  <input v-model="form.container" type="checkbox" class="custom-control-input"
-                         id="checkbox-container">
-                  <label class="custom-control-label" for="checkbox-container">Append to custom container</label>
-                </div>
-              </div>
-
               <button type="submit" class="btn btn-secondary">Show notification</button>
 
             </form>
@@ -149,11 +140,7 @@
         console.log("User closed the notification.")
       },
       show() {
-        let props = Object.assign({}, this.form, {
-          container: this.form.container ? this.$refs.demoPanel : null
-        });
-        console.log(props);
-        this.$toast.open(props);
+        this.$toast.open(this.form);
       },
     }
   }

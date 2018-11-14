@@ -40,18 +40,17 @@ The API methods accepts these options:
 | :---             | :---:               | :---:                | :---             |
 |  message         | String              | --                   |  Message text (required)   |
 |  type            | String              | `success`            |  One of `success`, `info`, `warning`, `error`, `default`  |
-|  position        | String              | `bottom-right`       |  One of `top`, `bottom`, `top-right`, `bottom-right`,<br> `top-left`, `bottom-left`  |
+|  position        | String              | `bottom-right`       |  One of `top`, `bottom`, `top-right`, `bottom-right`,`top-left`, `bottom-left`  |
 |  duration        | Number              | `3000`               |  Visibility duration in milliseconds    |
 |  dismissible     | Boolean             | `true`               |  Allow user close by clicking    |
 |  onClose         | Function            | --                   |  Do something when user clicks    |
 |  queue           | Boolean             | `false`              |  Wait for existing to close before showing new     |
-|  container       | String              | --                   |  The DOM selector element on where to append the messages,<br> defaults to `document.body`     |
          
 ## API methods
 ### `Vue.$toast.open(options)`
 This is generic method, you can use this method to make any kind of toast.
 ```js
-// Can accept a message as string and take rest of options as default
+// Can accept a message as string and apply rest of options from defaults
 Vue.$toast.open('message string');
 
 // Can accept an Object of options
