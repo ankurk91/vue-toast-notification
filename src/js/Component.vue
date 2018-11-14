@@ -14,7 +14,7 @@
 </template>
 
 <script>
-  import {removeElement} from "./helpers";
+  import {removeElement, HTMLElement} from "./helpers";
 
   export default {
     name: 'toast',
@@ -41,7 +41,7 @@
       },
       onClose: Function,
       queue: Boolean,
-      container: String
+      container: [Object, Function, HTMLElement],
     },
     data() {
       return {
@@ -73,14 +73,16 @@
           this.parentBottom.className = 'notices is-bottom'
         }
 
-        const container = document.querySelector(this.container) || document.body;
+        const container = this.container || document.body;
 
         container.appendChild(this.parentTop);
         container.appendChild(this.parentBottom);
 
+        let containerParentClass = 'is-custom-parent';
+
         if (this.container) {
-          this.parentTop.classList.add('has-custom-container');
-          this.parentBottom.classList.add('has-custom-container')
+          this.parentTop.classList.add(containerParentClass);
+          this.parentBottom.classList.add(containerParentClass)
         }
       },
 
@@ -115,6 +117,7 @@
 
         this.timer = setTimeout(() => this.close(), this.duration)
       },
+
       onClick() {
         if (!this.dismissible) return;
         this.onClose.apply(null, arguments);

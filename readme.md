@@ -11,7 +11,7 @@ Yet another Vue.js Toast plugin.
 
 :warning: This package has not been released yet. Package name and API is subject to change.
 
-## [Demo](https://ankurk91.github.io/vue-toast) or [JSFiddle](https://jsfiddle.net)
+## [Demo](https://ankurk91.github.io/vue-toast) or [JSFiddle](https://jsfiddle.net/user/ankurk91)
 
 ## Installation
 ```bash
@@ -40,12 +40,12 @@ The API methods accepts these options:
 | :---             | :---:               | :---:                | :---             |
 |  message         | String              | --                   |  Message text (required)   |
 |  type            | String              | `success`            |  One of `success`, `info`, `warning`, `error`, `default`  |
-|  position        | String              | `bottom-right`       |  One of `top`, `bottom`, `top-right`, `bottom-right`, `top-left`, `bottom-left`  |
+|  position        | String              | `bottom-right`       |  One of `top`, `bottom`, `top-right`, `bottom-right`,<br> `top-left`, `bottom-left`  |
 |  duration        | Number              | `3000`               |  Visibility duration in milliseconds    |
 |  dismissible     | Boolean             | `true`               |  Allow user close by clicking    |
 |  onClose         | Function            | --                   |  Do something when user clicks    |
 |  queue           | Boolean             | `false`              |  Wait for existing to close before showing new     |
-|  container       | String              | --                   |  The DOM selector element on where to append the messages, defaults to `document.body`     |
+|  container       | String              | --                   |  The DOM selector element on where to append the messages,<br> defaults to `document.body`     |
          
 ## API methods
 ### `Vue.$toast.open(options)`
@@ -74,10 +74,10 @@ Vue.$toast.success("message string", {
 ### `Vue.$toast.default(message,?options)`
 
 ## Global options
-You can set options for all future instances when using as plugin
+You can set options for all of the instances during plugin initialization
 ```js
 Vue.use(VueToast, {
-  // any option
+  // One of options
   position: 'top'
 })
 ```

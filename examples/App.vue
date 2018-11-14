@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col-md-8 mb-3">
           <div class="card">
-            <form class="card-body" method="post" @submit.prevent="show">
+            <form class="card-body" method="post" @submit.prevent="show" ref="demoPanel">
 
               <div class="form-group">
                 <label>Message <code>(required)</code></label>
@@ -36,22 +36,27 @@
                        v-model.number="form.duration">
               </div>
 
-              <div class="form-group">
-                <label>Dismissible</label>
-                <div class="custom-control custom-checkbox">
-                  <input v-model="form.dismissible" type="checkbox" class="custom-control-input"
-                         id="checkbox-dismissible">
-                  <label class="custom-control-label" for="checkbox-dismissible">Close on click</label>
+              <div class="form-row">
+                <div class="col-md-3">
+                  <div class="form-group">
+                    <label>Dismissible</label>
+                    <div class="custom-control custom-checkbox">
+                      <input v-model="form.dismissible" type="checkbox" class="custom-control-input"
+                             id="checkbox-dismissible">
+                      <label class="custom-control-label" for="checkbox-dismissible">Close on click</label>
+                    </div>
+                  </div>
                 </div>
-              </div>
-
-              <div class="form-group">
-                <label>Queue</label>
-                <div class="custom-control custom-checkbox">
-                  <input v-model="form.queue" type="checkbox" class="custom-control-input"
-                         id="checkbox-queue">
-                  <label class="custom-control-label" for="checkbox-queue">Wait for previous to close before
-                    showing new</label>
+                <div class="col-md-9">
+                  <div class="form-group">
+                    <label>Queue</label>
+                    <div class="custom-control custom-checkbox">
+                      <input v-model="form.queue" type="checkbox" class="custom-control-input"
+                             id="checkbox-queue">
+                      <label class="custom-control-label" for="checkbox-queue">Wait for previous to close before
+                        showing new</label>
+                    </div>
+                  </div>
                 </div>
               </div>
 
@@ -63,6 +68,15 @@
                            class="custom-control-input">
                     <label class="custom-control-label text-capitalize" :for="`radio-position-${item}`">{{item}}</label>
                   </div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label>Custom container</label>
+                <div class="custom-control custom-checkbox">
+                  <input v-model="form.container" type="checkbox" class="custom-control-input"
+                         id="checkbox-container">
+                  <label class="custom-control-label" for="checkbox-container">Append to custom container</label>
                 </div>
               </div>
 
@@ -110,6 +124,7 @@
           queue: false,
           position: 'bottom-right',
           onClose: this.onClose,
+          container: false,
         },
         types: [
           'success',
@@ -134,7 +149,11 @@
         console.log("User closed the notification.")
       },
       show() {
-        this.$toast.open(this.form);
+        let props = Object.assign({}, this.form, {
+          container: this.form.container ? this.$refs.demoPanel : null
+        });
+        console.log(props);
+        this.$toast.open(props);
       },
     }
   }
