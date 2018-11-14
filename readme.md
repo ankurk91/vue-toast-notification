@@ -6,6 +6,7 @@
 [![github-tag](https://img.shields.io/github/tag/ankurk91/vue-toast-package.svg?maxAge=1800)](https://github.com/ankurk91/vue-toast-package/)
 [![license](https://img.shields.io/github/license/ankurk91/vue-toast-package.svg?maxAge=1800)](https://yarnpkg.com/en/package/vue-toast-package)
 [![build-status](https://travis-ci.com/ankurk91/vue-toast.svg?branch=master)](https://travis-ci.com/ankurk91/vue-toast)
+
 Yet another Vue.js Toast plugin.
 
 :warning: This package has not been released yet. Package name and API is subject to change.

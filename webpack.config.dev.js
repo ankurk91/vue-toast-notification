@@ -105,7 +105,8 @@ module.exports = {
     runtimeChunk: false,
     splitChunks: {
       chunks: 'all',
-    }
+    },
+    minimizer: [],
   },
   plugins: [
     new HtmlWebpackPlugin({
@@ -151,16 +152,15 @@ if (isProduction) {
     new MiniCssExtractPlugin({
       filename: 'css/demo-[hash].css',
     }),
+  );
+  module.exports.optimization.minimizer.push(
     new UglifyJsPlugin({
       sourceMap: false,
       uglifyOptions: {
         output: {
-          comments: false,
           beautify: false
         },
         compress: {
-          warnings: false,
-          drop_debugger: true,
           drop_console: true
         }
       }
