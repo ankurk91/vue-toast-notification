@@ -127,15 +127,17 @@ module.exports = {
     }),
     new VueLoaderPlugin(),
   ],
-  // webpack-serve related configs
-  serve: {
+  devServer: {
+    contentBase: path.resolve(__dirname, 'docs'),
     host: 'localhost',
     port: 9000,
     open: true,
     hot: true,
-    logTime: true,
-    logLevel: 'info',
-    clipboard: false
+    overlay: {
+      warnings: false,
+      errors: true
+    },
+    stats: 'errors-only',
   },
   devtool: isProduction ? false : '#cheap-module-eval-source-map',
   performance: {
@@ -165,5 +167,5 @@ if (isProduction) {
         }
       }
     }),
-  )
+  );
 }
