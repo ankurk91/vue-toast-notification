@@ -1,32 +1,30 @@
 # Vue Toast Component
 
 [![vue-js](https://img.shields.io/badge/vue.js-2.x-brightgreen.svg?maxAge=604800)](https://vuejs.org/)
-[![downloads](https://img.shields.io/npm/dt/vue-toast-package.svg)](http://npm-stats.com/~packages/vue-toast-package)
-[![npm-version](https://img.shields.io/npm/v/vue-toast-package.svg)](https://www.npmjs.com/package/vue-toast-package)
-[![github-tag](https://img.shields.io/github/tag/ankurk91/vue-toast-package.svg?maxAge=1800)](https://github.com/ankurk91/vue-toast-package/)
-[![license](https://img.shields.io/github/license/ankurk91/vue-toast-package.svg?maxAge=1800)](https://yarnpkg.com/en/package/vue-toast-package)
-[![build-status](https://travis-ci.com/ankurk91/vue-toast.svg?branch=master)](https://travis-ci.com/ankurk91/vue-toast)
+[![downloads](https://img.shields.io/npm/dt/vue-toast-notification.svg)](http://npm-stats.com/~packages/vue-toast-notification)
+[![npm-version](https://img.shields.io/npm/v/vue-toast-notification.svg)](https://www.npmjs.com/package/vue-toast-notification)
+[![github-tag](https://img.shields.io/github/tag/ankurk91/vue-toast-notification.svg?maxAge=1800)](https://github.com/ankurk91/vue-toast-notification/)
+[![license](https://img.shields.io/github/license/ankurk91/vue-toast-notification.svg?maxAge=1800)](https://yarnpkg.com/en/package/vue-toast-notification)
+[![build-status](https://travis-ci.com/ankurk91/vue-toast-notification.svg?branch=master)](https://travis-ci.com/ankurk91/vue-toast-notification)
 
-Yet another Vue.js Toast plugin.
+Yet another Vue.js Toast notification plugin.
 
-:warning: This package has not been released yet. Package name and API is subject to change.
-
-## [Demo](https://ankurk91.github.io/vue-toast) or [JSFiddle](https://jsfiddle.net/user/ankurk91)
+## [Demo](https://ankurk91.github.io/vue-toast-notification) or [JSFiddle](https://jsfiddle.net/user/ankurk91)
 
 ## Installation
 ```bash
 # npm
-npm install vue-toast-package --save
+npm install vue-toast-notification --save
 
 # Yarn
-yarn add vue-toast-package
+yarn add vue-toast-notification
 ```
 
 ## Usage
 ```js
 import Vue from 'vue';
-import VueToast from 'vue-toast-package';
-import 'vue-toast-package/dist/vue-toast.css';
+import VueToast from 'vue-toast-notification';
+import 'vue-toast-notification/dist/index.css';
 
 Vue.use(VueToast);
 Vue.$toast.open('You did it!');
@@ -93,8 +91,8 @@ Vue.$toast.success("message string", {
 <!-- Vue js -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5/dist/vue.min.js"></script>
 <!-- Lastly add this package -->
-<script src="https://cdn.jsdelivr.net/npm/vue-toast-package@1"></script>
-<link href="https://cdn.jsdelivr.net/npm/vue-toast-package@1/dist/vue-toast.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/vue-toast-notification"></script>
+<link href="https://cdn.jsdelivr.net/npm/vue-toast-notification/dist/index.css" rel="stylesheet">
 <!-- Init the plugin -->
 <script>
 Vue.use(VueToast);

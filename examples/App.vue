@@ -4,7 +4,7 @@
       <span class="navbar-brand mb-0">Vue.js Toast</span>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
-          <a class="nav-link" href="https://github.com/ankurk91/vue-toast-package"
+          <a class="nav-link" href="https://github.com/ankurk91/vue-toast-notification"
              target="_blank"> GitHub</a></li>
       </ul>
     </nav>
@@ -82,8 +82,8 @@
             <div class="card-header"> Links</div>
             <div class="card-body">
               <ul>
-                <li><a href="https://github.com/ankurk91/vue-toast-package" target="_blank">GitHub</a></li>
-                <li><a href="https://www.npmjs.com/package/vue-toast-package" target="_blank">npm</a></li>
+                <li><a href="https://github.com/ankurk91/vue-toast-notification" target="_blank">GitHub</a></li>
+                <li><a href="https://www.npmjs.com/package/vue-toast-notification" target="_blank">npm</a></li>
               </ul>
             </div>
           </div>

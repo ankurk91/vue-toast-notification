@@ -30,7 +30,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'vue-toast.min.js',
+    filename: 'index.min.js',
     library: 'VueToast',
     libraryTarget: 'umd',
     libraryExport: 'default',
@@ -104,7 +104,7 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['./dist']),
     new MiniCssExtractPlugin({
-      filename: 'vue-toast.css',
+      filename: 'index.css',
     }),
     new UnminifiedWebpackPlugin({
       exclude: /\.css$/
@@ -117,5 +117,7 @@ module.exports = {
   },
   stats: {
     modules: false,
+    children: false,
+    entrypoints: false,
   }
 };

@@ -1,17 +1,17 @@
 {
-  "name": "vue-toast",
+  "name": "vue-toast-notification",
   "version": "0.0.1",
-  "description": "Vue.js toast plugin",
-  "main": "dist/vue-toast.js",
-  "browser": "dist/vue-toast.min.js",
-  "style": "dist/vue-toast.css",
+  "description": "Vue.js toast notification plugin",
+  "main": "dist/index.js",
+  "browser": "dist/index.min.js",
+  "style": "dist/index.css",
   "files": [
     "src",
     "dist"
   ],
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ankurk91/vue-toast.git"
+    "url": "git+https://github.com/ankurk91/vue-toast-notification.git"
   },
   "keywords": [
     "vue",
@@ -23,9 +23,9 @@
   "author": "ankurk91",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/ankurk91/vue-toast/issues"
+    "url": "https://github.com/ankurk91/vue-toast-notification/issues"
   },
-  "homepage": "https://github.com/ankurk91/vue-toast",
+  "homepage": "https://github.com/ankurk91/vue-toast-notification",
   "scripts": {
     "start": "yarn run dev",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot --config=webpack.config.dev.js",
