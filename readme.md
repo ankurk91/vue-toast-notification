@@ -1,4 +1,4 @@
-# Vue Toast Component
+# Vue Toast Notification
 
 [![vue-js](https://img.shields.io/badge/vue.js-2.x-brightgreen.svg?maxAge=604800)](https://vuejs.org/)
 [![downloads](https://img.shields.io/npm/dt/vue-toast-notification.svg)](http://npm-stats.com/~packages/vue-toast-notification)
@@ -63,7 +63,7 @@ Vue.$toast.open({
 ### `Vue.$toast.success(message,?options)`
 There are some proxy method to make it more readable.
 ```js
-Vue.$toast.success("message string", {
+Vue.$toast.success('message string', {
   // optional options Object
 })
 ```
@@ -82,7 +82,7 @@ Vue.use(VueToast, {
 ```
 Further you can override option when creating new instances
 ```js
-Vue.$toast.success("message string", {
+Vue.$toast.success('message string', {
   // override the global option
   position: 'bottom'
 })
@@ -90,7 +90,7 @@ Vue.$toast.success("message string", {
 
 ## Install in non-module environments (without webpack)
 ```html
-<!-- Vue js -->
+<!-- Vue.js -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5/dist/vue.min.js"></script>
 <!-- Lastly add this package -->
 <script src="https://cdn.jsdelivr.net/npm/vue-toast-notification"></script>
