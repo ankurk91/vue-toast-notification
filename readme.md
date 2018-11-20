@@ -9,7 +9,9 @@
 
 Yet another Vue.js Toast notification plugin.
 
-## [Demo](https://ankurk91.github.io/vue-toast-notification) or [JSFiddle](https://jsfiddle.net/user/ankurk91)
+:warning: This package is in very early stage. API is subject to change.
+
+## [Demo](https://ankurk91.github.io/vue-toast-notification) or [JSFiddle](https://jsfiddle.net/ankurk91/ebakcs62/)
 
 ## Installation
 ```bash
