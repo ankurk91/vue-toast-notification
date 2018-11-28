@@ -5,7 +5,7 @@ const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UnminifiedWebpackPlugin = require('unminified-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const {VueLoaderPlugin} = require('vue-loader');
 
 module.exports = {
@@ -52,20 +52,7 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.css$/,
-        use: [
-          MiniCssExtractPlugin.loader,
-          {
-            loader: "css-loader",
-            options: {
-              sourceMap: false,
-            }
-          },
-        ],
-      },
-      {
         test: /\.s?[ac]ss$/,
-        include: /src/,
         use: [
           MiniCssExtractPlugin.loader,
           {
@@ -88,9 +75,9 @@ module.exports = {
   },
   optimization: {
     minimizer: [
-      new UglifyJsPlugin({
+      new TerserPlugin({
         sourceMap: false,
-        uglifyOptions: {
+        terserOptions: {
           output: {
             beautify: false
           },

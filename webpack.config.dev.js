@@ -6,7 +6,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {VueLoaderPlugin} = require('vue-loader');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
 
@@ -41,26 +41,7 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.css$/,
-        use: [
-          isProduction ? MiniCssExtractPlugin.loader :
-            {
-              loader: "style-loader",
-              options: {
-                sourceMap: !isProduction,
-              }
-            },
-          {
-            loader: "css-loader",
-            options: {
-              sourceMap: !isProduction,
-            }
-          },
-        ],
-      },
-      {
         test: /\.s?[ac]ss$/,
-        include: /src/,
         use: [
           isProduction ? MiniCssExtractPlugin.loader :
             {
@@ -158,9 +139,9 @@ if (isProduction) {
     }),
   );
   module.exports.optimization.minimizer.push(
-    new UglifyJsPlugin({
+    new TerserPlugin({
       sourceMap: false,
-      uglifyOptions: {
+      terserOptions: {
         output: {
           beautify: false
         },
