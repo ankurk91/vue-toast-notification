@@ -60,7 +60,8 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               sourceMap: !isProduction,
-              minimize: isProduction
+              minimize: isProduction,
+              implementation: require('sass'),
             }
           },
         ],

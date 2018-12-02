@@ -67,6 +67,7 @@ module.exports = {
               sourceMap: false,
               minimize: true,
               outputStyle: 'compressed',
+              implementation: require('sass'),
             }
           },
         ],
