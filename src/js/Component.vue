@@ -39,7 +39,11 @@
         type: Boolean,
         default: true
       },
-      onClose: Function,
+      onClose: {
+        type: Function,
+        default: () => {
+        }
+      },
       queue: Boolean,
       container: [Object, Function, HTMLElement],
     },
