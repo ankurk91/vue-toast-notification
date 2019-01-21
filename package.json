@@ -1,6 +1,6 @@
 {
   "name": "vue-toast-notification",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Vue.js toast notification plugin",
   "main": "dist/index.js",
   "browser": "dist/index.min.js",
