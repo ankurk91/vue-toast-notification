@@ -45,7 +45,10 @@
         }
       },
       queue: Boolean,
-      container: [Object, Function, HTMLElement],
+      container: {
+        type: [Object, Function, HTMLElement],
+        default: null
+      },
     },
     data() {
       return {
