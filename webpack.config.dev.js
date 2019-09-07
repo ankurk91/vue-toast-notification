@@ -5,7 +5,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {VueLoaderPlugin} = require('vue-loader');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
+const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -46,9 +46,7 @@ module.exports = {
           isProduction ? MiniCssExtractPlugin.loader :
             {
               loader: 'style-loader',
-              options: {
-                sourceMap: !isProduction,
-              }
+              options: {}
             },
           {
             loader: 'css-loader',
@@ -60,8 +58,6 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               sourceMap: !isProduction,
-              minimize: isProduction,
-              implementation: require('sass'),
             }
           },
         ],
@@ -134,7 +130,7 @@ module.exports = {
 
 if (isProduction) {
   module.exports.plugins.push(
-    new CleanWebpackPlugin(['docs']),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/demo-[hash].css',
     }),

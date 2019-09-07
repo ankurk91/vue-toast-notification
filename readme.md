@@ -1,9 +1,9 @@
 # Vue Toast Notification
 
-[![downloads](https://img.shields.io/npm/dt/vue-toast-notification.svg)](http://npm-stats.com/~packages/vue-toast-notification)
-[![npm-version](https://img.shields.io/npm/v/vue-toast-notification.svg)](https://www.npmjs.com/package/vue-toast-notification)
-[![github-tag](https://img.shields.io/github/tag/ankurk91/vue-toast-notification.svg?maxAge=1800)](https://github.com/ankurk91/vue-toast-notification/)
-[![license](https://img.shields.io/github/license/ankurk91/vue-toast-notification.svg?maxAge=1800)](https://yarnpkg.com/en/package/vue-toast-notification)
+[![downloads](https://badgen.net/npm/dt/vue-toast-notification)](http://npm-stats.com/~packages/vue-toast-notification)
+[![npm-version](https://badgen.net/npm/v/vue-toast-notification)](https://www.npmjs.com/package/vue-toast-notification)
+[![github-tag](https://badgen.net/github/tag/ankurk91/vue-toast-notification)](https://github.com/ankurk91/vue-toast-notification/)
+[![license](https://badgen.net/github/license/ankurk91/vue-toast-notification)](https://yarnpkg.com/en/package/vue-toast-notification)
 [![build-status](https://travis-ci.com/ankurk91/vue-toast-notification.svg?branch=master)](https://travis-ci.com/ankurk91/vue-toast-notification)
 
 Yet another Vue.js Toast notification plugin.
@@ -90,7 +90,7 @@ Vue.$toast.success('message string', {
 ## Install in non-module environments (without webpack)
 ```html
 <!-- Vue.js -->
-<script src="https://cdn.jsdelivr.net/npm/vue@2.5/dist/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6/dist/vue.min.js"></script>
 <!-- Lastly add this package -->
 <script src="https://cdn.jsdelivr.net/npm/vue-toast-notification"></script>
 <link href="https://cdn.jsdelivr.net/npm/vue-toast-notification/dist/index.css" rel="stylesheet">
@@ -105,7 +105,7 @@ Vue.use(VueToast);
 
 ## Run examples on your localhost
 * Clone this repo
-* Make sure you have node-js `>=6.10` and [yarn](https://yarnpkg.com) `>=1.x` pre-installed
+* Make sure you have node-js `>=8.9` and [yarn](https://yarnpkg.com) `>=1.x` pre-installed
 * Install dependencies - `yarn install`
 * Run webpack dev server - `yarn start`
 * This should open the demo page at `http://localhost:9000` in your default web browser 

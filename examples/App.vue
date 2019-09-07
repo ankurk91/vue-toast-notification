@@ -110,7 +110,7 @@
         form: {
           message: 'This is a sample message',
           type: 'success',
-          duration: 3000,
+          duration: 5000,
           dismissible: true,
           queue: false,
           position: 'bottom-right',

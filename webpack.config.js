@@ -2,7 +2,7 @@
 
 const webpack = require('webpack');
 const path = require('path');
-const CleanWebpackPlugin = require('clean-webpack-plugin');
+const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UnminifiedWebpackPlugin = require('unminified-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
@@ -65,9 +65,6 @@ module.exports = {
             loader: 'sass-loader',
             options: {
               sourceMap: false,
-              minimize: true,
-              outputStyle: 'compressed',
-              implementation: require('sass'),
             }
           },
         ],
@@ -90,7 +87,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['./dist']),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'index.css',
     }),
