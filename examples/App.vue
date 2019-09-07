@@ -71,7 +71,8 @@
                 </div>
               </div>
 
-              <button type="submit" class="btn btn-secondary">Show notification</button>
+              <button type="submit" class="btn btn-primary">Show notification</button>
+              <button type="button" class="btn btn-secondary" @click="clearAll">Hide all</button>
 
             </form>
           </div>
@@ -142,6 +143,9 @@
       show() {
         this.$toast.open(this.form);
       },
+      clearAll() {
+        this.$toast.clear()
+      }
     }
   }
 </script>

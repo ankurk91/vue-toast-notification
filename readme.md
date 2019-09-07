@@ -30,6 +30,9 @@ import 'vue-toast-notification/dist/index.css';
 Vue.use(VueToast);
 Vue.$toast.open('You did it!');
 Vue.$toast.open({/* options */});
+
+// Close all opened toast immediately
+Vue.$toast.clear();
 ```
 
 ## Available options
@@ -60,7 +63,7 @@ Vue.$toast.open({
 });
 ```
 ### `Vue.$toast.success(message,?options)`
-There are some proxy method to make it more readable.
+There are some proxy methods to make it more readable.
 ```js
 Vue.$toast.success('message string', {
   // optional options Object

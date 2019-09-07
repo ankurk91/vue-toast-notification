@@ -15,6 +15,7 @@
 
 <script>
   import {removeElement, HTMLElement} from "./helpers";
+  import eventBus from './bus.js'
 
   export default {
     name: 'toast',
@@ -61,7 +62,8 @@
       this.setupContainer()
     },
     mounted() {
-      this.showNotice()
+      this.showNotice();
+      eventBus.$on('toast.clear', this.close)
     },
     methods: {
       setupContainer() {
@@ -97,8 +99,8 @@
         if (!this.queue) return false;
 
         return (
-          this.parentTop.childElementCount > 0 ||
-          this.parentBottom.childElementCount > 0
+            this.parentTop.childElementCount > 0 ||
+            this.parentBottom.childElementCount > 0
         )
       },
 

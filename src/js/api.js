@@ -1,4 +1,5 @@
 import Component from './Component.vue'
+import eventBus from './bus.js';
 
 const Api = (Vue, globalOptions = {}) => {
   return {
@@ -16,6 +17,9 @@ const Api = (Vue, globalOptions = {}) => {
         el: document.createElement('div'),
         propsData
       })
+    },
+    clear() {
+      eventBus.$emit('toast.clear')
     },
     success(message, options = {}) {
       return this.open(Object.assign({}, {
