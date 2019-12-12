@@ -31,6 +31,17 @@
               </div>
 
               <div class="form-group">
+                <label>Theme</label>
+                <div>
+                  <div v-for="item in themes" class="custom-control custom-radio custom-control-inline">
+                    <input v-model="form.theme" :value="item" type="radio" :id="`radio-theme-${item}`"
+                           class="custom-control-input">
+                    <label class="custom-control-label text-capitalize" :for="`radio-theme-${item}`">{{item}}</label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-group">
                 <label>Duration <code>({{form.duration/1000}} seconds)</code></label>
                 <input type="range" class="custom-range" min="1" max="500000"
                        v-model.number="form.duration">
@@ -111,6 +122,7 @@
         form: {
           message: 'This is a sample message',
           type: 'success',
+          theme: 'default',
           duration: 5000,
           dismissible: true,
           queue: false,
@@ -132,6 +144,10 @@
           'bottom-right',
           'top-left',
           'bottom-left',
+        ],
+        themes: [
+          'default',
+          'sugar'
         ]
       }
     },

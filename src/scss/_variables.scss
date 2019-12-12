@@ -9,3 +9,15 @@ $toast-colors: map-merge(
     ),
     $toast-colors
 );
+
+$toast-colors-sugar: () !default;
+$toast-colors-sugar: map-merge(
+    (
+      "success": #47d78a,
+      "info": #1c85d5,
+      "warning": #febc22,
+      "error": #f7471c,
+      "default": #343a40
+    ),
+    $toast-colors-sugar
+);
