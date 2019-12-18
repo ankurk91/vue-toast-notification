@@ -41,13 +41,18 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
+        test: /\.svg/,
+        loader: 'svg-url-loader',
+        exclude: /node_modules/,       
+      },
+      {
         test: /\.s?[ac]ss$/,
         use: [
           isProduction ? MiniCssExtractPlugin.loader :
-            {
-              loader: 'style-loader',
-              options: {}
-            },
+          {
+            loader: 'style-loader',
+            options: {}
+          },
           {
             loader: 'css-loader',
             options: {
@@ -59,7 +64,7 @@ module.exports = {
             options: {
               sourceMap: !isProduction,
             }
-          },
+          }
         ],
       },
       {
@@ -70,7 +75,7 @@ module.exports = {
         }
       },
       {
-        test: /\.(woff|woff2|eot|ttf|svg)(\?.*$|$)/,
+        test: /\.(woff|woff2|eot|ttf)(\?.*$|$)/,
         loader: 'file-loader',
         options: {
           name: '[path][name]-[hash].[ext]',

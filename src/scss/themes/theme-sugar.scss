@@ -1,0 +1,44 @@
+$toast-colors-sugar: () !default;
+$toast-colors-sugar: map-merge(
+    (
+      "success": #47d78a,
+      "info": #1c85d5,
+      "warning": #febc22,
+      "error": #f7471c,
+      "default": #343a40
+    ),
+    $toast-colors-sugar
+);
+
+.toast.theme-sugar {
+    opacity: 1;
+  
+    .toast-text {
+      margin: 0;
+      padding: 1.5em 1em;
+    }
+  
+    .toast-icon {
+      display: block;
+      width: 28px;
+      height: 28px;
+      margin-left: 1em;
+
+      background-image: url(../assets/info.svg)
+
+    }
+
+    &.toast-success .toast-icon {
+      background-image: url(../assets/success.svg)
+    }
+
+    &.toast-error .toast-icon {
+      background-image: url(../assets/error.svg)
+    }
+  
+    @each $color, $value in $toast-colors-sugar {
+      &.toast-#{$color} {
+        background-color: $value;
+      }
+    }
+}

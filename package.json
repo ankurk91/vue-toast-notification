@@ -33,7 +33,6 @@
     "build": "cross-env NODE_ENV=production webpack --progress --mode production",
     "prepublishOnly": "yarn run build"
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.6.0",
     "@babel/preset-env": "^7.6.0",
@@ -48,6 +47,7 @@
     "sass": "~1.22",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
+    "svg-url-loader": "^3.0.3",
     "unminified-webpack-plugin": "^2.0.0",
     "vue": "^2.6.10",
     "vue-loader": "^15.7.1",

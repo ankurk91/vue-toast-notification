@@ -8,7 +8,7 @@
       class="toast"
       :class="[`theme-${theme}`, `toast-${type}`, `is-${position}`]"
       @click="onClick">
-      <img v-if='isThemeWithIcon' class="toast-icon" :src="icon">
+      <div class="toast-icon" />
       <p class="toast-text">{{message}}</p>
     </div>
   </transition>
@@ -17,8 +17,6 @@
 <script>
   import {removeElement, HTMLElement} from "./helpers"
   import eventBus from './bus.js'
-
-  const THEMES_WITH_ICON = ['sugar']
 
   export default {
     name: 'toast',
@@ -141,19 +139,6 @@
       }
     },
     computed: {
-      isThemeWithIcon(){
-        return THEMES_WITH_ICON.includes(this.theme)
-      },
-      icon(){
-        switch(this.type) {
-          case 'success':
-            return require('../assets/success.svg')
-          case 'error':
-            return require('../assets/error.svg')
-          default:
-            return require('../assets/info.svg')
-        }
-      },
       correctParent() {
         switch (this.position) {
           case 'top-right':

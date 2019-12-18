@@ -52,6 +52,13 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
+        test: /\.svg/,
+        use: {
+            loader: 'svg-url-loader',
+            options: {}
+        }
+      },
+      {
         test: /\.s?[ac]ss$/,
         use: [
           MiniCssExtractPlugin.loader,
@@ -68,7 +75,7 @@ module.exports = {
             }
           },
         ],
-      },
+      }
     ]
   },
   optimization: {
