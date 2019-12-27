@@ -20,8 +20,9 @@ $toast-colors-sugar: map-merge(
   
     .toast-icon {
       display: block;
-      width: 28px;
-      height: 28px;
+      width: 27px;
+      min-width: 27px;
+      height: 27px;
       margin-left: 1em;
 
       background-image: url(../assets/info.svg)
