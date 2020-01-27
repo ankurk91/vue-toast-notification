@@ -7,6 +7,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const UnminifiedWebpackPlugin = require('unminified-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const {VueLoaderPlugin} = require('vue-loader');
+const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
 
 module.exports = {
   context: __dirname,
@@ -19,7 +20,11 @@ module.exports = {
     },
     extensions: ['.js', '.json', '.vue']
   },
-  entry: './src/index.js',
+  entry: {
+    index: './src/index.js',
+    'theme-default': './src/themes/default/index.scss',
+    'theme-sugar': './src/themes/sugar/index.scss',
+  },
   externals: {
     'vue': {
       commonjs: 'vue',
@@ -30,7 +35,7 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: 'index.min.js',
+    filename: '[name].min.js',
     library: 'VueToast',
     libraryTarget: 'umd',
     libraryExport: 'default',
@@ -69,6 +74,17 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.svg/,
+        use: [
+          {
+            loader: "svg-url-loader",
+            options: {
+              limit: 15000, // bytes
+            }
+          }
+        ]
+      },
     ]
   },
   optimization: {
@@ -88,8 +104,10 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
+    new FixStyleOnlyEntriesPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'index.css',
+      filename: "[name].css",
+      chunkFilename: "[name].css"
     }),
     new UnminifiedWebpackPlugin({
       exclude: /\.css$/

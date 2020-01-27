@@ -25,7 +25,9 @@ yarn add vue-toast-notification
 ```js
 import Vue from 'vue';
 import VueToast from 'vue-toast-notification';
-import 'vue-toast-notification/dist/index.css';
+// Import any of available themes
+import 'vue-toast-notification/dist/dist/theme-default.css';
+//import 'vue-toast-notification/dist/dist/theme-sugar.css';
 
 Vue.use(VueToast);
 Vue.$toast.open('You did it!');
@@ -96,19 +98,16 @@ Vue.$toast.success('message string', {
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6/dist/vue.min.js"></script>
 <!-- Lastly add this package -->
 <script src="https://cdn.jsdelivr.net/npm/vue-toast-notification"></script>
-<link href="https://cdn.jsdelivr.net/npm/vue-toast-notification/dist/index.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/vue-toast-notification/dist/theme-default.css" rel="stylesheet">
 <!-- Init the plugin -->
 <script>
 Vue.use(VueToast);
 </script>
 ```
 
-### Browser support
-* [Modern](http://browserl.ist/?q=defaults%2C+not+ie+%3E+0%2Cnot+ie_mob+%3E+0) browsers only
-
 ## Run examples on your localhost
 * Clone this repo
-* Make sure you have node-js `>=8.9` and [yarn](https://yarnpkg.com) `>=1.x` pre-installed
+* Make sure you have node-js `>=10.13` and [yarn](https://yarnpkg.com) `>=1.x` pre-installed
 * Install dependencies - `yarn install`
 * Run webpack dev server - `yarn start`
 * This should open the demo page at `http://localhost:9000` in your default web browser 

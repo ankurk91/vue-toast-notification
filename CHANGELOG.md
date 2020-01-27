@@ -1,5 +1,9 @@
 # Changelog
 
+### 0.1.0
+* Add a new color theme along with default, [#6](https://github.com/ankurk91/vue-toast-notification/pull/6)
+* See [UPGRADING.md](UPGRADING.md) for migration instructions
+
 ### 0.0.3
 * Add: method to close all toast at-once
 

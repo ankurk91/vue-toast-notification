@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar navbar-expand-lg navbar navbar-dark bg-dark shadow-sm mb-3">
+    <nav class="navbar navbar-expand-lg navbar navbar-light bg-white shadow-sm mb-3">
       <span class="navbar-brand mb-0">Vue.js Toast</span>
       <ul class="navbar-nav ml-auto">
         <li class="nav-item">
@@ -72,6 +72,7 @@
               </div>
 
               <button type="submit" class="btn btn-primary">Show notification</button>
+              <button type="button" class="btn btn-outline-info" @click="showAll">Demo all</button>
               <button type="button" class="btn btn-secondary" @click="clearAll">Hide all</button>
 
             </form>
@@ -101,6 +102,8 @@
 <script>
   import Vue from 'vue';
   import Plugin from '../src/index';
+  //import '../src/themes/default/index.scss'
+  import '../src/themes/sugar/index.scss'
 
   Vue.use(Plugin);
 
@@ -111,12 +114,12 @@
         form: {
           message: 'This is a sample message',
           type: 'success',
-          duration: 5000,
+          duration: 10000,
           dismissible: true,
           queue: false,
           position: 'bottom-right',
           onClose: this.onClose,
-          container: false,
+          container: null,
         },
         types: [
           'success',
@@ -136,7 +139,20 @@
       }
     },
     components: {},
+    mounted() {
+      // Lets show some toasts on page load
+      this.showAll();
+    },
     methods: {
+      showAll() {
+        this.types.forEach((type) => {
+          this.$toast.open({
+            message: 'Yet another toast notification!',
+            duration: this.form.duration,
+            type
+          })
+        })
+      },
       onClose() {
         console.log("User closed the notification.")
       },

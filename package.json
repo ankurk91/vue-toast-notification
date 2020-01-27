@@ -4,7 +4,7 @@
   "description": "Vue.js toast notification plugin",
   "main": "dist/index.js",
   "browser": "dist/index.min.js",
-  "style": "dist/index.css",
+  "style": "dist/theme-default.css",
   "files": [
     "src",
     "dist"
@@ -29,7 +29,7 @@
   "scripts": {
     "start": "yarn run dev",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot --config=webpack.config.dev.js",
-    "docs": "cross-env NODE_ENV=production webpack --config=webpack.config.dev.js --progress --mode production",
+    "demo": "cross-env NODE_ENV=production webpack --config=webpack.config.dev.js --progress --mode production",
     "build": "cross-env NODE_ENV=production webpack --progress --mode production",
     "prepublishOnly": "yarn run build"
   },
@@ -40,28 +40,29 @@
     "babel-loader": "^8.0.6",
     "bootstrap": "^4.3.1",
     "clean-webpack-plugin": "^3.0.0",
-    "cross-env": "^6.0.3",
+    "cross-env": "^7.0.0",
     "css-loader": "^3.2.0",
-    "file-loader": "^4.2.0",
+    "file-loader": "^5.0.0",
     "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.8.0",
+    "mini-css-extract-plugin": "^0.9.0",
     "sass": "~1.22",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
+    "svg-url-loader": "^4.0.0",
     "unminified-webpack-plugin": "^2.0.0",
     "vue": "^2.6.10",
     "vue-loader": "^15.7.1",
     "vue-template-compiler": "^2.6.10",
     "webpack": "^4.39.3",
     "webpack-cli": "^3.3.8",
-    "webpack-dev-server": "^3.8.0"
+    "webpack-dev-server": "^3.8.0",
+    "webpack-fix-style-only-entries": "^0.4.0"
   },
   "peerDependencies": {
     "vue": "^2.0.0"
   },
   "engines": {
-    "node": ">=6.9.0",
-    "npm": ">=3.10.0"
+    "node": ">=10.13.0"
   },
   "jest": {
     "moduleFileExtensions": [
@@ -75,9 +76,6 @@
     "transform": {
       "^.+\\.js$": "babel-jest",
       ".*\\.(vue)$": "vue-jest"
-    },
-    "moduleNameMapper": {
-      "\\.(css|less|scss)$": "<rootDir>/__test__/__mocks__/styleMock.js"
     },
     "collectCoverage": false,
     "testURL": "http://localhost"

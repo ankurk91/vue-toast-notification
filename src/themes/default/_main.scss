@@ -1,4 +1,3 @@
-
 .notices {
   position: fixed;
   display: flex;
@@ -23,9 +22,15 @@
     color: #fff;
     min-height: 3em;
     cursor: pointer;
+
     .toast-text {
       margin: 0;
       padding: 0.5em 1em;
+      word-break: break-all;
+    }
+
+    .toast-icon {
+      display: none;
     }
   }
 
@@ -41,9 +46,11 @@
     &.is-top, &.is-bottom {
       align-self: center;
     }
+
     &.is-top-right, &.is-bottom-right {
       align-self: flex-end;
     }
+
     &.is-top-left, &.is-bottom-left {
       align-self: flex-start;
     }
@@ -53,9 +60,11 @@
   &.is-top {
     flex-direction: column;
   }
+
   &.is-bottom {
     flex-direction: column-reverse;
   }
+
   &.is-custom-parent {
     position: absolute;
   }

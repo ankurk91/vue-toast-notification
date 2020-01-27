@@ -8,6 +8,7 @@
       class="toast"
       :class="[`toast-${type}`, `is-${position}`]"
       @click="onClick">
+      <div class="toast-icon"></div>
       <p class="toast-text">{{message}}</p>
     </div>
   </transition>
