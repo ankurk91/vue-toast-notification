@@ -26,8 +26,8 @@ yarn add vue-toast-notification
 import Vue from 'vue';
 import VueToast from 'vue-toast-notification';
 // Import any of available themes
-import 'vue-toast-notification/dist/dist/theme-default.css';
-//import 'vue-toast-notification/dist/dist/theme-sugar.css';
+import 'vue-toast-notification/dist/theme-default.css';
+//import 'vue-toast-notification/dist/theme-sugar.css';
 
 Vue.use(VueToast);
 Vue.$toast.open('You did it!');
