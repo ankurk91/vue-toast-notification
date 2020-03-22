@@ -7,7 +7,7 @@
       v-show="isActive"
       class="toast"
       :class="[`toast-${type}`, `is-${position}`]"
-      @click="onClick">
+      @click="whenClicked">
       <div class="toast-icon"></div>
       <p class="toast-text">{{message}}</p>
     </div>
@@ -42,6 +42,11 @@
         default: true
       },
       onClose: {
+        type: Function,
+        default: () => {
+        }
+      },
+      onClick: {
         type: Function,
         default: () => {
         }
@@ -111,6 +116,7 @@
 
         // Timeout for the animation complete before destroying
         setTimeout(() => {
+          this.onClose.apply(null, arguments);
           this.$destroy();
           removeElement(this.$el)
         }, 150)
@@ -128,9 +134,9 @@
         this.timer = setTimeout(() => this.close(), this.duration)
       },
 
-      onClick() {
+      whenClicked() {
         if (!this.dismissible) return;
-        this.onClose.apply(null, arguments);
+        this.onClick.apply(null, arguments);
         this.close()
       }
     },

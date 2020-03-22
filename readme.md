@@ -14,11 +14,11 @@ Yet another Vue.js Toast notification plugin.
 
 ## Installation
 ```bash
-# npm
-npm install vue-toast-notification --save
-
 # Yarn
 yarn add vue-toast-notification
+
+# npm
+npm install vue-toast-notification --save
 ```
 
 ## Usage
@@ -47,7 +47,8 @@ The API methods accepts these options:
 |  position        | String              | `bottom-right`       |  One of `top`, `bottom`, `top-right`, `bottom-right`,`top-left`, `bottom-left`  |
 |  duration        | Number              | `3000`               |  Visibility duration in milliseconds    |
 |  dismissible     | Boolean             | `true`               |  Allow user close by clicking    |
-|  onClose         | Function            | --                   |  Do something when user clicks    |
+|  onClick         | Function            | --                   |  Do something when user clicks    |
+|  onClose         | Function            | --                   |  Do something after toast gets dismissed    |
 |  queue           | Boolean             | `false`              |  Wait for existing to close before showing new     |
          
 ## API methods

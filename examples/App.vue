@@ -118,6 +118,7 @@
           dismissible: true,
           queue: false,
           position: 'bottom-right',
+          onClick: this.onClick,
           onClose: this.onClose,
           container: null,
         },
@@ -153,8 +154,11 @@
           })
         })
       },
+      onClick() {
+        console.log("User dismissed the notification.")
+      },
       onClose() {
-        console.log("User closed the notification.")
+        console.log("Toast was closed.")
       },
       show() {
         this.$toast.open(this.form);
