@@ -54,5 +54,6 @@ composer.phar
 *.tgz
 /dist/
 /demo/
+/docs/
 /tmp/
 /coverage/

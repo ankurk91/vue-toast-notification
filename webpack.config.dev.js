@@ -24,7 +24,7 @@ module.exports = {
   },
   entry: './examples/index.js',
   output: {
-    path: path.resolve(__dirname, 'demo'),
+    path: path.resolve(__dirname, 'docs'),
     publicPath: '',
     filename: 'js/[name]-[hash:8].js'
   },
@@ -103,7 +103,7 @@ module.exports = {
     new VueLoaderPlugin(),
   ],
   devServer: {
-    contentBase: path.resolve(__dirname, 'demo'),
+    contentBase: path.resolve(__dirname, 'docs'),
     host: 'localhost',
     port: 9000,
     open: true,

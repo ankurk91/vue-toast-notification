@@ -29,7 +29,7 @@
   "scripts": {
     "start": "yarn run dev",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --hot --config=webpack.config.dev.js",
-    "demo": "cross-env NODE_ENV=production webpack --config=webpack.config.dev.js --progress --mode production",
+    "docs": "cross-env NODE_ENV=production webpack --config=webpack.config.dev.js --progress --mode production",
     "build": "cross-env NODE_ENV=production webpack --progress --mode production",
     "prepublishOnly": "yarn run build"
   },

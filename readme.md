@@ -3,8 +3,8 @@
 [![downloads](https://badgen.net/npm/dt/vue-toast-notification)](http://npm-stats.com/~packages/vue-toast-notification)
 [![npm-version](https://badgen.net/npm/v/vue-toast-notification)](https://www.npmjs.com/package/vue-toast-notification)
 [![github-tag](https://badgen.net/github/tag/ankurk91/vue-toast-notification)](https://github.com/ankurk91/vue-toast-notification/)
+![build](https://github.com/ankurk91/vue-toast-notification/workflows/build/badge.svg)
 [![license](https://badgen.net/github/license/ankurk91/vue-toast-notification)](https://yarnpkg.com/en/package/vue-toast-notification)
-[![build-status](https://travis-ci.com/ankurk91/vue-toast-notification.svg?branch=master)](https://travis-ci.com/ankurk91/vue-toast-notification)
 
 Yet another Vue.js Toast notification plugin.
 
@@ -18,7 +18,7 @@ Yet another Vue.js Toast notification plugin.
 yarn add vue-toast-notification
 
 # npm
-npm install vue-toast-notification --save
+npm install vue-toast-notification
 ```
 
 ## Usage
