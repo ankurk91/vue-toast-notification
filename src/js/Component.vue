@@ -100,6 +100,7 @@
 
       close() {
         clearTimeout(this.timer);
+        clearTimeout(this.queueTimer);
         this.isActive = false;
 
         // Timeout for the animation complete before destroying
@@ -113,7 +114,7 @@
       showNotice() {
         if (this.shouldQueue()) {
           // Call recursively if should queue
-          setTimeout(this.showNotice, 250);
+          this.queueTimer = setTimeout(this.showNotice, 250);
           return
         }
         this.correctParent.insertAdjacentElement('afterbegin', this.$el);
