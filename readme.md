@@ -3,18 +3,16 @@
 [![downloads](https://badgen.net/npm/dt/vue-toast-notification)](http://npm-stats.com/~packages/vue-toast-notification)
 [![npm-version](https://badgen.net/npm/v/vue-toast-notification)](https://www.npmjs.com/package/vue-toast-notification)
 [![github-tag](https://badgen.net/github/tag/ankurk91/vue-toast-notification)](https://github.com/ankurk91/vue-toast-notification/)
-![build](https://github.com/ankurk91/vue-toast-notification/workflows/build/badge.svg)
+[![build](https://github.com/ankurk91/vue-toast-notification/workflows/build/badge.svg)](https://github.com/ankurk91/vue-toast-notification/actions)
 [![license](https://badgen.net/github/license/ankurk91/vue-toast-notification)](https://yarnpkg.com/en/package/vue-toast-notification)
 
 Yet another Vue.js Toast notification plugin.
-
-:warning: This package is in very early stage. API is subject to change.
 
 ## [Demo](https://ankurk91.github.io/vue-toast-notification) or [JSFiddle](https://jsfiddle.net/ankurk91/ebakcs62/)
 
 ## Installation
 ```bash
-# Yarn
+# yarn
 yarn add vue-toast-notification
 
 # npm
@@ -25,7 +23,7 @@ npm install vue-toast-notification
 ```js
 import Vue from 'vue';
 import VueToast from 'vue-toast-notification';
-// Import any of available themes
+// Import one of available themes
 import 'vue-toast-notification/dist/theme-default.css';
 //import 'vue-toast-notification/dist/theme-sugar.css';
 
@@ -56,19 +54,19 @@ The API methods accepts these options:
 This is generic method, you can use this method to make any kind of toast.
 ```js
 // Can accept a message as string and apply rest of options from defaults
-Vue.$toast.open('message string');
+Vue.$toast.open('Howdy!');
 
 // Can accept an Object of options
 Vue.$toast.open({
-    message: 'message string',
+    message: 'Something went wrong!',
     type: 'error',
-    // all other options
+    // all other options may go here
 });
 ```
 ### `Vue.$toast.success(message,?options)`
 There are some proxy methods to make it more readable.
 ```js
-Vue.$toast.success('message string', {
+Vue.$toast.success('Profile saved.', {
   // optional options Object
 })
 ```
@@ -78,7 +76,7 @@ Vue.$toast.success('message string', {
 ### `Vue.$toast.default(message,?options)`
 
 ## Global options
-You can set options for all of the instances during plugin initialization
+You can set options for all the instances during plugin initialization
 ```js
 Vue.use(VueToast, {
   // One of options
@@ -87,7 +85,7 @@ Vue.use(VueToast, {
 ```
 Further you can override option when creating new instances
 ```js
-Vue.$toast.success('message string', {
+Vue.$toast.success('Order placed.', {
   // override the global option
   position: 'bottom'
 })
