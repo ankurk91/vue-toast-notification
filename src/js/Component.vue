@@ -105,8 +105,8 @@
         if (!this.queue) return false;
 
         return (
-            this.parentTop.childElementCount > 0 ||
-            this.parentBottom.childElementCount > 0
+          this.parentTop.childElementCount > 0 ||
+          this.parentBottom.childElementCount > 0
         )
       },
 
@@ -125,13 +125,13 @@
       showNotice() {
         if (this.shouldQueue()) {
           // Call recursively if should queue
-          setTimeout(() => this.showNotice(), 250);
+          setTimeout(this.showNotice, 250);
           return
         }
         this.correctParent.insertAdjacentElement('afterbegin', this.$el);
         this.isActive = true;
 
-        this.timer = setTimeout(() => this.close(), this.duration)
+        this.timer = setTimeout(this.close, this.duration)
       },
 
       whenClicked() {
@@ -173,5 +173,8 @@
         }
       },
     },
+    beforeDestroy() {
+      eventBus.$off('toast.clear', this.close)
+    }
   }
 </script>

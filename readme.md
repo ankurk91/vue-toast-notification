@@ -112,7 +112,7 @@ Vue.use(VueToast);
 * This should open the demo page at `http://localhost:9000` in your default web browser 
 
 ## Credits
-* Buefy [Toast](https://buefy.github.io/documentation/toast) component
+* Buefy [Toast](https://buefy.org/documentation/toast) component
 
 ## License
 [MIT](LICENSE.txt) License
