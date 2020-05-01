@@ -52,10 +52,6 @@
         }
       },
       queue: Boolean,
-      container: {
-        type: [Object, Function, HTMLElement],
-        default: null
-      },
     },
     data() {
       return {
@@ -88,17 +84,9 @@
           this.parentBottom.className = 'notices is-bottom'
         }
 
-        const container = this.container || document.body;
-
+        const container = document.body;
         container.appendChild(this.parentTop);
         container.appendChild(this.parentBottom);
-
-        let containerParentClass = 'is-custom-parent';
-
-        if (this.container) {
-          this.parentTop.classList.add(containerParentClass);
-          this.parentBottom.classList.add(containerParentClass)
-        }
       },
 
       shouldQueue() {
