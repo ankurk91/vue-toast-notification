@@ -1,5 +1,9 @@
 # Changelog
 
+### [0.3.0](https://github.com/ankurk91/vue-toast-notification/compare/0.2.0...0.3.0)
+* Fix: issue [#18](https://github.com/ankurk91/vue-toast-notification/issues/18)
+* Remove: undocumented prop `container`
+
 ### 0.1.0
 * Add a new color theme along with default, [#6](https://github.com/ankurk91/vue-toast-notification/pull/6)
 * See [UPGRADING.md](UPGRADING.md) for migration instructions
