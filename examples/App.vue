@@ -32,7 +32,7 @@
 
               <div class="form-group">
                 <label>Duration <code>({{form.duration/1000}} seconds)</code></label>
-                <input type="range" class="custom-range" min="1" max="500000"
+                <input type="range" class="custom-range" min="100" max="50000"
                        v-model.number="form.duration">
               </div>
 
