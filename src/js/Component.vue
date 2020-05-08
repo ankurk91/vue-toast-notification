@@ -9,7 +9,7 @@
       :class="[`toast-${type}`, `is-${position}`]"
       @click="whenClicked">
       <div class="toast-icon"></div>
-      <p class="toast-text">{{message}}</p>
+      <p class="toast-text" v-html="message"></p>
     </div>
   </transition>
 </template>

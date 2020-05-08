@@ -40,7 +40,7 @@ The API methods accepts these options:
 
 | Attribute        | Type                | Default              | Description      |
 | :---             | :---:               | :---:                | :---             |
-|  message         | String              | --                   |  Message text (required)   |
+|  message         | String              | --                   |  Message text/html (required)   |
 |  type            | String              | `success`            |  One of `success`, `info`, `warning`, `error`, `default`  |
 |  position        | String              | `bottom-right`       |  One of `top`, `bottom`, `top-right`, `bottom-right`,`top-left`, `bottom-left`  |
 |  duration        | Number              | `3000`               |  Visibility duration in milliseconds    |
