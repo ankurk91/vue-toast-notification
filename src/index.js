@@ -1,5 +1,6 @@
 import Component from './js/Component.vue';
-import Api from './js/api';
+import Api from './js/api.js';
+import Positions from './js/positions.js';
 
 const Plugin = (Vue, options = {}) => {
   let methods = Api(Vue, options);
@@ -10,3 +11,4 @@ const Plugin = (Vue, options = {}) => {
 Component.install = Plugin;
 
 export default Component;
+export {Component, Positions}

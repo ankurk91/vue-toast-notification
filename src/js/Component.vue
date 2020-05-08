@@ -15,7 +15,8 @@
 </template>
 
 <script>
-  import {removeElement} from "./helpers";
+  import {removeElement} from './helpers.js';
+  import Positions from './positions.js'
   import eventBus from './bus.js'
 
   export default {
@@ -31,7 +32,10 @@
       },
       position: {
         type: String,
-        default: 'bottom-right',
+        default: Positions.BOTTOM_RIGHT,
+        validator(value) {
+          return Object.values(Positions).includes(value)
+        }
       },
       duration: {
         type: Number,
@@ -132,29 +136,30 @@
     computed: {
       correctParent() {
         switch (this.position) {
-          case 'top-right':
-          case 'top':
-          case 'top-left':
+          case Positions.TOP:
+          case Positions.TOP_RIGHT:
+          case Positions.TOP_LEFT:
             return this.parentTop;
 
-          case 'bottom-right':
-          case 'bottom':
-          case 'bottom-left':
+          case Positions.BOTTOM:
+          case Positions.BOTTOM_RIGHT:
+          case Positions.BOTTOM_LEFT:
             return this.parentBottom;
         }
       },
       transition() {
         switch (this.position) {
-          case 'top-right':
-          case 'top':
-          case 'top-left':
+          case Positions.TOP:
+          case Positions.TOP_RIGHT:
+          case Positions.TOP_LEFT:
             return {
               enter: 'fadeInDown',
               leave: 'fadeOut'
             };
-          case 'bottom-right':
-          case 'bottom':
-          case 'bottom-left':
+
+          case Positions.BOTTOM:
+          case Positions.BOTTOM_RIGHT:
+          case Positions.BOTTOM_LEFT:
             return {
               enter: 'fadeInUp',
               leave: 'fadeOut'
