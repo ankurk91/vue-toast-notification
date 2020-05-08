@@ -15,7 +15,7 @@
 </template>
 
 <script>
-  import {removeElement, HTMLElement} from "./helpers";
+  import {removeElement} from "./helpers";
   import eventBus from './bus.js'
 
   export default {

@@ -6,10 +6,4 @@ const removeElement = (el) => {
   }
 };
 
-const hasWindow = () => {
-  return typeof window !== 'undefined';
-};
-
-const HTMLElement = hasWindow() ? window.HTMLElement : Object;
-
-export {removeElement, hasWindow, HTMLElement}
+export {removeElement}
