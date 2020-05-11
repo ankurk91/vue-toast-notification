@@ -7,6 +7,8 @@
       v-show="isActive"
       class="toast"
       :class="[`toast-${type}`, `is-${position}`]"
+      @mouseover="mouseover = true"
+      @mouseleave="mouseover = false"
       @click="whenClicked">
       <div class="toast-icon"></div>
       <p class="toast-text" v-html="message"></p>
@@ -15,7 +17,7 @@
 </template>
 
 <script>
-  import {removeElement} from './helpers.js';
+  import {removeElement, Timer} from './helpers.js';
   import Positions from './positions.js'
   import eventBus from './bus.js'
 
@@ -62,6 +64,7 @@
         isActive: false,
         parentTop: null,
         parentBottom: null,
+        mouseover: null,
       }
     },
     beforeMount() {
@@ -70,6 +73,11 @@
     mounted() {
       this.showNotice();
       eventBus.$on('toast.clear', this.close)
+    },
+    watch: {
+      mouseover: function (val) {
+        val ? this.timer.pause() : this.timer.resume();
+      }
     },
     methods: {
       setupContainer() {
@@ -103,7 +111,7 @@
       },
 
       close() {
-        clearTimeout(this.timer);
+        this.timer.stop();
         clearTimeout(this.queueTimer);
         this.isActive = false;
 
@@ -124,7 +132,7 @@
         this.correctParent.insertAdjacentElement('afterbegin', this.$el);
         this.isActive = true;
 
-        this.timer = setTimeout(this.close, this.duration)
+        this.timer = new Timer(this.close, this.duration);
       },
 
       whenClicked() {
