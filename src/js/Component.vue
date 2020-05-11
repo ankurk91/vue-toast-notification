@@ -7,8 +7,8 @@
       v-show="isActive"
       class="toast"
       :class="[`toast-${type}`, `is-${position}`]"
-      @mouseover="mouseover = true"
-      @mouseleave="mouseover = false"
+      @mouseover="isHovered = true"
+      @mouseleave="isHovered = false"
       @click="whenClicked">
       <div class="toast-icon"></div>
       <p class="toast-text" v-html="message"></p>
@@ -17,7 +17,8 @@
 </template>
 
 <script>
-  import {removeElement, Timer} from './helpers.js';
+  import {removeElement} from './helpers.js';
+  import Timer from "./timer.js";
   import Positions from './positions.js'
   import eventBus from './bus.js'
 
@@ -58,13 +59,17 @@
         }
       },
       queue: Boolean,
+      pauseOnHover: {
+        type: Boolean,
+        default: true
+      },
     },
     data() {
       return {
         isActive: false,
         parentTop: null,
         parentBottom: null,
-        mouseover: null,
+        isHovered: false,
       }
     },
     beforeMount() {
@@ -75,8 +80,9 @@
       eventBus.$on('toast.clear', this.close)
     },
     watch: {
-      mouseover: function (val) {
-        val ? this.timer.pause() : this.timer.resume();
+      isHovered: function (newVal) {
+        if (!this.pauseOnHover) return;
+        newVal ? this.timer.pause() : this.timer.resume();
       }
     },
     methods: {

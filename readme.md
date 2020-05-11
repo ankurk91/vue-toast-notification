@@ -48,6 +48,7 @@ The API methods accepts these options:
 |  onClick         | Function            | --                   |  Do something when user clicks    |
 |  onClose         | Function            | --                   |  Do something after toast gets dismissed    |
 |  queue           | Boolean             | `false`              |  Wait for existing to close before showing new     |
+|  pauseOnHover    | Boolean             | `true`               |  Pause the timer when mouse on over a toast    |
          
 ## API methods
 ### `Vue.$toast.open(options)`
