@@ -7,8 +7,8 @@
       v-show="isActive"
       class="toast"
       :class="[`toast-${type}`, `is-${position}`]"
-      @mouseover="isHovered = true"
-      @mouseleave="isHovered = false"
+      @mouseover="toggleTimer(true)"
+      @mouseleave="toggleTimer(false)"
       @click="whenClicked">
       <div class="toast-icon"></div>
       <p class="toast-text" v-html="message"></p>
@@ -79,12 +79,6 @@
       this.showNotice();
       eventBus.$on('toast.clear', this.close)
     },
-    watch: {
-      isHovered: function (newVal) {
-        if (!this.pauseOnHover) return;
-        newVal ? this.timer.pause() : this.timer.resume();
-      }
-    },
     methods: {
       setupContainer() {
         this.parentTop = document.querySelector('.notices.is-top');
@@ -145,6 +139,10 @@
         if (!this.dismissible) return;
         this.onClick.apply(null, arguments);
         this.close()
+      },
+      toggleTimer(newVal) {
+        if (!this.pauseOnHover) return;
+        newVal ? this.timer.pause() : this.timer.resume();
       }
     },
     computed: {
