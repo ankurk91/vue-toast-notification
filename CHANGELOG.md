@@ -1,5 +1,9 @@
 # Changelog
 
+### [0.4.0](https://github.com/ankurk91/vue-toast-notification/compare/0.3.0...0.4.0)
+* Add: allow html in `message` prop
+* Add: `pauseOnHover` prop, disabled by default
+
 ### [0.3.0](https://github.com/ankurk91/vue-toast-notification/compare/0.2.0...0.3.0)
 * Fix: issue [#18](https://github.com/ankurk91/vue-toast-notification/issues/18)
 * Remove: undocumented prop `container`
