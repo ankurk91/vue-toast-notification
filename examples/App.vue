@@ -12,7 +12,7 @@
       <div class="row">
         <div class="col-md-8 mb-3">
           <div class="card">
-            <form class="card-body" method="post" @submit.prevent="show" ref="demoPanel">
+            <form class="card-body" method="post" @submit.prevent="show">
 
               <div class="form-group">
                 <label>Message <code>(required)</code></label>
@@ -71,6 +71,8 @@
                 </div>
               </div>
 
+              <hr>
+
               <button type="submit" class="btn btn-primary">Show notification</button>
               <button type="button" class="btn btn-outline-info" @click="showAll">Demo all</button>
               <button type="button" class="btn btn-secondary" @click="clearAll">Hide all</button>
@@ -104,6 +106,7 @@
   import Plugin from '../src/index';
   //import '../src/themes/default/index.scss'
   import '../src/themes/sugar/index.scss'
+  import positions from "../src/js/positions.js";
 
   Vue.use(Plugin);
 
@@ -120,7 +123,6 @@
           position: 'bottom-right',
           onClick: this.onClick,
           onClose: this.onClose,
-          container: null,
         },
         types: [
           'success',
@@ -129,14 +131,7 @@
           'info',
           'default',
         ],
-        positions: [
-          'top',
-          'bottom',
-          'top-right',
-          'bottom-right',
-          'top-left',
-          'bottom-left',
-        ]
+        positions: positions
       }
     },
     components: {},

@@ -28,9 +28,11 @@ import 'vue-toast-notification/dist/theme-default.css';
 //import 'vue-toast-notification/dist/theme-sugar.css';
 
 Vue.use(VueToast);
-Vue.$toast.open('You did it!');
-Vue.$toast.open({/* options */});
+let instance = Vue.$toast.open('You did it!');
+//Vue.$toast.open({/* options */});
 
+// Close specific toast
+instance.close();
 // Close all opened toast immediately
 Vue.$toast.clear();
 ```
@@ -112,7 +114,7 @@ Vue.use(VueToast);
 * Run webpack dev server - `yarn start`
 * This should open the demo page at `http://localhost:9000` in your default web browser 
 
-## Credits
+## Acknowledgements
 * Buefy [Toast](https://buefy.org/documentation/toast) component
 
 ## License
