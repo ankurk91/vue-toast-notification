@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toast plugin has close method on instance returned by open() 1`] = `
+<div
+  class="toast toast-success is-bottom-right v-enter fadeInUp"
+  role="alert"
+  style=""
+>
+  <div
+    class="toast-icon"
+  />
+   
+  <p
+    class="toast-text"
+  >
+    <b>
+      Sample
+    </b>
+  </p>
+</div>
+`;

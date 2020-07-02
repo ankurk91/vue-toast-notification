@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Toast component renders when active 1`] = `
+<transition-stub
+  enteractiveclass="fadeInUp"
+  leaveactiveclass="fadeOut"
+>
+  <div
+    class="toast toast-success is-bottom-right"
+    role="alert"
+    style=""
+  >
+    <div
+      class="toast-icon"
+    />
+     
+    <p
+      class="toast-text"
+    >
+      Test message
+    </p>
+  </div>
+</transition-stub>
+`;
