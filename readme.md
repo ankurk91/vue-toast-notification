@@ -45,7 +45,7 @@ The API methods accepts these options:
 |  message         | String              | --                   |  Message text/html (required)   |
 |  type            | String              | `success`            |  One of `success`, `info`, `warning`, `error`, `default`  |
 |  position        | String              | `bottom-right`       |  One of `top`, `bottom`, `top-right`, `bottom-right`,`top-left`, `bottom-left`  |
-|  duration        | Number              | `3000`               |  Visibility duration in milliseconds    |
+|  duration        | Number              | `3000`               |  Visibility duration in milliseconds. "0" milliseconds to keep it open.    |
 |  dismissible     | Boolean             | `true`               |  Allow user close by clicking    |
 |  onClick         | Function            | --                   |  Do something when user clicks    |
 |  onClose         | Function            | --                   |  Do something after toast gets dismissed    |
@@ -58,6 +58,12 @@ This is generic method, you can use this method to make any kind of toast.
 ```js
 // Can accept a message as string and apply rest of options from defaults
 Vue.$toast.open('Howdy!');
+
+// Can be always visible
+Vue.$toast.open('I will never disappear!', {
+  duration: 0,
+  dismissible: false
+});
 
 // Can accept an Object of options
 Vue.$toast.open({
