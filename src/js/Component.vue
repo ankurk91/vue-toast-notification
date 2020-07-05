@@ -131,8 +131,9 @@
         }
         this.correctParent.insertAdjacentElement('afterbegin', this.$el);
         this.isActive = true;
-
-        this.timer = new Timer(this.close, this.duration);
+        
+        if (this.duration > 0)
+          this.timer = new Timer(this.close, this.duration);
       },
 
       whenClicked() {
@@ -141,7 +142,7 @@
         this.close()
       },
       toggleTimer(newVal) {
-        if (!this.pauseOnHover) return;
+        if (!this.duration || !this.pauseOnHover) return;
         newVal ? this.timer.pause() : this.timer.resume();
       }
     },
