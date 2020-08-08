@@ -6,16 +6,16 @@ exports[`Toast component renders when active 1`] = `
   leaveactiveclass="fadeOut"
 >
   <div
-    class="toast toast-success is-bottom-right"
+    class="v-toast v-toast-success is-bottom-right"
     role="alert"
     style=""
   >
     <div
-      class="toast-icon"
+      class="v-toast-icon"
     />
      
     <p
-      class="toast-text"
+      class="v-toast-text"
     >
       Test message
     </p>

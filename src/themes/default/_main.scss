@@ -1,4 +1,4 @@
-.notices {
+.v-notices {
   position: fixed;
   display: flex;
   top: 0;
@@ -10,7 +10,7 @@
   z-index: 1052;
   pointer-events: none;
 
-  .toast {
+  .v-toast {
     display: inline-flex;
     align-items: center;
     animation-duration: 150ms;
@@ -23,26 +23,26 @@
     min-height: 3em;
     cursor: pointer;
 
-    .toast-text {
+    .v-toast-text {
       margin: 0;
       padding: 0.5em 1em;
       word-break: break-word;
     }
 
-    .toast-icon {
+    .v-toast-icon {
       display: none;
     }
   }
 
   // Colors
   @each $color, $value in $toast-colors {
-    .toast-#{$color} {
+    .v-toast-#{$color} {
       background-color: $value;
     }
   }
 
   // Individual toast position
-  .toast {
+  .v-toast {
     &.is-top, &.is-bottom {
       align-self: center;
     }
