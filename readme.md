@@ -31,7 +31,7 @@ Vue.use(VueToast);
 let instance = Vue.$toast.open('You did it!');
 //Vue.$toast.open({/* options */});
 
-// Close specific toast
+// Force close specific toast
 instance.close();
 // Close all opened toast immediately
 Vue.$toast.clear();
@@ -63,7 +63,7 @@ Vue.$toast.open('Howdy!');
 Vue.$toast.open({
     message: 'Something went wrong!',
     type: 'error',
-    // all other options may go here
+    // all of other options may go here
 });
 ```
 ### `Vue.$toast.success(message,?options)`
@@ -82,7 +82,7 @@ Vue.$toast.success('Profile saved.', {
 You can set options for all the instances during plugin initialization
 ```js
 Vue.use(VueToast, {
-  // One of options
+  // One of the options
   position: 'top'
 })
 ```

@@ -25,14 +25,14 @@
                   <div v-for="item in types" class="custom-control custom-radio custom-control-inline">
                     <input v-model="form.type" :value="item" type="radio" :id="`radio-type-${item}`"
                            class="custom-control-input">
-                    <label class="custom-control-label text-capitalize" :for="`radio-type-${item}`">{{item}}</label>
+                    <label class="custom-control-label text-capitalize" :for="`radio-type-${item}`">{{ item }}</label>
                   </div>
                 </div>
               </div>
 
               <div class="form-group">
-                <label>Duration <code>({{form.duration/1000}} seconds)</code></label>
-                <input type="range" class="custom-range" min="100" max="50000"
+                <label>Duration <code>({{ form.duration / 1000 }} seconds)</code></label>
+                <input type="range" class="custom-range" min="100" max="60000"
                        v-model.number="form.duration">
               </div>
 
@@ -66,7 +66,8 @@
                   <div v-for="item in positions" class="custom-control custom-radio custom-control-inline">
                     <input v-model="form.position" :value="item" type="radio" :id="`radio-position-${item}`"
                            class="custom-control-input">
-                    <label class="custom-control-label text-capitalize" :for="`radio-position-${item}`">{{item}}</label>
+                    <label class="custom-control-label text-capitalize"
+                           :for="`radio-position-${item}`">{{ item }}</label>
                   </div>
                 </div>
               </div>
@@ -102,66 +103,65 @@
 </template>
 
 <script>
-  import Vue from 'vue';
-  import Plugin from '../src/index';
-  //import '../src/themes/default/index.scss'
-  import '../src/themes/sugar/index.scss'
-  import positions from "../src/js/positions.js";
+import Vue from 'vue';
+import Plugin, {Positions} from '../src/index';
+//import '../src/themes/default/index.scss'
+import '../src/themes/sugar/index.scss'
 
-  Vue.use(Plugin);
+Vue.use(Plugin);
 
-  export default {
-    name: 'app',
-    data() {
-      return {
-        form: {
-          message: 'This is a sample message',
-          type: 'success',
-          duration: 10000,
-          dismissible: true,
-          queue: false,
-          position: 'bottom-right',
-          onClick: this.onClick,
-          onClose: this.onClose,
-        },
-        types: [
-          'success',
-          'error',
-          'warning',
-          'info',
-          'default',
-        ],
-        positions: positions
-      }
-    },
-    components: {},
-    mounted() {
-      // Lets show some toasts on page load
-      this.showAll();
-    },
-    methods: {
-      showAll() {
-        this.types.forEach((type) => {
-          this.$toast.open({
-            message: 'Yet another toast notification!',
-            duration: this.form.duration,
-            type
-          })
+export default {
+  name: 'app',
+  data() {
+    return {
+      form: {
+        message: 'This is a sample message',
+        type: 'success',
+        duration: 10000,
+        dismissible: true,
+        queue: false,
+        position: 'bottom-right',
+        onClick: this.onClick,
+        onClose: this.onClose,
+      },
+      types: [
+        'success',
+        'error',
+        'warning',
+        'info',
+        'default',
+      ],
+      positions: Positions
+    }
+  },
+  components: {},
+  mounted() {
+    // Lets show some toasts on page load
+    this.showAll();
+  },
+  methods: {
+    showAll() {
+      this.types.forEach((type) => {
+        this.$toast.open({
+          message: 'Yet another toast notification!',
+          duration: this.form.duration,
+          type
         })
-      },
-      onClick() {
-        console.log("User dismissed the notification.")
-      },
-      onClose() {
-        console.log("Toast was closed.")
-      },
-      show() {
-        this.$toast.open(this.form);
-      },
-      clearAll() {
-        this.$toast.clear()
-      }
+      })
+    },
+    onClick() {
+      console.log("User dismissed the notification.")
+    },
+    onClose() {
+      console.log("Toast was closed.")
+    },
+    show() {
+      this.$toast.open(this.form);
+    },
+    clearAll() {
+      this.$toast.clear()
     }
   }
+}
 </script>
 

@@ -1,5 +1,12 @@
 # Changelog
 
+### [0.5.0](https://github.com/ankurk91/vue-toast-notification/compare/0.4.1...0.5.0)
+* Fix: 
+    - [#26](https://github.com/ankurk91/vue-toast-notification/issues/26)
+    - [#27](https://github.com/ankurk91/vue-toast-notification/issues/27)
+    - [#4](https://github.com/ankurk91/vue-toast-notification/issues/4)
+* Change: :warning: CSS classes has been prefixed with `v-`, if you were overriding any css class then revisit your code
+
 ### [0.4.1](https://github.com/ankurk91/vue-toast-notification/compare/0.4.0...0.4.1)
 * Fix: [#24](https://github.com/ankurk91/vue-toast-notification/issues/24)
 
