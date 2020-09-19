@@ -5,6 +5,7 @@
 [![github-tag](https://badgen.net/github/tag/ankurk91/vue-toast-notification)](https://github.com/ankurk91/vue-toast-notification/)
 [![build](https://github.com/ankurk91/vue-toast-notification/workflows/build/badge.svg)](https://github.com/ankurk91/vue-toast-notification/actions)
 [![license](https://badgen.net/github/license/ankurk91/vue-toast-notification)](https://yarnpkg.com/en/package/vue-toast-notification)
+![ts](https://badgen.net/badge/ready/TypeScript/blue)
 
 Yet another Vue.js Toast notification plugin.
 

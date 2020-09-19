@@ -3,6 +3,7 @@
   "version": "0.5.0",
   "description": "Vue.js toast notification plugin",
   "main": "dist/index.js",
+  "types": "./types/index.d.ts",
   "browser": "dist/index.min.js",
   "style": "dist/theme-default.css",
   "files": [
