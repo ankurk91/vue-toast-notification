@@ -1,5 +1,8 @@
 # Changelog
 
+### [0.5.4](https://github.com/ankurk91/vue-toast-notification/compare/0.5.3...0.5.4)
+* Fix: type definitions, [#30](https://github.com/ankurk91/vue-toast-notification/issues/30)
+
 ### [0.5.3](https://github.com/ankurk91/vue-toast-notification/compare/0.5.2...0.5.3)
 * Fix: previous release
 
