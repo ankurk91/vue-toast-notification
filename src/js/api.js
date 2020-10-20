@@ -19,7 +19,7 @@ const Api = (Vue, globalOptions = {}) => {
       })
     },
     clear() {
-      eventBus.$emit('toast.clear')
+      eventBus.emit('toast-clear')
     },
     success(message, options = {}) {
       return this.open(Object.assign({}, {
