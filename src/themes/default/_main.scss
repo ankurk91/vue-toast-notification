@@ -1,4 +1,4 @@
-.v-notices {
+.v-toast__container {
   position: fixed;
   display: flex;
   top: 0;
@@ -23,49 +23,47 @@
     min-height: 3em;
     cursor: pointer;
 
-    .v-toast-text {
+    &__text {
       margin: 0;
       padding: 0.5em 1em;
       word-break: break-word;
     }
 
-    .v-toast-icon {
+    &__icon {
       display: none;
     }
-  }
 
-  // Colors
-  @each $color, $value in $toast-colors {
-    .v-toast-#{$color} {
-      background-color: $value;
+    // Colors
+    @each $color, $value in $toast-colors {
+      &--#{$color} {
+        background-color: $value;
+      }
     }
-  }
 
-  // Individual toast position
-  .v-toast {
-    &.is-top, &.is-bottom {
+    // Individual toast position
+    &.v-toast--top, &.v-toast--bottom {
       align-self: center;
     }
 
-    &.is-top-right, &.is-bottom-right {
+    &.v-toast--top-right, &.v-toast--bottom-right {
       align-self: flex-end;
     }
 
-    &.is-top-left, &.is-bottom-left {
+    &.v-toast--top-left, &.v-toast--bottom-left {
       align-self: flex-start;
     }
   }
 
   // Notice container positions
-  &.is-top {
+  &.v-toast__container--top {
     flex-direction: column;
   }
 
-  &.is-bottom {
+  &.v-toast__container--bottom {
     flex-direction: column-reverse;
   }
 
-  &.is-custom-parent {
+  &.v-toast__container--custom-parent {
     position: absolute;
   }
 
