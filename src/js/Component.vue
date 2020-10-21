@@ -5,13 +5,13 @@
     <div
       role="alert"
       v-show="isActive"
-      class="v-toast"
-      :class="[`v-toast-${type}`, `is-${position}`]"
+      class="vt__item"
+      :class="[`vt__item--${type}`, `vt__item--${position}`]"
       @mouseover="toggleTimer(true)"
       @mouseleave="toggleTimer(false)"
       @click="whenClicked">
-      <div class="v-toast-icon"></div>
-      <p class="v-toast-text" v-html="message"></p>
+      <div class="vt__icon"></div>
+      <p class="vt__text" v-html="message"></p>
     </div>
   </transition>
 </template>
@@ -81,19 +81,19 @@
     },
     methods: {
       setupContainer() {
-        this.parentTop = document.querySelector('.v-notices.is-top');
-        this.parentBottom = document.querySelector('.v-notices.is-bottom');
+        this.parentTop = document.querySelector('.vt__container.vt__item--top');
+        this.parentBottom = document.querySelector('.vt__container.vt__item--bottom');
         // No need to create them, they already exists
         if (this.parentTop && this.parentBottom) return;
 
         if (!this.parentTop) {
           this.parentTop = document.createElement('div');
-          this.parentTop.className = 'v-notices is-top';
+          this.parentTop.className = 'vt__container vt__item--top';
         }
 
         if (!this.parentBottom) {
           this.parentBottom = document.createElement('div');
-          this.parentBottom.className = 'v-notices is-bottom'
+          this.parentBottom.className = 'vt__container vt__item--bottom'
         }
 
         const container = document.body;

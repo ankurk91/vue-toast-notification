@@ -1,4 +1,4 @@
-.v-notices {
+.vt__container {
   position: fixed;
   display: flex;
   top: 0;
@@ -10,7 +10,7 @@
   z-index: 1052;
   pointer-events: none;
 
-  .v-toast {
+  .vt__item {
     display: inline-flex;
     align-items: center;
     animation-duration: 150ms;
@@ -23,49 +23,49 @@
     min-height: 3em;
     cursor: pointer;
 
-    .v-toast-text {
+    .vt__text {
       margin: 0;
       padding: 0.5em 1em;
       word-break: break-word;
     }
 
-    .v-toast-icon {
+    .vt__icon {
       display: none;
     }
   }
 
   // Colors
   @each $color, $value in $toast-colors {
-    .v-toast-#{$color} {
+    .vt__item--#{$color} {
       background-color: $value;
     }
   }
 
   // Individual toast position
-  .v-toast {
-    &.is-top, &.is-bottom {
+  .vt__item {
+    &.vt__item--top, &vt__item--bottom {
       align-self: center;
     }
 
-    &.is-top-right, &.is-bottom-right {
+    &.vt__item--top-right, &.vt__item--bottom-right {
       align-self: flex-end;
     }
 
-    &.is-top-left, &.is-bottom-left {
+    &.vt__item--top-left, &.vt__item--bottom-left {
       align-self: flex-start;
     }
   }
 
   // Notice container positions
-  &.is-top {
+  &.vt__item--top {
     flex-direction: column;
   }
 
-  &.is-bottom {
+  &.vt__item--bottom {
     flex-direction: column-reverse;
   }
 
-  &.is-custom-parent {
+  &.vt__item--custom-parent {
     position: absolute;
   }
 
