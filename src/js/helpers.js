@@ -4,6 +4,6 @@ const removeElement = (el) => {
   } else {
     el.parentNode.removeChild(el)
   }
-};
+}
 
-export {removeElement}
+export { removeElement }

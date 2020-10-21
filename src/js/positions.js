@@ -4,5 +4,5 @@ export default Object.freeze({
   TOP_LEFT: 'top-left',
   BOTTOM_RIGHT: 'bottom-right',
   BOTTOM: 'bottom',
-  BOTTOM_LEFT: 'bottom-left',
+  BOTTOM_LEFT: 'bottom-left'
 })
