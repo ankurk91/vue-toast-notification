@@ -77,7 +77,7 @@
     },
     mounted() {
       this.showNotice();
-      eventBus.$on('toast.clear', this.close)
+      eventBus.on('toast-clear', this.close)
     },
     methods: {
       setupContainer() {
@@ -180,7 +180,7 @@
       },
     },
     beforeDestroy() {
-      eventBus.$off('toast.clear', this.close)
+      eventBus.off('toast-clear', this.close)
     }
   }
 </script>
