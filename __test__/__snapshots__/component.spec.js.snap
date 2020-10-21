@@ -6,7 +6,7 @@ exports[`Toast component renders when active 1`] = `
   leaveactiveclass="v-toast--fade-out"
 >
   <div
-    class="v-toast v-toast--success v-toast--bottom-right"
+    class="v-toast__item v-toast__item--success v-toast__item--bottom-right"
     role="alert"
     style=""
   >

@@ -2,7 +2,7 @@
 
 exports[`Toast plugin has close method on instance returned by open() 1`] = `
 <div
-  class="v-toast v-toast--success v-toast--bottom-right v-enter v-toast--fade-in-up"
+  class="v-toast__item v-toast__item--success v-toast__item--bottom-right v-enter v-toast--fade-in-up"
   role="alert"
   style=""
 >

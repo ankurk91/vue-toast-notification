@@ -1,4 +1,4 @@
-.v-toast__container {
+.v-toast {
   position: fixed;
   display: flex;
   top: 0;
@@ -10,7 +10,7 @@
   z-index: 1052;
   pointer-events: none;
 
-  .v-toast {
+  &__item {
     display: inline-flex;
     align-items: center;
     animation-duration: 150ms;
@@ -23,16 +23,6 @@
     min-height: 3em;
     cursor: pointer;
 
-    &__text {
-      margin: 0;
-      padding: 0.5em 1em;
-      word-break: break-word;
-    }
-
-    &__icon {
-      display: none;
-    }
-
     // Colors
     @each $color, $value in $toast-colors {
       &--#{$color} {
@@ -41,29 +31,39 @@
     }
 
     // Individual toast position
-    &.v-toast--top, &.v-toast--bottom {
+    &.v-toast__item--top, &.v-toast__item--bottom {
       align-self: center;
     }
 
-    &.v-toast--top-right, &.v-toast--bottom-right {
+    &.v-toast__item--top-right, &.v-toast__item--bottom-right {
       align-self: flex-end;
     }
 
-    &.v-toast--top-left, &.v-toast--bottom-left {
+    &.v-toast__item--top-left, &.v-toast__item--bottom-left {
       align-self: flex-start;
     }
   }
 
+  &__text {
+    margin: 0;
+    padding: 0.5em 1em;
+    word-break: break-word;
+  }
+
+  &__icon {
+    display: none;
+  }
+  
   // Notice container positions
-  &.v-toast__container--top {
+  &.v-toast--top {
     flex-direction: column;
   }
 
-  &.v-toast__container--bottom {
+  &.v-toast--bottom {
     flex-direction: column-reverse;
   }
 
-  &.v-toast__container--custom-parent {
+  &.v-toast--custom-parent {
     position: absolute;
   }
 

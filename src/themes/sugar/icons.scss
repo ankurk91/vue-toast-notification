@@ -1,5 +1,5 @@
-.v-toast__container {
-  .v-toast {
+.v-toast {
+  &__item {
     opacity: 1;
     min-height: 4em;
 
@@ -16,15 +16,15 @@
       background: url(./icons/info.svg) no-repeat;
     }
 
-    &.v-toast--success .v-toast__icon {
+    &.v-toast__item--success .v-toast__icon {
       background: url(./icons/success.svg) no-repeat;
     }
 
-    &.v-toast--error .v-toast__icon {
+    &.v-toast__item--error .v-toast__icon {
       background: url(./icons/error.svg) no-repeat;
     }
 
-    &.v-toast--warning .v-toast__icon {
+    &.v-toast__item--warning .v-toast__icon {
       background: url(./icons/warning.svg) no-repeat;
     }
   }
