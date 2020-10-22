@@ -3,6 +3,7 @@
 exports[`Toast plugin has close method on instance returned by open() 1`] = `
 <div
   class="v-toast v-toast-success is-bottom-right v-enter fadeInUp"
+  id="vue_toast_notification_1"
   role="alert"
   style=""
 >

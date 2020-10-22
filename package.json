@@ -37,7 +37,9 @@
     "build": "cross-env NODE_ENV=production webpack --progress --mode production",
     "prepublishOnly": "yarn run test && yarn run build"
   },
-  "dependencies": {},
+  "dependencies": {
+    "lodash": "^4.17.20"
+  },
   "devDependencies": {
     "@babel/core": "^7.11.1",
     "@babel/preset-env": "^7.11.0",

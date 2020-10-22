@@ -6,6 +6,7 @@
       role="alert"
       v-show="isActive"
       class="v-toast"
+      :id="id"
       :class="[`v-toast-${type}`, `is-${position}`]"
       @mouseover="toggleTimer(true)"
       @mouseleave="toggleTimer(false)"
@@ -63,6 +64,7 @@
         type: Boolean,
         default: true
       },
+      id: String
     },
     data() {
       return {

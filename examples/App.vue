@@ -20,9 +20,14 @@
               </div>
 
               <div class="form-group">
+                <label>ID</label>
+                <input type="text" class="form-control" v-model="form.id" name="notification-id"/>
+              </div>
+
+              <div class="form-group">
                 <label>Type</label>
                 <div>
-                  <div v-for="item in types" class="custom-control custom-radio custom-control-inline">
+                  <div v-for="(item,index) in types" class="custom-control custom-radio custom-control-inline" :key="index">
                     <input v-model="form.type" :value="item" type="radio" :id="`radio-type-${item}`"
                            class="custom-control-input">
                     <label class="custom-control-label text-capitalize" :for="`radio-type-${item}`">{{ item }}</label>
@@ -63,12 +68,19 @@
               <div class="form-group">
                 <label>Position</label>
                 <div>
-                  <div v-for="item in positions" class="custom-control custom-radio custom-control-inline">
+                  <div v-for="(item,key) in positions" class="custom-control custom-radio custom-control-inline" :key="key">
                     <input v-model="form.position" :value="item" type="radio" :id="`radio-position-${item}`"
                            class="custom-control-input">
                     <label class="custom-control-label text-capitalize"
                            :for="`radio-position-${item}`">{{ item }}</label>
                   </div>
+                </div>
+              </div>
+
+               <div class="form-group">
+                <label>Visible Toasts</label>
+                <div style="height:4rem;overflow-y:auto;">
+                  {{visisbleToastsId}}
                 </div>
               </div>
 
@@ -105,9 +117,10 @@
 <script>
 import Vue from 'vue';
 import Plugin, {Positions} from '../src/index';
+import lodash from "lodash";
 //import '../src/themes/default/index.scss'
 import '../src/themes/sugar/index.scss'
-
+let oldId, visibleIds = [];
 Vue.use(Plugin);
 
 export default {
@@ -115,6 +128,7 @@ export default {
   data() {
     return {
       form: {
+        id: lodash.uniqueId("vue_toast_notification_"),
         message: 'This is a sample message',
         type: 'success',
         duration: 10000,
@@ -124,6 +138,7 @@ export default {
         onClick: this.onClick,
         onClose: this.onClose,
       },
+      visisbleToastsId:"",
       types: [
         'success',
         'error',
@@ -153,10 +168,25 @@ export default {
       console.log("User dismissed the notification.")
     },
     onClose() {
+      setTimeout(()=>{
+        visibleIds = visibleIds.filter((id)=>{
+          return this.$toast.isVisible(id)
+        });
+        this.visisbleToastsId = visibleIds.join(",");
+      },0);
       console.log("Toast was closed.")
     },
     show() {
+      if(!this.form.id || (oldId === this.form.id))
+        this.form.id = lodash.uniqueId("vue_toast_notification_");
+      oldId = this.form.id;
       this.$toast.open(this.form);
+      setTimeout(()=>{
+        if(this.$toast.isVisible(oldId)) {
+          visibleIds.push(oldId);
+          this.visisbleToastsId = visibleIds.join(",");
+        }
+      },0)
     },
     clearAll() {
       this.$toast.clear()

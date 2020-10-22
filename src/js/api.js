@@ -1,5 +1,6 @@
 import Component from './Component.vue'
 import eventBus from './bus.js';
+import lodash from "lodash";
 
 const Api = (Vue, globalOptions = {}) => {
   return {
@@ -8,7 +9,8 @@ const Api = (Vue, globalOptions = {}) => {
       if (typeof options === 'string') message = options;
 
       const defaultOptions = {
-        message
+        message,
+        id: lodash.uniqueId("vue_toast_notification_")
       };
 
       const propsData = Object.assign({}, defaultOptions, globalOptions, options);
@@ -50,6 +52,9 @@ const Api = (Vue, globalOptions = {}) => {
         message,
         type: 'default'
       }, options))
+    },
+    isVisible(id){
+      return document.getElementById(id) !== null ? true : false;
     }
   }
 };
