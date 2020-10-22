@@ -48,7 +48,7 @@
         type: Boolean,
         default: true
       },
-      onClose: {
+      onDismiss: {
         type: Function,
         default: () => {
         }
@@ -77,7 +77,7 @@
     },
     mounted() {
       this.showNotice();
-      eventBus.on('toast-clear', this.close)
+      eventBus.on('toast-clear', this.dismiss)
     },
     methods: {
       setupContainer() {
@@ -110,14 +110,14 @@
         )
       },
 
-      close() {
+      dismiss() {
         this.timer.stop();
         clearTimeout(this.queueTimer);
         this.isActive = false;
 
         // Timeout for the animation complete before destroying
         setTimeout(() => {
-          this.onClose.apply(null, arguments);
+          this.onDismiss.apply(null, arguments);
           this.$destroy();
           removeElement(this.$el)
         }, 150)
@@ -132,13 +132,13 @@
         this.correctParent.insertAdjacentElement('afterbegin', this.$el);
         this.isActive = true;
 
-        this.timer = new Timer(this.close, this.duration);
+        this.timer = new Timer(this.dismiss, this.duration);
       },
 
       whenClicked() {
         if (!this.dismissible) return;
         this.onClick.apply(null, arguments);
-        this.close()
+        this.dismiss()
       },
       toggleTimer(newVal) {
         if (!this.pauseOnHover) return;
@@ -180,7 +180,7 @@
       },
     },
     beforeDestroy() {
-      eventBus.off('toast-clear', this.close)
+      eventBus.off('toast-clear', this.dismiss)
     }
   }
 </script>

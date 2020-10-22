@@ -32,9 +32,9 @@ Vue.use(VueToast);
 let instance = Vue.$toast.open('You did it!');
 //Vue.$toast.open({/* options */});
 
-// Force close specific toast
-instance.close();
-// Close all opened toast immediately
+// Force dismiss specific toast
+instance.dismiss();
+// Dismiss all opened toast immediately
 Vue.$toast.clear();
 ```
 
@@ -47,10 +47,10 @@ The API methods accepts these options:
 |  type            | String              | `success`            |  One of `success`, `info`, `warning`, `error`, `default`  |
 |  position        | String              | `bottom-right`       |  One of `top`, `bottom`, `top-right`, `bottom-right`,`top-left`, `bottom-left`  |
 |  duration        | Number              | `3000`               |  Visibility duration in milliseconds    |
-|  dismissible     | Boolean             | `true`               |  Allow user close by clicking    |
+|  dismissible     | Boolean             | `true`               |  Allow user dismiss by clicking    |
 |  onClick         | Function            | --                   |  Do something when user clicks    |
-|  onClose         | Function            | --                   |  Do something after toast gets dismissed    |
-|  queue           | Boolean             | `false`              |  Wait for existing to close before showing new     |
+|  onDismiss         | Function            | --                   |  Do something after toast gets dismissed    |
+|  queue           | Boolean             | `false`              |  Wait for existing to dismiss before showing new     |
 |  pauseOnHover    | Boolean             | `true`               |  Pause the timer when mouse on over a toast    |
          
 ## API methods

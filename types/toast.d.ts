@@ -2,7 +2,7 @@ import {Vue, VueConstructor, ExtendedVue} from 'vue/types/vue'
 import {PluginFunction} from 'vue'
 
 export interface ToastComponent extends ExtendedVue<any, any, any, any, any> {
-  close(): void
+  dismiss(): void
 }
 
 export type ToastPosition =
@@ -24,7 +24,7 @@ export interface ToastOptions {
   queue?: boolean,
   pauseOnHover?: boolean,
   onClick?: () => any,
-  onClose?: () => any,
+  onDismiss?: () => any,
 }
 
 export interface ToastApi {

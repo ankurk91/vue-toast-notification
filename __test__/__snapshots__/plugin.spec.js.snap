@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Toast plugin has close method on instance returned by open() 1`] = `
+exports[`Toast plugin has dismiss method on instance returned by open() 1`] = `
 <div
   class="v-toast v-toast-success is-bottom-right v-enter fadeInUp"
   role="alert"
