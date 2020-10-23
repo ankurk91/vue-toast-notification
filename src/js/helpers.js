@@ -1,3 +1,5 @@
+let count = 0;
+const ID_PREFIX="vue_toast_notification_"
 const removeElement = (el) => {
   if (typeof el.remove !== 'undefined') {
     el.remove()
@@ -6,4 +8,9 @@ const removeElement = (el) => {
   }
 };
 
-export {removeElement}
+const getElementId = () => {
+  count++;
+  return `${ID_PREFIX}${count}`;
+}
+
+export {removeElement, getElementId}

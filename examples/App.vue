@@ -118,6 +118,7 @@
 import Vue from 'vue';
 import Plugin, {Positions} from '../src/index';
 import lodash from "lodash";
+import {getElementId} from "../src/js/helpers"
 //import '../src/themes/default/index.scss'
 import '../src/themes/sugar/index.scss'
 let oldId, visibleIds = [];
@@ -128,7 +129,7 @@ export default {
   data() {
     return {
       form: {
-        id: lodash.uniqueId("vue_toast_notification_"),
+        id: getElementId(),
         message: 'This is a sample message',
         type: 'success',
         duration: 10000,
@@ -178,7 +179,7 @@ export default {
     },
     show() {
       if(!this.form.id || (oldId === this.form.id))
-        this.form.id = lodash.uniqueId("vue_toast_notification_");
+        this.form.id = getElementId();
       oldId = this.form.id;
       this.$toast.open(this.form);
       setTimeout(()=>{

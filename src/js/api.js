@@ -1,6 +1,6 @@
 import Component from './Component.vue'
 import eventBus from './bus.js';
-import lodash from "lodash";
+import {getElementId} from "./helpers";
 
 const Api = (Vue, globalOptions = {}) => {
   return {
@@ -10,7 +10,7 @@ const Api = (Vue, globalOptions = {}) => {
 
       const defaultOptions = {
         message,
-        id: lodash.uniqueId("vue_toast_notification_")
+        id: getElementId()
       };
 
       const propsData = Object.assign({}, defaultOptions, globalOptions, options);
