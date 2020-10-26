@@ -32,9 +32,9 @@ Vue.use(VueToast);
 let instance = Vue.$toast.open('You did it!');
 //Vue.$toast.open({/* options */});
 
-// Force close specific toast
-instance.close();
-// Close all opened toast immediately
+// Force dismiss specific toast
+instance.dismiss();
+// Dismiss all opened toast immediately
 Vue.$toast.clear();
 ```
 

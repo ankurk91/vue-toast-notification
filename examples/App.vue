@@ -122,7 +122,7 @@ export default {
         queue: false,
         position: 'bottom-right',
         onClick: this.onClick,
-        onClose: this.onClose,
+        onDismiss: this.onDismiss,
       },
       types: [
         'success',
@@ -152,8 +152,8 @@ export default {
     onClick() {
       console.log("User dismissed the notification.")
     },
-    onClose() {
-      console.log("Toast was closed.")
+    onDismiss() {
+      console.log("Toast was dismissed.")
     },
     show() {
       this.$toast.open(this.form);
