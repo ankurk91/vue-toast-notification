@@ -16,15 +16,15 @@
       background: url(./icons/info.svg) no-repeat;
     }
 
-    &.vt__item--success .v-toast-icon {
+    &.vt__item--success .vt__icon {
       background: url(./icons/success.svg) no-repeat;
     }
 
-    &.vt__item--error .v-toast-icon {
+    &.vt__item--error .vt__icon {
       background: url(./icons/error.svg) no-repeat;
     }
 
-    &.vt__item--warning .v-toast-icon {
+    &.vt__item--warning .vt__icon {
       background: url(./icons/warning.svg) no-repeat;
     }
   }
