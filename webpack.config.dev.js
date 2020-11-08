@@ -97,9 +97,6 @@ module.exports = {
         minifyURLs: isProduction,
       }
     }),
-    new webpack.ProvidePlugin({
-      Vue: ['vue/dist/vue.runtime.esm.js', 'default'],
-    }),
     new VueLoaderPlugin(),
   ],
   devServer: {
@@ -114,7 +111,7 @@ module.exports = {
     },
     stats: 'errors-only',
   },
-  devtool: isProduction ? false : '#cheap-module-eval-source-map',
+  devtool: isProduction ? false : 'cheap-module-eval-source-map',
   performance: {
     hints: false,
   },
@@ -130,7 +127,6 @@ if (isProduction) {
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name]-[hash:8].css',
-      chunkFilename: 'css/chunk-[name]-[chunkhash:8].css',
     }),
   );
   module.exports.optimization.minimizer.push(

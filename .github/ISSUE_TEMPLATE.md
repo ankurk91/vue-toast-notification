@@ -7,7 +7,7 @@
 
 **Tell about your platform**
 * Vue.js version : 2.6.x
-* Browser name and version : Chrome|Firefox|Safari x.x.x
+* Browser name and version : Chrome|Firefox|Safari|Edge x.x.x
 * This package version : 0.x.x
 
 **Current behavior**

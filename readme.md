@@ -24,13 +24,13 @@ npm install vue-toast-notification
 ```js
 import Vue from 'vue';
 import VueToast from 'vue-toast-notification';
-// Import one of available themes
-import 'vue-toast-notification/dist/theme-default.css';
-//import 'vue-toast-notification/dist/theme-sugar.css';
+// Import one of the available themes
+//import 'vue-toast-notification/dist/theme-default.css';
+import 'vue-toast-notification/dist/theme-sugar.css';
 
 Vue.use(VueToast);
-let instance = Vue.$toast.open('You did it!');
 //Vue.$toast.open({/* options */});
+let instance = Vue.$toast.open('You did it!');
 
 // Force dismiss specific toast
 instance.dismiss();
@@ -49,7 +49,7 @@ The API methods accepts these options:
 |  duration        | Number              | `3000`               |  Visibility duration in milliseconds    |
 |  dismissible     | Boolean             | `true`               |  Allow user dismiss by clicking    |
 |  onClick         | Function            | --                   |  Do something when user clicks    |
-|  onDismiss         | Function            | --                   |  Do something after toast gets dismissed    |
+|  onDismiss       | Function            | --                   |  Do something after toast gets dismissed    |
 |  queue           | Boolean             | `false`              |  Wait for existing to dismiss before showing new     |
 |  pauseOnHover    | Boolean             | `true`               |  Pause the timer when mouse on over a toast    |
          
@@ -98,10 +98,10 @@ Vue.$toast.success('Order placed.', {
 ## Install in non-module environments (without webpack)
 ```html
 <!-- Vue.js -->
-<script src="https://cdn.jsdelivr.net/npm/vue@2.6/dist/vue.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
 <!-- Lastly add this package -->
 <script src="https://cdn.jsdelivr.net/npm/vue-toast-notification"></script>
-<link href="https://cdn.jsdelivr.net/npm/vue-toast-notification/dist/theme-default.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/vue-toast-notification/dist/theme-sugar.css" rel="stylesheet">
 <!-- Init the plugin -->
 <script>
 Vue.use(VueToast);

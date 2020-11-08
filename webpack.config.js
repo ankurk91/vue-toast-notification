@@ -40,9 +40,8 @@ module.exports = {
     libraryTarget: 'umd',
     libraryExport: 'default',
     umdNamedDefine: true,
-    // Workaround to fix umd build, restore webpack v3 behaviour
-    // https://github.com/webpack/webpack/issues/6642
-    globalObject: "typeof self !== 'undefined' ? self : this"
+    globalObject: 'this',
+    pathinfo: false
   },
   module: {
     rules: [
@@ -106,8 +105,7 @@ module.exports = {
     new CleanWebpackPlugin(),
     new FixStyleOnlyEntriesPlugin(),
     new MiniCssExtractPlugin({
-      filename: "[name].css",
-      chunkFilename: "[name].css"
+      filename: '[name].css',
     }),
     new UnminifiedWebpackPlugin({
       exclude: /\.css$/

@@ -1,5 +1,10 @@
 # Changelog
 
+### [0.6.0](https://github.com/ankurk91/vue-toast-notification/compare/0.5.4...0.6.0)
+* Rename `close()` method to `dismiss()`, [#39](https://github.com/ankurk91/vue-toast-notification/pull/39)
+* Rename `onClose` prop to `onDismiss`
+* Using BEM naming convention in CSS classes
+
 ### [0.5.4](https://github.com/ankurk91/vue-toast-notification/compare/0.5.3...0.5.4)
 * Fix: type definitions, [#30](https://github.com/ankurk91/vue-toast-notification/issues/30)
 

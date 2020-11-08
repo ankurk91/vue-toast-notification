@@ -1,4 +1,4 @@
-import {mount, createLocalVue} from '@vue/test-utils'
+import {createLocalVue} from '@vue/test-utils'
 import Plugin from '../src/index';
 
 describe('Toast plugin', () => {
@@ -8,7 +8,7 @@ describe('Toast plugin', () => {
   // Define the global component
   localVue.use(Plugin);
 
-  test('has instance registered', () => {
+  test('instance is registered', () => {
     expect(localVue.$toast).toBeDefined()
   });
 
@@ -16,7 +16,7 @@ describe('Toast plugin', () => {
     expect(localVue.$toast.open).toBeDefined()
   });
 
-  test('has dismiss method on instance returned by open()',async () => {
+  test('has dismiss method on the instance returned by open()',async () => {
     let toast = localVue.$toast.open('<b>Sample</b>');
     await toast.$nextTick();
 
