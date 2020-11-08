@@ -22,7 +22,7 @@
               <div class="form-group">
                 <label>Type</label>
                 <div>
-                  <div v-for="item in types" class="custom-control custom-radio custom-control-inline">
+                  <div v-for="item in types" :key="item" class="custom-control custom-radio custom-control-inline">
                     <input v-model="form.type" :value="item" type="radio" :id="`radio-type-${item}`"
                            class="custom-control-input">
                     <label class="custom-control-label text-capitalize" :for="`radio-type-${item}`">{{ item }}</label>
@@ -43,7 +43,7 @@
                     <div class="custom-control custom-checkbox">
                       <input v-model="form.dismissible" type="checkbox" class="custom-control-input"
                              id="checkbox-dismissible">
-                      <label class="custom-control-label" for="checkbox-dismissible">Close on click</label>
+                      <label class="custom-control-label" for="checkbox-dismissible">Dismiss on click</label>
                     </div>
                   </div>
                 </div>
@@ -53,7 +53,7 @@
                     <div class="custom-control custom-checkbox">
                       <input v-model="form.queue" type="checkbox" class="custom-control-input"
                              id="checkbox-queue">
-                      <label class="custom-control-label" for="checkbox-queue">Wait for previous to close before
+                      <label class="custom-control-label" for="checkbox-queue">Wait for previous to dismiss before
                         showing new</label>
                     </div>
                   </div>
@@ -63,7 +63,7 @@
               <div class="form-group">
                 <label>Position</label>
                 <div>
-                  <div v-for="item in positions" class="custom-control custom-radio custom-control-inline">
+                  <div v-for="item in positions" :key="item" class="custom-control custom-radio custom-control-inline">
                     <input v-model="form.position" :value="item" type="radio" :id="`radio-position-${item}`"
                            class="custom-control-input">
                     <label class="custom-control-label text-capitalize"
@@ -122,7 +122,7 @@ export default {
         queue: false,
         position: 'bottom-right',
         onClick: this.onClick,
-        onClose: this.onClose,
+        onDismiss: this.onDismiss,
       },
       types: [
         'success',
@@ -152,8 +152,8 @@ export default {
     onClick() {
       console.log("User dismissed the notification.")
     },
-    onClose() {
-      console.log("Toast was closed.")
+    onDismiss() {
+      console.log("Toast was dismissed.")
     },
     show() {
       this.$toast.open(this.form);
@@ -164,4 +164,3 @@ export default {
   }
 }
 </script>
-

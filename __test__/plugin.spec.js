@@ -16,13 +16,13 @@ describe('Toast plugin', () => {
     expect(localVue.$toast.open).toBeDefined()
   });
 
-  test('has close method on instance returned by open()',async () => {
+  test('has dismiss method on instance returned by open()',async () => {
     let toast = localVue.$toast.open('<b>Sample</b>');
     await toast.$nextTick();
 
     expect(toast.$el).toMatchSnapshot();
-    expect(toast.close).toBeDefined();
-    toast.close();
+    expect(toast.dismiss).toBeDefined();
+    toast.dismiss();
   });
 
 });
