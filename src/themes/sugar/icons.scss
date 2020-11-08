@@ -1,13 +1,13 @@
-.v-notices {
-  .v-toast {
+.v-toast {
+  &__item {
     opacity: 1;
     min-height: 4em;
 
-    .v-toast-text {
+    .v-toast__text {
       padding: 1.5em 1em;
     }
 
-    .v-toast-icon {
+    .v-toast__icon {
       display: block;
       width: 27px;
       min-width: 27px;
@@ -16,15 +16,15 @@
       background: url(./icons/info.svg) no-repeat;
     }
 
-    &.v-toast-success .v-toast-icon {
+    &.v-toast__item--success .v-toast__icon {
       background: url(./icons/success.svg) no-repeat;
     }
 
-    &.v-toast-error .v-toast-icon {
+    &.v-toast__item--error .v-toast__icon {
       background: url(./icons/error.svg) no-repeat;
     }
 
-    &.v-toast-warning .v-toast-icon {
+    &.v-toast__item--warning .v-toast__icon {
       background: url(./icons/warning.svg) no-repeat;
     }
   }

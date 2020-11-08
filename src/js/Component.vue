@@ -5,13 +5,13 @@
     <div
       role="alert"
       v-show="isActive"
-      class="v-toast"
-      :class="[`v-toast-${type}`, `is-${position}`]"
+      class="v-toast__item"
+      :class="[`v-toast__item--${type}`, `v-toast__item--${position}`]"
       @mouseover="toggleTimer(true)"
       @mouseleave="toggleTimer(false)"
       @click="whenClicked">
-      <div class="v-toast-icon"></div>
-      <p class="v-toast-text" v-html="message"></p>
+      <div class="v-toast__icon"></div>
+      <p class="v-toast__text" v-html="message"></p>
     </div>
   </transition>
 </template>
@@ -81,19 +81,19 @@
     },
     methods: {
       setupContainer() {
-        this.parentTop = document.querySelector('.v-notices.is-top');
-        this.parentBottom = document.querySelector('.v-notices.is-bottom');
+        this.parentTop = document.querySelector('.v-toast.v-toast--top');
+        this.parentBottom = document.querySelector('.v-toast.v-toast--bottom');
         // No need to create them, they already exists
         if (this.parentTop && this.parentBottom) return;
 
         if (!this.parentTop) {
           this.parentTop = document.createElement('div');
-          this.parentTop.className = 'v-notices is-top';
+          this.parentTop.className = 'v-toast v-toast--top';
         }
 
         if (!this.parentBottom) {
           this.parentBottom = document.createElement('div');
-          this.parentBottom.className = 'v-notices is-bottom'
+          this.parentBottom.className = 'v-toast v-toast--bottom'
         }
 
         const container = document.body;
@@ -165,16 +165,16 @@
           case Positions.TOP_RIGHT:
           case Positions.TOP_LEFT:
             return {
-              enter: 'fadeInDown',
-              leave: 'fadeOut'
+              enter: 'v-toast--fade-in-down',
+              leave: 'v-toast--fade-out'
             };
 
           case Positions.BOTTOM:
           case Positions.BOTTOM_RIGHT:
           case Positions.BOTTOM_LEFT:
             return {
-              enter: 'fadeInUp',
-              leave: 'fadeOut'
+              enter: 'v-toast--fade-in-up',
+              leave: 'v-toast--fade-out'
             }
         }
       },

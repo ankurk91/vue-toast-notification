@@ -2,20 +2,20 @@
 
 exports[`Toast component renders when active 1`] = `
 <transition-stub
-  enteractiveclass="fadeInUp"
-  leaveactiveclass="fadeOut"
+  enteractiveclass="v-toast--fade-in-up"
+  leaveactiveclass="v-toast--fade-out"
 >
   <div
-    class="v-toast v-toast-success is-bottom-right"
+    class="v-toast__item v-toast__item--success v-toast__item--bottom-right"
     role="alert"
     style=""
   >
     <div
-      class="v-toast-icon"
+      class="v-toast__icon"
     />
      
     <p
-      class="v-toast-text"
+      class="v-toast__text"
     >
       Test message
     </p>
