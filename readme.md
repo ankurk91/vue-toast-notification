@@ -50,7 +50,7 @@ The API methods accepts these options:
 |  dismissible     | Boolean             | `true`               |  Allow user dismiss by clicking    |
 |  onClick         | Function            | --                   |  Do something when user clicks    |
 |  onDismiss       | Function            | --                   |  Do something after toast gets dismissed    |
-|  queue           | Boolean             | `false`              |  Wait for existing to dismiss before showing new     |
+|  queue           | Boolean             | `true`              |  Wait for existing to dismiss before showing new     |
 |  pauseOnHover    | Boolean             | `true`               |  Pause the timer when mouse on over a toast    |
          
 ## API methods
