@@ -26,7 +26,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, 'docs'),
     publicPath: '',
-    filename: 'js/[name]-[hash:8].js'
+    filename: 'js/[name]-[chunkhash].js'
   },
   module: {
     rules: [
@@ -77,9 +77,20 @@ module.exports = {
   },
   // https://gist.github.com/sokra/1522d586b8e5c0f5072d7565c2bee693
   optimization: {
-    runtimeChunk: false,
+    moduleIds: 'deterministic',
+    runtimeChunk: {
+      name: 'manifest'
+    },
     splitChunks: {
-      chunks: 'all',
+      automaticNameDelimiter: '-',
+      cacheGroups: {
+        commons: {
+          test: /[\\/]node_modules[\\/].*\.js$/,
+          name: 'vendor',
+          chunks: 'all',
+          enforce: true
+        }
+      }
     },
     minimizer: [],
   },
@@ -100,18 +111,18 @@ module.exports = {
     new VueLoaderPlugin(),
   ],
   devServer: {
-    contentBase: path.resolve(__dirname, 'docs'),
+    firewall: false,
     host: 'localhost',
     port: 9000,
     open: true,
-    hot: true,
+    liveReload: false,
     overlay: {
       warnings: false,
       errors: true
     },
-    stats: 'errors-only',
+    static: path.resolve(process.cwd(), 'docs'),
   },
-  devtool: isProduction ? false : 'cheap-module-eval-source-map',
+  devtool: isProduction ? false : 'eval-cheap-source-map',
   performance: {
     hints: false,
   },
@@ -126,18 +137,19 @@ if (isProduction) {
   module.exports.plugins.push(
     new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
-      filename: 'css/[name]-[hash:8].css',
+      filename: 'css/[name]-[chunkhash].css',
     }),
   );
   module.exports.optimization.minimizer.push(
     new TerserPlugin({
-      sourceMap: false,
+      include: /\.min\.js$/,
+      extractComments: false,
       terserOptions: {
         output: {
-          beautify: false
+          comments: false,
         },
         compress: {
-          drop_console: true
+          drop_console: true,
         }
       }
     }),

@@ -4,7 +4,6 @@ const webpack = require('webpack');
 const path = require('path');
 const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const UnminifiedWebpackPlugin = require('unminified-webpack-plugin');
 const TerserPlugin = require('terser-webpack-plugin');
 const {VueLoaderPlugin} = require('vue-loader');
 const FixStyleOnlyEntriesPlugin = require("webpack-fix-style-only-entries");
@@ -22,6 +21,7 @@ module.exports = {
   },
   entry: {
     index: './src/index.js',
+    'index.min': './src/index.js',
     'theme-default': './src/themes/default/index.scss',
     'theme-sugar': './src/themes/sugar/index.scss',
   },
@@ -35,12 +35,11 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: '[name].min.js',
+    filename: '[name].js',
     library: 'VueToast',
     libraryTarget: 'umd',
     libraryExport: 'default',
     umdNamedDefine: true,
-    globalObject: 'this',
     pathinfo: false
   },
   module: {
@@ -87,15 +86,17 @@ module.exports = {
     ]
   },
   optimization: {
+    minimize: true,
     minimizer: [
       new TerserPlugin({
-        sourceMap: false,
+        include: /\.min\.js$/,
+        extractComments: false,
         terserOptions: {
           output: {
-            beautify: false
+            comments: false,
           },
           compress: {
-            drop_console: true
+            drop_console: true,
           }
         }
       }),
@@ -106,9 +107,6 @@ module.exports = {
     new FixStyleOnlyEntriesPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css',
-    }),
-    new UnminifiedWebpackPlugin({
-      exclude: /\.css$/
     }),
     new VueLoaderPlugin(),
   ],
