@@ -111,7 +111,7 @@
       },
 
       dismiss() {
-        this.timer.stop();
+        if(this.timer) this.timer.stop();
         clearTimeout(this.queueTimer);
         this.isActive = false;
 
@@ -132,7 +132,9 @@
         this.correctParent.insertAdjacentElement('afterbegin', this.$el);
         this.isActive = true;
 
-        this.timer = new Timer(this.dismiss, this.duration);
+        if (this.duration) {
+          this.timer = new Timer(this.dismiss, this.duration);
+        }
       },
 
       whenClicked() {
@@ -140,8 +142,9 @@
         this.onClick.apply(null, arguments);
         this.dismiss()
       },
+
       toggleTimer(newVal) {
-        if (!this.pauseOnHover) return;
+        if (!this.pauseOnHover || !this.timer) return;
         newVal ? this.timer.pause() : this.timer.resume();
       }
     },
