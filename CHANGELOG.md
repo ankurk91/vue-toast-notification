@@ -1,5 +1,9 @@
 # Changelog
 
+### [0.6.1](https://github.com/ankurk91/vue-toast-notification/compare/0.6.0...0.6.1)
+* Add ability to keep toast opened, [#46](https://github.com/ankurk91/vue-toast-notification/pull/46)
+* Chore: upgrade to webpack 5
+
 ### [0.6.0](https://github.com/ankurk91/vue-toast-notification/compare/0.5.4...0.6.0)
 * Rename `close()` method to `dismiss()`, [#39](https://github.com/ankurk91/vue-toast-notification/pull/39)
 * Rename `onClose` prop to `onDismiss`
