@@ -9,6 +9,8 @@
 
 Yet another Vue.js Toast notification plugin.
 
+:warning: This library is not compatible with Vue v3 yet
+
 ## [Demo](https://ankurk91.github.io/vue-toast-notification) or [JSFiddle](https://jsfiddle.net/ankurk91/ebakcs62/)
 
 ## Installation
