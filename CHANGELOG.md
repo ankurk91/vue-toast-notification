@@ -1,5 +1,9 @@
 # Changelog
 
+### [0.6.2](https://github.com/ankurk91/vue-toast-notification/compare/0.6.1...0.6.2)
+
+* Fix: SSR issue, #57
+
 ### [0.6.1](https://github.com/ankurk91/vue-toast-notification/compare/0.6.0...0.6.1)
 
 * Add ability to keep toast opened, [#46](https://github.com/ankurk91/vue-toast-notification/pull/46)
