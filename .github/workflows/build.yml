@@ -10,12 +10,13 @@ on:
       - master
       - dev
   schedule:
-    - cron: '0 0 1 * *'
+    - cron: '0 0 15 * *'
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
+    timeout-minutes: 5
 
     strategy:
       matrix:
