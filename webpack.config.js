@@ -40,6 +40,7 @@ module.exports = {
     libraryTarget: 'umd',
     libraryExport: 'default',
     umdNamedDefine: true,
+    globalObject: 'this',
     pathinfo: false
   },
   module: {
