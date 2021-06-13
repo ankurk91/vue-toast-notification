@@ -1,28 +1,30 @@
-import {createLocalVue} from '@vue/test-utils'
+import {createApp} from 'vue'
 import Plugin from '../src/index';
 
 describe('Toast plugin', () => {
 
-  // Make a copy of local vue
-  let localVue = createLocalVue();
-  // Define the global component
-  localVue.use(Plugin);
+  test('works as plugin', (done) => {
 
-  test('instance is registered', () => {
-    expect(localVue.$toast).toBeDefined()
-  });
+    const app = createApp({
+      render() {
+        return null
+      },
+      async created() {
+        let toast = this.$toast.success('test message', {
+          duration: 10000,
+        });
+        await this.$nextTick();
 
-  test('has open method on instance', () => {
-    expect(localVue.$toast.open).toBeDefined()
-  });
+        expect(document.body.querySelectorAll('.v-toast__item').length).toEqual(1);
+        toast.dismiss();
 
-  test('has dismiss method on the instance returned by open()',async () => {
-    let toast = localVue.$toast.open('<b>Sample</b>');
-    await toast.$nextTick();
+        done();
+      }
+    });
 
-    expect(toast.$el).toMatchSnapshot();
-    expect(toast.dismiss).toBeDefined();
-    toast.dismiss();
+    app.use(Plugin);
+    app.mount('body')
   });
 
 });
+

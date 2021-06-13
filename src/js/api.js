@@ -1,22 +1,24 @@
-import Component from './Component.vue'
+import ToastComponent from './Component.vue'
+import {createComponent} from './helpers';
 import eventBus from './bus.js';
 
-const Api = (Vue, globalOptions = {}) => {
+export const useToast = (globalProps = {}) => {
   return {
     open(options) {
-      let message;
+      let message = null;
       if (typeof options === 'string') message = options;
 
-      const defaultOptions = {
+      const defaultProps = {
         message
       };
 
-      const propsData = Object.assign({}, defaultOptions, globalOptions, options);
+      const propsData = Object.assign({}, defaultProps, globalProps, options);
 
-      return new (Vue.extend(Component))({
-        el: document.createElement('div'),
-        propsData
-      })
+      const instance = createComponent(ToastComponent, propsData, document.body);
+
+      return {
+        dismiss: instance.ctx.dismiss
+      }
     },
     clear() {
       eventBus.emit('toast-clear')
@@ -53,5 +55,3 @@ const Api = (Vue, globalOptions = {}) => {
     }
   }
 };
-
-export default Api;

@@ -1,24 +1,18 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Toast component renders when active 1`] = `
-<transition-stub
-  enteractiveclass="v-toast--fade-in-up"
-  leaveactiveclass="v-toast--fade-out"
+<div
+  class="v-toast__item v-toast__item--success v-toast__item--bottom-right v-enter-from v-toast--fade-in-up"
+  role="alert"
+  style=""
 >
   <div
-    class="v-toast__item v-toast__item--success v-toast__item--bottom-right"
-    role="alert"
-    style=""
+    class="v-toast__icon"
+  />
+  <p
+    class="v-toast__text"
   >
-    <div
-      class="v-toast__icon"
-    />
-     
-    <p
-      class="v-toast__text"
-    >
-      Test message
-    </p>
-  </div>
-</transition-stub>
+    Test message
+  </p>
+</div>
 `;

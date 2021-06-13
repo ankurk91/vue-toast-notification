@@ -74,8 +74,8 @@
 
               <hr>
 
-              <button type="submit" class="btn btn-primary">Show notification</button>
-              <button type="button" class="btn btn-outline-info" @click="showAll">Demo all</button>
+              <button type="submit" class="btn btn-primary mr-3">Show notification</button>
+              <button type="button" class="btn btn-outline-info mr-3" @click="showAll">Demo all</button>
               <button type="button" class="btn btn-secondary" @click="clearAll">Hide all</button>
 
             </form>
@@ -103,12 +103,7 @@
 </template>
 
 <script>
-import Vue from 'vue';
-import Plugin, {Positions} from '../src/index';
-//import '../src/themes/default/index.scss'
-import '../src/themes/sugar/index.scss'
-
-Vue.use(Plugin);
+import {ToastPositions} from '../src/index';
 
 export default {
   name: 'app',
@@ -131,7 +126,7 @@ export default {
         'info',
         'default',
       ],
-      positions: Positions
+      positions: ToastPositions
     }
   },
   components: {},
@@ -142,11 +137,9 @@ export default {
   methods: {
     showAll() {
       this.types.forEach((type) => {
-        this.$toast.open({
-          message: 'Yet another toast notification!',
-          duration: this.form.duration,
+        this.$toast.open(Object.assign(this.form, {
           type
-        })
+        }))
       })
     },
     onClick() {

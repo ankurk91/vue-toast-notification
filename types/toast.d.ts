@@ -1,7 +1,6 @@
-import {Vue, VueConstructor, ExtendedVue} from 'vue/types/vue'
-import {PluginFunction} from 'vue'
+import {Plugin} from 'vue'
 
-export interface ToastComponent extends ExtendedVue<any, any, any, any, any> {
+export interface ActiveToast {
   dismiss(): void
 }
 
@@ -15,7 +14,7 @@ export type ToastPosition =
 
 export type ToastType = 'success' | 'info' | 'error' | 'warning' | 'default'
 
-export interface ToastOptions {
+export interface ToastProps {
   message: string,
   type?: ToastType | string,
   position?: ToastPosition,
@@ -27,36 +26,30 @@ export interface ToastOptions {
   onDismiss?: () => any,
 }
 
-export interface ToastApi {
-  open(message: string): ToastComponent
+export interface ToastPluginApi {
+  open(message: string): ActiveToast
 
-  open(options: ToastOptions): ToastComponent
+  open(options: ToastProps): ActiveToast
 
-  success(message: string, options?: ToastOptions): ToastComponent
+  success(message: string, options?: ToastProps): ActiveToast
 
-  error(message: string, options?: ToastOptions): ToastComponent
+  error(message: string, options?: ToastProps): ActiveToast
 
-  info(message: string, options?: ToastOptions): ToastComponent
+  info(message: string, options?: ToastProps): ActiveToast
 
-  warning(message: string, options?: ToastOptions): ToastComponent
+  warning(message: string, options?: ToastProps): ActiveToast
 
-  default(message: string, options?: ToastOptions): ToastComponent
+  default(message: string, options?: ToastProps): ActiveToast
 
   clear(): void
 }
 
-declare class ToastPlugin {
-  static install: PluginFunction<ToastOptions>
-}
-
-declare module 'vue/types/vue' {
-  interface VueConstructor {
-    $toast: ToastApi
-  }
-
-  interface Vue {
-    $toast: ToastApi
+declare module '@vue/runtime-core' {
+  interface ComponentCustomProperties {
+    readonly $toast: ToastPluginApi;
   }
 }
+
+declare const ToastPlugin: Plugin
 
 export default ToastPlugin

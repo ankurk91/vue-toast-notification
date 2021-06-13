@@ -1,14 +1,14 @@
-import Component from './js/Component.vue';
-import Api from './js/api.js';
-import Positions from './js/positions.js';
+import ToastComponent from './js/Component.vue';
+import {useToast} from './js/api';
+import ToastPositions from './js/positions';
 
-const Plugin = (Vue, options = {}) => {
-  let methods = Api(Vue, options);
-  Vue.$toast = methods;
-  Vue.prototype.$toast = methods;
-};
+const ToastPlugin = {
+  install: (app, options = {}) => {
+    let instance = useToast(options);
+    app.config.globalProperties.$toast = instance;
+    app.provide('$toast', instance)
+  }
+}
 
-Component.install = Plugin;
-
-export default Component;
-export {Component, Positions}
+export default ToastPlugin;
+export {useToast, ToastComponent, ToastPositions}
