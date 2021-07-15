@@ -10,7 +10,7 @@
 
 Yet another Vue.js Toast notification plugin.
 
-## [Demo](https://ankurk91.github.io/vue-toast-notification) or [JSFiddle](https://jsfiddle.net/ankurk91/ebakcs62/)
+## [Demo](https://ankurk91.github.io/vue-toast-notification) or [JSFiddle](https://jsfiddle.net/ankurk91/4kqhsavp/)
 
 ### Version matrix
 
@@ -38,8 +38,9 @@ import VueToast from 'vue-toast-notification';
 //import 'vue-toast-notification/dist/theme-default.css';
 import 'vue-toast-notification/dist/theme-sugar.css';
 
-const app = createApp({}).mount('#app')
+const app = createApp({});
 app.use(VueToast);
+app.mount('#app');
 
 //Vue.$toast.open({/* options */});
 let instance = app.$toast.open('You did it!');
@@ -132,8 +133,9 @@ app.$toast.success('Order placed.', {
 <link href="https://cdn.jsdelivr.net/npm/vue-toast-notification@2/dist/theme-sugar.css" rel="stylesheet">
 <!-- Init the plugin -->
 <script>
-    const app = Vue.createApp({}).mount('#app')
+    const app = Vue.createApp({});
     app.use(VueToast);
+    app.mount('#app');
 </script>
 ```
 

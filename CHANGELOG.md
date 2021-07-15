@@ -3,6 +3,7 @@
 ### [2.0.0](https://github.com/ankurk91/vue-toast-notification/compare/1.0.0...2.0.0)
 
 * Drop support for Vue 2.x, add support for Vue 3.x
+* Drop Internet Explorer support
 
 ### [0.6.2](https://github.com/ankurk91/vue-toast-notification/compare/0.6.1...0.6.2)
 
