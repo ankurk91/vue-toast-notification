@@ -1,5 +1,9 @@
 # Changelog
 
+### [2.0.1](https://github.com/ankurk91/vue-toast-notification/compare/2.0.0...2.0.1)
+
+* Fix: Composition API usage, #58
+
 ### [2.0.0](https://github.com/ankurk91/vue-toast-notification/compare/1.0.0...2.0.0)
 
 * Drop support for Vue 2.x, add support for Vue 3.x
