@@ -8,9 +8,7 @@
 [![license](https://badgen.net/github/license/ankurk91/vue-toast-notification)](https://yarnpkg.com/en/package/vue-toast-notification)
 ![ts](https://badgen.net/badge/ready/TypeScript/blue)
 
-Yet another Vue.js Toast notification plugin.
-
-:warning: This library is not compatible with Vue v3 yet
+Yet another Vue.js v2 Toast notification plugin.
 
 ## [Demo](https://ankurk91.github.io/vue-toast-notification) or [JSFiddle](https://jsfiddle.net/ankurk91/ebakcs62/)
 
@@ -18,10 +16,10 @@ Yet another Vue.js Toast notification plugin.
 
 ```bash
 # yarn
-yarn add vue-toast-notification
+yarn add vue-toast-notification@^0.6
 
 # npm
-npm install vue-toast-notification
+npm install vue-toast-notification^0.6
 ```
 
 ## Usage
@@ -121,8 +119,8 @@ Vue.$toast.success('Order placed.', {
 <!-- Vue.js -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2.6"></script>
 <!-- Lastly add this package -->
-<script src="https://cdn.jsdelivr.net/npm/vue-toast-notification"></script>
-<link href="https://cdn.jsdelivr.net/npm/vue-toast-notification/dist/theme-sugar.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/vue-toast-notification@0.6"></script>
+<link href="https://cdn.jsdelivr.net/npm/vue-toast-notification/@0.6/dist/theme-sugar.css" rel="stylesheet">
 <!-- Init the plugin -->
 <script>
     Vue.use(VueToast);
