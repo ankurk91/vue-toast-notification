@@ -19,7 +19,7 @@ Yet another Vue.js v2 Toast notification plugin.
 yarn add vue-toast-notification@^0.6
 
 # npm
-npm install vue-toast-notification^0.6
+npm install vue-toast-notification@^0.6
 ```
 
 ## Usage
