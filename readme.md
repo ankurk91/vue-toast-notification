@@ -17,7 +17,7 @@ Yet another Vue.js Toast notification plugin.
 | Vue.js version | Package version | Branch        |
 | :---           | :---:           | ---:          | 
 | 2.x            | 1.x             | [1.x](https://github.com/ankurk91/vue-toast-notification/tree/v1.x) |
-| 3.x            | 2.x             | `master`          |
+| 3.x            | 2.x             | `master`                                                            |
 
 ## Installation
 
@@ -142,10 +142,10 @@ app.$toast.success('Order placed.', {
 ## Run examples on your localhost
 
 * Clone this repo
-* Make sure you have node-js `>=14.15` and [yarn](https://yarnpkg.com) `>=1.22` pre-installed
-* Install dependencies - `yarn install`
-* Run webpack dev server - `yarn start`
-* This should open the demo page at `http://localhost:9000` in your default web browser
+* Make sure you have node-js `>=16.9` and [pnpm](https://pnpm.io/) `>=6.23` pre-installed
+* Install dependencies - `pnpm install`
+* Run webpack dev server - `npm start`
+* This should open the demo page in your default web browser
 
 ## Acknowledgements
 
