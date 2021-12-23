@@ -38,7 +38,6 @@ module.exports = {
     filename: '[name].js',
     library: 'VueToast',
     libraryTarget: 'umd',
-    libraryExport: 'default',
     umdNamedDefine: true,
     globalObject: 'this',
     pathinfo: false

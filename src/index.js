@@ -11,4 +11,4 @@ const ToastPlugin = {
 }
 
 export default ToastPlugin;
-export {useToast, ToastComponent, ToastPositions}
+export {useToast, ToastPlugin, ToastComponent, ToastPositions}

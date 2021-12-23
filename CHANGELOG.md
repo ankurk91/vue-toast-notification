@@ -1,5 +1,20 @@
 # Changelog
 
+### [3.0.0](https://github.com/ankurk91/vue-toast-notification/compare/2.0.1...3.0.0)
+
+* Allow Composition API usage
+
+```js
+import {useToast} from "vue-toast-notification";
+```
+
+* [BC] Use named export in browser environment
+
+```diff
+- app.use(VueToast)
++ app.use(VueToast.ToastPlugin)
+```
+
 ### [2.0.1](https://github.com/ankurk91/vue-toast-notification/compare/2.0.0...2.0.1)
 
 * Fix: Composition API usage, #58

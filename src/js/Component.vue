@@ -25,7 +25,7 @@ import Positions from './positions.js'
 import eventBus from './bus.js'
 
 export default defineComponent({
-  name: 'toast',
+  name: 'Toast',
   props: {
     message: {
       type: String,
@@ -130,7 +130,7 @@ export default defineComponent({
 
     showNotice() {
       if (this.shouldQueue()) {
-        // Call recursively if should queue
+        // Call recursively if it should queue
         this.queueTimer = setTimeout(this.showNotice, 250);
         return
       }

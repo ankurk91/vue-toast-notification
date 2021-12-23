@@ -6,7 +6,7 @@
 [![github-tag](https://badgen.net/github/tag/ankurk91/vue-toast-notification)](https://github.com/ankurk91/vue-toast-notification/tags)
 [![build](https://github.com/ankurk91/vue-toast-notification/workflows/build/badge.svg)](https://github.com/ankurk91/vue-toast-notification/actions)
 [![license](https://badgen.net/github/license/ankurk91/vue-toast-notification)](https://yarnpkg.com/en/package/vue-toast-notification)
-![ts](https://badgen.net/badge/ready/TypeScript/blue)
+![TypeScript](https://badgen.net/badge/icon/Typed?icon=typescript&label&labelColor=blue&color=555555)
 
 Yet another Vue.js Toast notification plugin.
 
@@ -15,18 +15,18 @@ Yet another Vue.js Toast notification plugin.
 ### Version matrix
 
 | Vue.js version | Package version | Branch        |
-| :---           | :---:           | ---:          | 
-| 2.x            | 1.x             | [1.x](https://github.com/ankurk91/vue-toast-notification/tree/v1.x) |
-| 3.x            | 2.x             | `master`                                                            |
+| :---           |:---------------:| ---:          | 
+| 2.x            |       1.x       | [1.x](https://github.com/ankurk91/vue-toast-notification/tree/v1.x) |
+| 3.x            |       3.x       | `master`                                                            |
 
 ## Installation
 
 ```bash
 # yarn
-yarn add vue-toast-notification@^2.0
+yarn add vue-toast-notification@^3.0
 
 # npm
-npm install vue-toast-notification@^2.0
+npm install vue-toast-notification@^3.0
 ```
 
 ## Usage
@@ -129,12 +129,12 @@ app.$toast.success('Order placed.', {
 <!-- Vue.js -->
 <script src="https://cdn.jsdelivr.net/npm/vue@3"></script>
 <!-- Lastly add this package -->
-<script src="https://cdn.jsdelivr.net/npm/vue-toast-notification@2"></script>
-<link href="https://cdn.jsdelivr.net/npm/vue-toast-notification@2/dist/theme-sugar.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/vue-toast-notification@3"></script>
+<link href="https://cdn.jsdelivr.net/npm/vue-toast-notification@3/dist/theme-sugar.css" rel="stylesheet">
 <!-- Init the plugin -->
 <script>
     const app = Vue.createApp({});
-    app.use(VueToast);
+    app.use(VueToast.ToastPlugin);
     app.mount('#app');
 </script>
 ```
