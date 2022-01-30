@@ -8,7 +8,7 @@
 import {useToast} from "vue-toast-notification";
 ```
 
-* [BC] Use named export in browser environment
+* (Breaking) Use named export in browser environment
 
 ```diff
 - app.use(VueToast)

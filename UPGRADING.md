@@ -2,7 +2,7 @@
 
 ## From v2.0 to v3.x
 
-If you are using the package directly from a CDN, Then you need to use named exports now
+If you are using the package directly from a CDN, Then you need to use named exports from now
 
 ```diff
 - app.use(VueToast)
@@ -11,7 +11,7 @@ If you are using the package directly from a CDN, Then you need to use named exp
 
 There is no breaking change if you are consuming the package through a module bundler like webpack.
 
-## From 0.5.4 to 0.6.0
+## From v0.5.4 to v0.6.0
 
 * `onClose` prop has been renamed to `onDismiss`
 * `close()` method has been renamed to `dismiss()`

@@ -17,15 +17,11 @@ Yet another Vue.js Toast notification plugin.
 | Vue.js version | Package version | Branch        |
 | :---           |:---------------:| ---:          | 
 | 2.x            |       1.x       | [1.x](https://github.com/ankurk91/vue-toast-notification/tree/v1.x) |
-| 3.x            |       3.x       | `master`                                                            |
+| 3.x            |       3.x       | `main`                                                            |
 
 ## Installation
 
 ```bash
-# yarn
-yarn add vue-toast-notification@^3.0
-
-# npm
 npm install vue-toast-notification@^3.0
 ```
 
