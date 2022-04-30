@@ -61,6 +61,8 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
+              modules: false,
+              esModule: false,
               sourceMap: false,
             }
           },
