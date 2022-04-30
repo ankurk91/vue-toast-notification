@@ -52,4 +52,6 @@ declare module '@vue/runtime-core' {
 
 declare const ToastPlugin: Plugin
 
+export const useToast: ToastPluginApi;
+
 export default ToastPlugin
