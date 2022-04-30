@@ -52,4 +52,14 @@ declare module '@vue/runtime-core' {
 
 declare const ToastPlugin: Plugin
 
+export function useToast(globalProps?: Partial<ToastProps>): {
+  open(options: string|Partial<ToastProps>): ActiveToast;
+  clear(): void;
+  success(message: string, options?: Partial<ToastProps>): ActiveToast;
+  error(message: string, options?: Partial<ToastProps>): ActiveToast;
+  info(message: string, options?: Partial<ToastProps>): ActiveToast;
+  warning(message: string, options?: Partial<ToastProps>): ActiveToast;
+  default(message: string, options?: Partial<ToastProps>): ActiveToast;
+};
+
 export default ToastPlugin
