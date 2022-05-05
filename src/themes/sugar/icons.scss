@@ -14,6 +14,11 @@
       height: 27px;
       margin-left: 1em;
       background: url(./icons/info.svg) no-repeat;
+
+      [dir="rtl"] & {
+        margin-left: unset;
+        margin-right: 1em;
+      }
     }
 
     &.v-toast__item--success .v-toast__icon {
