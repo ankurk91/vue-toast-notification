@@ -1,5 +1,17 @@
 # Changelog
 
+### [3.0.3](https://github.com/ankurk91/vue-toast-notification/compare/3.0.2...3.0.3)
+
+* Fix: issue [#72](https://github.com/ankurk91/vue-toast-notification/issues/72)
+
+### [3.0.2](https://github.com/ankurk91/vue-toast-notification/compare/3.0.1...3.0.2)
+
+* Fix: issue [#69](https://github.com/ankurk91/vue-toast-notification/issues/69)
+
+### [3.0.1](https://github.com/ankurk91/vue-toast-notification/compare/3.0.0...3.0.1)
+
+* Add missing type for typescript usage, [#68](https://github.com/ankurk91/vue-toast-notification/pull/68)
+
 ### [3.0.0](https://github.com/ankurk91/vue-toast-notification/compare/2.0.1...3.0.0)
 
 * Allow Composition API usage

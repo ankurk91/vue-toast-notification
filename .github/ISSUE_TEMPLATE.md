@@ -8,9 +8,9 @@
 
 **Tell about your platform**
 
-* Vue.js version : 3.0.x
+* Vue.js version : 3.2.x
 * Browser name and version : Chrome|Firefox|Edge x.x.x
-* This package version : 2.x
+* This package version : 3.x
 
 **Current behavior**
 <!-- Describe how the bug manifests. -->
