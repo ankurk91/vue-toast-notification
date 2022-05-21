@@ -1,5 +1,9 @@
 # Changelog
 
+### [3.0.4](https://github.com/ankurk91/vue-toast-notification/compare/3.0.3...3.0.4)
+
+* Fix: issue [#72](https://github.com/ankurk91/vue-toast-notification/issues/72)
+
 ### [3.0.3](https://github.com/ankurk91/vue-toast-notification/compare/3.0.2...3.0.3)
 
 * Fix: issue [#72](https://github.com/ankurk91/vue-toast-notification/issues/72)
