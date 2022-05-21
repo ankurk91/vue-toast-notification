@@ -138,7 +138,7 @@ app.$toast.success('Order placed.', {
 ## Run examples on your localhost
 
 * Clone this repo
-* Make sure you have node-js `>=16.9` and [pnpm](https://pnpm.io/) `>=6.23` pre-installed
+* Make sure you have node-js `>=16.9` and [pnpm](https://pnpm.io/) `>=7.0` pre-installed
 * Install dependencies - `pnpm install`
 * Run webpack dev server - `npm start`
 * This should open the demo page in your default web browser
