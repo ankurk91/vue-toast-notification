@@ -52,6 +52,6 @@ declare module '@vue/runtime-core' {
 
 declare const ToastPlugin: Plugin
 
-export const useToast: ToastPluginApi;
+export declare function useToast(globalProps?: ToastProps): ToastPluginApi
 
 export default ToastPlugin
