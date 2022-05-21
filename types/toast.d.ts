@@ -14,8 +14,11 @@ export type ToastPosition =
 
 export type ToastType = 'success' | 'info' | 'error' | 'warning' | 'default'
 
+export interface ToastPropsWithMessage extends ToastProps {
+  message: string;
+}
+
 export interface ToastProps {
-  message: string,
   type?: ToastType | string,
   position?: ToastPosition,
   duration?: number,
@@ -29,7 +32,7 @@ export interface ToastProps {
 export interface ToastPluginApi {
   open(message: string): ActiveToast
 
-  open(options: ToastProps): ActiveToast
+  open(options: ToastPropsWithMessage): ActiveToast
 
   success(message: string, options?: ToastProps): ActiveToast
 
@@ -52,6 +55,6 @@ declare module '@vue/runtime-core' {
 
 declare const ToastPlugin: Plugin
 
-export declare function useToast(globalProps?: ToastProps): ToastPluginApi
+export function useToast(globalProps?: Partial<ToastProps>): ToastPluginApi;
 
 export default ToastPlugin
