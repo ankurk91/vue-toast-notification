@@ -29,22 +29,21 @@ npm install vue-toast-notification@^3.0
 
 ```js
 import {createApp} from 'vue';
-import VueToast from 'vue-toast-notification';
+import { useToast } from 'vue-toast-notification'
 // Import one of the available themes
 //import 'vue-toast-notification/dist/theme-default.css';
 import 'vue-toast-notification/dist/theme-sugar.css';
 
 const app = createApp({});
-app.use(VueToast);
 app.mount('#app');
 
-//Vue.$toast.open({/* options */});
-let instance = app.$toast.open('You did it!');
+const toast = useToast();
+toast.open('You did it!');
 
 // Force dismiss specific toast
-instance.dismiss();
+toast.dismiss();
 // Dismiss all opened toast immediately
-app.$toast.clear();
+toast.clear();
 ```
 
 ## Available options
