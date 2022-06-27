@@ -27,23 +27,46 @@ npm install vue-toast-notification@^3.0
 
 ## Usage
 
+### Plugin usage
+
 ```js
 import {createApp} from 'vue';
-import { useToast } from 'vue-toast-notification'
+import ToastPlugin from 'vue-toast-notification';
 // Import one of the available themes
 //import 'vue-toast-notification/dist/theme-default.css';
 import 'vue-toast-notification/dist/theme-sugar.css';
 
 const app = createApp({});
+app.use(ToastPlugin);
 app.mount('#app');
 
-const toast = useToast();
-toast.open('You did it!');
+let instance = app.$toast.open('You did it!');
 
 // Force dismiss specific toast
-toast.dismiss();
+instance.dismiss();
+
 // Dismiss all opened toast immediately
-toast.clear();
+app.$toast.clear();
+```
+
+### Composition API usage
+
+```js
+import {createApp} from 'vue';
+import {useToast} from 'vue-toast-notification';
+import 'vue-toast-notification/dist/theme-sugar.css';
+
+const app = createApp({});
+app.mount('#app');
+
+const $toast = useToast();
+let instance = $toast.success('You did it!');
+
+// Force dismiss specific toast
+instance.dismiss();
+
+// Dismiss all opened toast immediately
+$toast.clear();
 ```
 
 ## Available options
