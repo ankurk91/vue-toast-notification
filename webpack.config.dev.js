@@ -5,7 +5,6 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const {VueLoaderPlugin} = require('vue-loader');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -14,16 +13,13 @@ module.exports = {
   mode: 'development',
   context: __dirname,
   resolve: {
-    modules: [
-      path.resolve(__dirname, 'node_modules'),
-    ],
     alias: {
       'vue$': 'vue/dist/vue.runtime.esm.js'
     },
-    extensions: ['.js', '.jsx', '.json', '.vue'],
   },
   entry: './examples/index.js',
   output: {
+    clean: true,
     path: path.resolve(__dirname, 'docs'),
     publicPath: '',
     filename: 'js/[name]-[chunkhash].js'
@@ -51,6 +47,8 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
+              modules: false,
+              esModule: false,
               sourceMap: !isProduction,
             }
           },
@@ -111,11 +109,9 @@ module.exports = {
     new VueLoaderPlugin(),
   ],
   devServer: {
-    firewall: false,
     host: 'localhost',
-    port: 9000,
+    port: 9002,
     open: true,
-    liveReload: false,
     client: {
       overlay: {
         warnings: false,
@@ -137,7 +133,6 @@ module.exports = {
 
 if (isProduction) {
   module.exports.plugins.push(
-    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name]-[chunkhash].css',
     }),

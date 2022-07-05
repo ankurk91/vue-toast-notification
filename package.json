@@ -30,70 +30,45 @@
   "homepage": "https://github.com/ankurk91/vue-toast-notification",
   "scripts": {
     "test": "jest",
-    "test:watch": "yarn run test --watch --notify",
-    "start": "yarn run dev",
+    "test:watch": "npm run test --watch --notify",
+    "start": "npm run dev",
     "dev": "cross-env NODE_ENV=development webpack serve --hot --config=webpack.config.dev.js",
     "docs": "cross-env NODE_ENV=production webpack --config=webpack.config.dev.js --progress --mode=production",
     "build": "cross-env NODE_ENV=production webpack --progress --mode=production",
-    "prepublishOnly": "yarn run test && yarn run build"
+    "prepublishOnly": "npm run test && npm run build"
   },
-  "dependencies": {},
   "devDependencies": {
     "@babel/core": "^7.14.3",
     "@babel/preset-env": "^7.14.4",
     "@vue/test-utils": "^1.2.0",
+    "@vue/vue2-jest": "^27",
     "babel-core": "7.0.0-bridge.0",
     "babel-jest": "^27.0.2",
     "babel-loader": "^8.2.2",
     "bootstrap": "^4.5.3",
-    "clean-webpack-plugin": "^4.0.0-alpha.0",
     "cross-env": "^7.0.3",
-    "css-loader": "^5.2.6",
+    "css-loader": "^6.0.0",
     "file-loader": "^6.2.0",
     "html-webpack-plugin": "^5.3.1",
     "jest": "^27.0.4",
     "mini-css-extract-plugin": "^1.6.0",
-    "mitt": "^2.1.0",
-    "sass": "~1.34.1",
-    "sass-loader": "^12.0.0",
-    "style-loader": "^2.0.0",
+    "mitt": "^3.0.0",
+    "sass": "^1.53.0",
+    "sass-loader": "^13.0.0",
+    "style-loader": "^3.0.0",
     "svg-url-loader": "^7.1.1",
     "vue": "^2.6.13",
-    "vue-jest": "^3.0.7",
     "vue-loader": "^15.9.7",
-    "vue-template-compiler": "^2.6.13",
+    "vue-template-compiler": "^2.7.2",
     "webpack": "^5.38.1",
     "webpack-cli": "^4.7.0",
-    "webpack-dev-server": "^4.0.0-beta.3",
-    "webpack-remove-empty-scripts": "^0.7.1"
+    "webpack-dev-server": "^4.0.0",
+    "webpack-remove-empty-scripts": "^0.8.1"
   },
   "peerDependencies": {
     "vue": "^2.0.0"
   },
   "engines": {
     "node": ">=10.13.0"
-  },
-  "jest": {
-    "testEnvironment": "jsdom",
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "jsx",
-      "node",
-      "vue",
-      "css"
-    ],
-    "setupFiles": [
-      "<rootDir>/__test__/setup.js"
-    ],
-    "transform": {
-      "^.+\\.js$": "babel-jest",
-      ".*\\.(vue)$": "vue-jest"
-    },
-    "moduleNameMapper": {
-      "\\.(css|less|scss)$": "<rootDir>/__test__/__mocks__/styleMock.js"
-    },
-    "collectCoverage": false,
-    "testURL": "http://localhost"
   }
 }

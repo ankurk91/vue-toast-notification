@@ -2,7 +2,6 @@
 
 const webpack = require('webpack');
 const path = require('path');
-const {CleanWebpackPlugin} = require("clean-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 const {VueLoaderPlugin} = require('vue-loader');
@@ -11,13 +10,9 @@ const RemoveEmptyScriptsPlugin = require('webpack-remove-empty-scripts');
 module.exports = {
   context: __dirname,
   resolve: {
-    modules: [
-      path.resolve(__dirname, 'node_modules'),
-    ],
     alias: {
       'vue$': 'vue/dist/vue.runtime.esm.js'
     },
-    extensions: ['.js', '.json', '.vue']
   },
   entry: {
     index: './src/index.js',
@@ -34,6 +29,7 @@ module.exports = {
     },
   },
   output: {
+    clean: true,
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
     library: 'VueToast',
@@ -62,6 +58,8 @@ module.exports = {
           {
             loader: 'css-loader',
             options: {
+              modules: false,
+              esModule: false,
               sourceMap: false,
             }
           },
@@ -104,7 +102,6 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new RemoveEmptyScriptsPlugin(),
     new MiniCssExtractPlugin({
       filename: '[name].css',
