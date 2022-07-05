@@ -5,10 +5,12 @@ on:
     branches:
       - main
       - dev
+      - v1.x
   pull_request:
     branches:
       - main
       - dev
+      - v1.x
   schedule:
     - cron: '0 0 15 * *'
 
