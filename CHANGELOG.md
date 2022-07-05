@@ -1,8 +1,13 @@
 # Changelog
 
+### [0.6.3](https://github.com/ankurk91/vue-toast-notification/compare/0.6.2...0.6.3)
+
+* Fix: types [#76](https://github.com/ankurk91/vue-toast-notification/issues/76)
+* Bump `mitt` to v3
+
 ### [0.6.2](https://github.com/ankurk91/vue-toast-notification/compare/0.6.1...0.6.2)
 
-* Fix: SSR issue, #57
+* Fix: SSR issue, [#57](https://github.com/ankurk91/vue-toast-notification/issues/57)
 
 ### [0.6.1](https://github.com/ankurk91/vue-toast-notification/compare/0.6.0...0.6.1)
 
