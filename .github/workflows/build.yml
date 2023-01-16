@@ -24,7 +24,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: 16.x
+          node-version: 18.x
 
       - name: Install pnpm
         run: npm install -g pnpm@^7
@@ -36,7 +36,7 @@ jobs:
         run: npm run test
 
       - name: Upload coverage report
-        uses: codecov/codecov-action@v2
+        uses: codecov/codecov-action@v3
         with:
           fail_ci_if_error: false
 
