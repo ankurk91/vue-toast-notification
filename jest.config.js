@@ -1,6 +1,13 @@
 module.exports = {
   testEnvironment: 'jsdom',
   collectCoverage: true,
+  testEnvironmentOptions: {
+    testURL: 'http://localhost',
+    customExportConditions: [
+      'node',
+      'node-addons',
+    ],
+  },
   moduleFileExtensions: [
     'js',
     'json',
@@ -19,5 +26,4 @@ module.exports = {
   moduleNameMapper: {
     '\\.(css|less|scss)$': '<rootDir>/__test__/__mocks__/styleMock.js'
   },
-  testURL: 'http://localhost'
 }

@@ -32,10 +32,12 @@ module.exports = {
     clean: true,
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
-    library: 'VueToast',
-    libraryTarget: 'umd',
-    libraryExport: 'default',
-    umdNamedDefine: true,
+    library: {
+      name: 'VueToast',
+      type: 'umd',
+      umdNamedDefine: true,
+      export: 'default',
+    },
     globalObject: 'this',
     pathinfo: false
   },

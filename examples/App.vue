@@ -136,7 +136,7 @@ export default {
   },
   components: {},
   mounted() {
-    // Lets show some toasts on page load
+    // Let's show some toasts on page load
     this.showAll();
   },
   methods: {

@@ -41,17 +41,17 @@ Vue.$toast.clear();
 
 The API methods accepts these options:
 
-| Attribute        | Type                | Default              | Description      |
-| :---             | :---:               | :---:                | :---             |
-|  message         | String              | --                   |  Message text/html (required)   |
-|  type            | String              | `success`            |  One of `success`, `info`, `warning`, `error`, `default`  |
-|  position        | String              | `bottom-right`       |  One of `top`, `bottom`, `top-right`, `bottom-right`,`top-left`, `bottom-left`  |
-|  duration        | Number              | `3000`               |  Visibility duration in milliseconds, set to `0` to keep toast visible    |
-|  dismissible     | Boolean             | `true`               |  Allow user dismiss by clicking    |
-|  onClick         | Function            | --                   |  Do something when user clicks    |
-|  onDismiss       | Function            | --                   |  Do something after toast gets dismissed    |
-|  queue           | Boolean             | `false`              |  Wait for existing to dismiss before showing new     |
-|  pauseOnHover    | Boolean             | `true`               |  Pause the timer when mouse on over a toast    |
+| Attribute    |   Type   |    Default     | Description                                                                   |
+|:-------------|:--------:|:--------------:|:------------------------------------------------------------------------------|
+| message      |  String  |       --       | Message text/html (required)                                                  |
+| type         |  String  |   `success`    | One of `success`, `info`, `warning`, `error`, `default`                       |
+| position     |  String  | `bottom-right` | One of `top`, `bottom`, `top-right`, `bottom-right`,`top-left`, `bottom-left` |
+| duration     |  Number  |     `3000`     | Visibility duration in milliseconds, set to `0` to keep toast visible         |
+| dismissible  | Boolean  |     `true`     | Allow user dismiss by clicking                                                |
+| onClick      | Function |       --       | Do something when user clicks                                                 |
+| onDismiss    | Function |       --       | Do something after toast gets dismissed                                       |
+| queue        | Boolean  |    `false`     | Wait for existing to dismiss before showing new                               |
+| pauseOnHover | Boolean  |     `true`     | Pause the timer when mouse on over a toast                                    |
 
 ## API methods
 
@@ -126,7 +126,7 @@ Vue.$toast.success('Order placed.', {
 ## Run examples on your localhost
 
 * Clone this repo
-* Make sure you have node-js `>=16.9` and [pnpm](https://pnpm.io/) `>=7.2` pre-installed
+* Make sure you have node-js `>=18.14` and [pnpm](https://pnpm.io/) `>=7.25` pre-installed
 * Install dependencies - `pnpm install`
 * Run webpack dev server - `npm start`
 * This should open the demo page in your default web browser
