@@ -106,7 +106,8 @@
 import Vue from 'vue';
 import Plugin, {Positions} from '../src/index';
 //import '../src/themes/default/index.scss'
-import '../src/themes/sugar/index.scss'
+//import '../src/themes/sugar/index.scss'
+import '../src/themes/bootstrap/index.scss'
 
 Vue.use(Plugin);
 

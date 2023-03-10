@@ -17,6 +17,7 @@ module.exports = {
   entry: {
     index: './src/index.js',
     'index.min': './src/index.js',
+    'theme-bootstrap': './src/themes/bootstrap/index.scss',
     'theme-default': './src/themes/default/index.scss',
     'theme-sugar': './src/themes/sugar/index.scss',
   },
