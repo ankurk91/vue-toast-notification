@@ -10,7 +10,7 @@
 
 * Vue.js version : 2.7.x
 * Browser name and version : Chrome|Firefox|Edge x.x.x
-* This package version : 0.x.x
+* This package version : 1.0
 
 **Current behavior**
 <!-- Describe how the bug manifests. -->

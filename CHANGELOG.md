@@ -1,5 +1,10 @@
 # Changelog
 
+### [1.0.0](https://github.com/ankurk91/vue-toast-notification/compare/0.6.3...1.0.0)
+
+* Add `bootstrap` theme
+* Introduce `$toast-icons-path` sass variable
+
 ### [0.6.3](https://github.com/ankurk91/vue-toast-notification/compare/0.6.2...0.6.3)
 
 * Fix: types [#76](https://github.com/ankurk91/vue-toast-notification/issues/76)

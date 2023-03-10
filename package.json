@@ -1,10 +1,10 @@
 {
   "name": "vue-toast-notification",
-  "version": "0.6.3",
+  "version": "1.0.0",
   "description": "Vue.js toast notification plugin",
   "main": "dist/index.js",
   "types": "./types/toast.d.ts",
-  "style": "dist/theme-default.css",
+  "style": "dist/theme-bootstrap.css",
   "files": [
     "src",
     "dist",
@@ -68,6 +68,6 @@
     "vue": "^2.7.0"
   },
   "engines": {
-    "node": ">=10.13.0"
+    "node": ">=12.15.0"
   }
 }

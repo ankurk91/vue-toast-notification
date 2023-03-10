@@ -15,7 +15,7 @@ Yet another Vue.js v2 Toast notification plugin.
 ## Installation
 
 ```bash
-npm install vue-toast-notification@^0.6
+npm install vue-toast-notification@^1
 ```
 
 ## Usage
@@ -25,7 +25,7 @@ import Vue from 'vue';
 import VueToast from 'vue-toast-notification';
 // Import one of the available themes
 //import 'vue-toast-notification/dist/theme-default.css';
-import 'vue-toast-notification/dist/theme-sugar.css';
+import 'vue-toast-notification/dist/theme-bootstrap.css';
 
 Vue.use(VueToast);
 //Vue.$toast.open({/* options */});
@@ -115,8 +115,8 @@ Vue.$toast.success('Order placed.', {
 <!-- Vue.js -->
 <script src="https://cdn.jsdelivr.net/npm/vue@2.7"></script>
 <!-- Lastly add this package -->
-<script src="https://cdn.jsdelivr.net/npm/vue-toast-notification@0.6"></script>
-<link href="https://cdn.jsdelivr.net/npm/vue-toast-notification/@0.6/dist/theme-sugar.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/vue-toast-notification@1"></script>
+<link href="https://cdn.jsdelivr.net/npm/vue-toast-notification/@1/dist/theme-sugar.css" rel="stylesheet">
 <!-- Init the plugin -->
 <script>
     Vue.use(VueToast);
@@ -128,7 +128,7 @@ Vue.$toast.success('Order placed.', {
 * Clone this repo
 * Make sure you have node-js `>=18.14` and [pnpm](https://pnpm.io/) `>=7.25` pre-installed
 * Install dependencies - `pnpm install`
-* Run webpack dev server - `npm start`
+* Run webpack dev server - `pnpm start`
 * This should open the demo page in your default web browser
 
 ## Acknowledgements
