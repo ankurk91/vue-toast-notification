@@ -5,7 +5,7 @@ import ToastPlugin from '../src/index';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 //import '../src/themes/default/index.scss'
-import '../src/themes/sugar/index.scss'
+import '../src/themes/bootstrap/index.scss'
 
 import App from './App.vue';
 

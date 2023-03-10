@@ -16,11 +16,11 @@ module.exports = {
     alias: {
       'vue$': 'vue/dist/vue.runtime.esm.js'
     },
-    extensions: ['.js', '.json', '.vue']
   },
   entry: {
     index: './src/index.js',
     'index.min': './src/index.js',
+    'theme-bootstrap': './src/themes/bootstrap/index.scss',
     'theme-default': './src/themes/default/index.scss',
     'theme-sugar': './src/themes/sugar/index.scss',
   },
@@ -36,9 +36,11 @@ module.exports = {
     clean: true,
     path: path.resolve(__dirname, 'dist'),
     filename: '[name].js',
-    library: 'VueToast',
-    libraryTarget: 'umd',
-    umdNamedDefine: true,
+    library: {
+      name: 'VueToast',
+      type: 'umd',
+      umdNamedDefine: true,
+    },
     globalObject: 'this',
     pathinfo: false
   },

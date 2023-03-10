@@ -13,7 +13,7 @@
       min-width: 27px;
       height: 27px;
       margin-left: 1em;
-      background: url(./icons/info.svg) no-repeat;
+      background: url(#{$toast-icons-path}/info.svg) no-repeat;
 
       [dir="rtl"] & {
         margin-left: unset;
@@ -22,15 +22,15 @@
     }
 
     &.v-toast__item--success .v-toast__icon {
-      background: url(./icons/success.svg) no-repeat;
+      background: url(#{$toast-icons-path}/success.svg) no-repeat;
     }
 
     &.v-toast__item--error .v-toast__icon {
-      background: url(./icons/error.svg) no-repeat;
+      background: url(#{$toast-icons-path}/error.svg) no-repeat;
     }
 
     &.v-toast__item--warning .v-toast__icon {
-      background: url(./icons/warning.svg) no-repeat;
+      background: url(#{$toast-icons-path}/warning.svg) no-repeat;
     }
   }
 }
