@@ -1,5 +1,9 @@
 # Changelog
 
+### [3.1.1](https://github.com/ankurk91/vue-toast-notification/compare/3.1.0...3.1.1)
+
+* Fix: warning must have dark text color
+
 ### [3.1.0](https://github.com/ankurk91/vue-toast-notification/compare/3.0.4...3.1.0)
 
 * Add `bootstrap` theme
