@@ -118,7 +118,7 @@ export default {
       form: {
         message: 'This is a sample message',
         type: 'success',
-        duration: 10000,
+        duration: 10000 * 5,
         dismissible: true,
         queue: false,
         position: 'bottom-right',
