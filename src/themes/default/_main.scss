@@ -30,6 +30,10 @@
       }
     }
 
+    &--warning {
+      color: #000
+    }
+
     // Individual toast position
     &.v-toast__item--top, &.v-toast__item--bottom {
       align-self: center;
