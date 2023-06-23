@@ -1,20 +1,25 @@
-import ToastComponent from './Component.vue'
+import ToastDefault from './ToastDefault.vue'
+import ToastContainer from './ToastContainer.vue'
 import {createComponent} from './helpers';
 import eventBus from './bus.js';
 
 export const useToast = (globalProps = {}) => {
   return {
     open(options) {
-      let message = null;
-      if (typeof options === 'string') message = options;
+      const message = typeof options === 'string' ? options : options.message;
+      const type = typeof options === 'string' ? undefined : options.type;
+      const propsData = Object.assign({}, globalProps, options);
+      const toastComponent = options.customToast || globalProps.customToast || {
+        component: ToastDefault,
+        props: { 
+          message,
+          type
+        }
+      }
 
-      const defaultProps = {
-        message
-      };
-
-      const propsData = Object.assign({}, defaultProps, globalProps, options);
-
-      const instance = createComponent(ToastComponent, propsData, document.body);
+      const instance = createComponent(ToastContainer, propsData, document.body, {
+        default: toastComponent
+      });
 
       return {
         dismiss: instance.ctx.dismiss

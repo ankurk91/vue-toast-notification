@@ -1,4 +1,4 @@
-import {Plugin} from 'vue'
+import {Component, Plugin} from 'vue'
 
 export interface ActiveToast {
   dismiss(): void
@@ -25,6 +25,10 @@ export interface ToastProps {
   dismissible?: boolean,
   queue?: boolean,
   pauseOnHover?: boolean,
+  customToast?: {
+    component: Component,
+    props: Record<string, any>
+  }
   onClick?: () => any,
   onDismiss?: () => any,
 }

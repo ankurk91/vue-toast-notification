@@ -1,11 +1,11 @@
 import {mount} from '@vue/test-utils';
-import Component from '../src/js/Component.vue';
+import ToastDefault from '../src/js/ToastDefault.vue';
 
-describe('Toast component', () => {
+describe('ToastDefault component', () => {
   let wrapper;
 
   beforeEach(() => {
-    wrapper = mount(Component, {
+    wrapper = mount(ToastDefault, {
       propsData: {
         message: 'Test message'
       },
@@ -17,7 +17,7 @@ describe('Toast component', () => {
     });
   });
 
-  test('renders when active', async () => {
+  test('renders', async () => {
     await wrapper.vm.$nextTick();
     expect(wrapper.vm.$el).toMatchSnapshot()
   });

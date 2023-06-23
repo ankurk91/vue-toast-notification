@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ToastContainer component renders when active 1`] = `
+<div
+  class="v-toast__container v-toast__container--bottom-right v-enter-from v-toast--fade-in-up"
+  style=""
+>
+  
+  <div
+    class="v-toast__item v-toast__item--success"
+    role="alert"
+  >
+    <div
+      class="v-toast__icon"
+    />
+    <p
+      class="v-toast__text"
+    >
+      Hello world
+    </p>
+  </div>
+  
+</div>
+`;

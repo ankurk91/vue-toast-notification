@@ -10,10 +10,26 @@
   z-index: 1052;
   pointer-events: none;
 
+  &__container {
+    animation-duration: 150ms;
+
+    // Individual toast position
+    &.v-toast__container--top, &.v-toast__container--bottom {
+      align-self: center;
+    }
+
+    &.v-toast__container--top-right, &.v-toast__container--bottom-right {
+      align-self: flex-end;
+    }
+
+    &.v-toast__container--top-left, &.v-toast__container--bottom-left {
+      align-self: flex-start;
+    }
+  }
+
   &__item {
     display: inline-flex;
     align-items: center;
-    animation-duration: 150ms;
     margin: 0.5em 0;
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12), 0 0 6px rgba(0, 0, 0, 0.04);
     border-radius: 0.25em;
@@ -32,19 +48,6 @@
 
     &--warning {
       color: #000
-    }
-
-    // Individual toast position
-    &.v-toast__item--top, &.v-toast__item--bottom {
-      align-self: center;
-    }
-
-    &.v-toast__item--top-right, &.v-toast__item--bottom-right {
-      align-self: flex-end;
-    }
-
-    &.v-toast__item--top-left, &.v-toast__item--bottom-left {
-      align-self: flex-start;
     }
   }
 

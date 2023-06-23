@@ -1,10 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Toast component renders when active 1`] = `
+exports[`ToastDefault component renders 1`] = `
 <div
-  class="v-toast__item v-toast__item--success v-toast__item--bottom-right v-enter-from v-toast--fade-in-up"
+  class="v-toast__item v-toast__item--success"
   role="alert"
-  style=""
 >
   <div
     class="v-toast__icon"

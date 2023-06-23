@@ -9,7 +9,9 @@ export function removeElement(el) {
 }
 
 export function createComponent(component, props, parentContainer, slots = {}) {
-  const vNode = h(component, props, slots)
+  const vNode = h(component, props, {
+    default: () => h(slots.default.component, slots.default.props)
+  })
   const container = document.createElement('div');
   container.classList.add('v-toast--pending')
   parentContainer.appendChild(container);

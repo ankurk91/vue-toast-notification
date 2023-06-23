@@ -1,18 +1,17 @@
 <template>
   <transition
     :enter-active-class="transition.enter"
-    :leave-active-class="transition.leave">
+    :leave-active-class="transition.leave"
+  > 
     <div
       ref="root"
-      role="alert"
       v-show="isActive"
-      class="v-toast__item"
-      :class="[`v-toast__item--${type}`, `v-toast__item--${position}`]"
+      :class="['v-toast__container', `v-toast__container--${position}`]"
       @mouseover="toggleTimer(true)"
       @mouseleave="toggleTimer(false)"
-      @click="whenClicked">
-      <div class="v-toast__icon"></div>
-      <p class="v-toast__text" v-html="message"></p>
+      @click="whenClicked"
+    >
+      <slot />
     </div>
   </transition>
 </template>
@@ -25,16 +24,8 @@ import Positions from './positions.js'
 import eventBus from './bus.js'
 
 export default defineComponent({
-  name: 'Toast',
+  name: 'ToastContainer',
   props: {
-    message: {
-      type: String,
-      required: true
-    },
-    type: {
-      type: String,
-      default: 'success'
-    },
     position: {
       type: String,
       default: Positions.BOTTOM_RIGHT,
