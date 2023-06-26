@@ -1,6 +1,6 @@
 import ToastDefault from './ToastDefault.vue'
 import ToastContainer from './ToastContainer.vue'
-import {createComponent} from './helpers';
+import {createComponent,getOptions} from './helpers';
 import eventBus from './bus.js';
 
 export const useToast = (globalProps = {}) => {
@@ -29,34 +29,34 @@ export const useToast = (globalProps = {}) => {
       eventBus.emit('toast-clear')
     },
     success(message, options = {}) {
-      return this.open(Object.assign({}, {
-        message,
+      return this.open(getOptions(message, {
+        ...options,
         type: 'success'
-      }, options))
+      }))
     },
     error(message, options = {}) {
-      return this.open(Object.assign({}, {
-        message,
+      return this.open(getOptions(message, {
+        ...options,
         type: 'error'
-      }, options))
+      }))
     },
     info(message, options = {}) {
-      return this.open(Object.assign({}, {
-        message,
+      return this.open(getOptions(message, {
+        ...options,
         type: 'info'
-      }, options))
+      }))
     },
     warning(message, options = {}) {
-      return this.open(Object.assign({}, {
-        message,
+      return this.open(getOptions(message, {
+        ...options,
         type: 'warning'
-      }, options))
+      }))
     },
     default(message, options = {}) {
-      return this.open(Object.assign({}, {
-        message,
+      return this.open(getOptions(message, {
+        ...options,
         type: 'default'
-      }, options))
+      }))
     }
   }
 };
