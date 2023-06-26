@@ -76,7 +76,9 @@
 
               <button type="submit" class="btn btn-primary mr-3">Show notification</button>
               <button type="button" class="btn btn-outline-info mr-3" @click="showAll">Demo all</button>
-              <button type="button" class="btn btn-secondary" @click="clearAll">Hide all</button>
+              <button type="button" class="btn btn-secondary mr-3" @click="clearAll">Hide all</button>
+              <button type="button" class="btn btn-success" @click="showCustomToast">Show custom toast</button>
+              
 
             </form>
           </div>
@@ -103,7 +105,8 @@
 </template>
 
 <script>
-import {ToastPositions} from '../src/index';
+import {ToastPositions,useToast} from '../src/index';
+import CustomToast from './CustomToast.vue';
 
 export default {
   name: 'app',
@@ -153,6 +156,19 @@ export default {
     },
     clearAll() {
       this.$toast.clear()
+    },
+    showCustomToast() {
+      const toast = useToast()
+      toast.success({
+        customToast: {
+          component: CustomToast,
+          props: {
+            title: 'Look at me, I am so custom',
+            description: 'Try it!'
+          }
+        },
+        duration: this.form.duration
+      })
     }
   }
 }
