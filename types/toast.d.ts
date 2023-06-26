@@ -27,7 +27,7 @@ export interface ToastProps {
   pauseOnHover?: boolean,
   customToast?: {
     component: Component,
-    props: Record<string, any>
+    props?: Record<string, any>
   }
   onClick?: () => any,
   onDismiss?: () => any,

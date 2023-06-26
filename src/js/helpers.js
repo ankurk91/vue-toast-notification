@@ -23,14 +23,5 @@ export function createComponent(component, props, parentContainer, slots = {}) {
 export function getOptions(message, options) {
   const messageObj = typeof message === 'string' ? { message } : message
   return Object.assign({}, messageObj, options)
-  // let messageObj = null
-  // if (typeof message === 'string') {
-  //   messageObj = {
-  //     message
-  //   }
-  // } else {
-  //   messageObj = message
-  // }
-  // return Object.assign({}, messageObj, options)
 }
 
