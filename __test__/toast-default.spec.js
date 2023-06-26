@@ -21,5 +21,4 @@ describe('ToastDefault component', () => {
     await wrapper.vm.$nextTick();
     expect(wrapper.vm.$el).toMatchSnapshot()
   });
-
 });
