@@ -65,6 +65,10 @@ export default defineComponent({
       type: Boolean,
       default: true
     },
+    context: {
+      type: String,
+      required: false
+    }
   },
   data() {
     return {
@@ -147,7 +151,11 @@ export default defineComponent({
 
     whenClicked() {
       if (!this.dismissible) return;
-      this.onClick.apply(null, arguments);
+      if (this.context) {
+        this.onClick.apply(null, arguments, this.context);
+      } else {
+        this.onClick.apply(null, arguments);
+      }
       this.dismiss()
     },
 

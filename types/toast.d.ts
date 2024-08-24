@@ -25,6 +25,7 @@ export interface ToastProps {
   dismissible?: boolean,
   queue?: boolean,
   pauseOnHover?: boolean,
+  context?: string,
   onClick?: () => any,
   onDismiss?: () => any,
 }
