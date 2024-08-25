@@ -90,6 +90,7 @@ The API methods accepts these options:
 | onDismiss    | Function |       --       | Do something after toast gets dismissed                                       |
 | queue        | Boolean  |    `false`     | Wait for existing to dismiss before showing new                               |
 | pauseOnHover | Boolean  |     `true`     | Pause the timer when mouse on over a toast                                    |
+| context      | String   |       --       | Pass in a context that is useful for your applications' needs                 |
 
 ## API methods
 
