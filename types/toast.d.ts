@@ -47,7 +47,7 @@ export interface ToastPluginApi {
   clear(): void
 }
 
-declare module '@vue/runtime-core' {
+declare module 'vue' {
   interface ComponentCustomProperties {
     readonly $toast: ToastPluginApi;
   }
