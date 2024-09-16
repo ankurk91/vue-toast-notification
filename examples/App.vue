@@ -72,6 +72,16 @@
                 </div>
               </div>
 
+              <div class="form-group">
+                <label>Parent Container</label>
+                <div class="custom-control custom-checkbox">
+                  <input v-model="form.parentContainer" type="checkbox" class="custom-control-input"
+                          id="checkbox-parentContainer" true-value="#app" :false-value="null">
+                  <label class="custom-control-label" for="checkbox-parentContainer">Mount to #app instead of body</label>
+                </div>
+                <pre>{{ form }}</pre>
+              </div>
+
               <hr>
 
               <button type="submit" class="btn btn-primary mr-3">Show notification</button>
@@ -116,6 +126,7 @@ export default {
         dismissible: true,
         queue: false,
         position: 'bottom-right',
+        parentContainer: null,
         onClick: this.onClick,
         onDismiss: this.onDismiss,
       },

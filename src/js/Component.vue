@@ -65,6 +65,10 @@ export default defineComponent({
       type: Boolean,
       default: true
     },
+    parentContainer: {
+      type: String,
+      default: null
+    }
   },
   data() {
     return {
@@ -83,8 +87,8 @@ export default defineComponent({
   },
   methods: {
     setupContainer() {
-      this.parentTop = document.querySelector('.v-toast.v-toast--top');
-      this.parentBottom = document.querySelector('.v-toast.v-toast--bottom');
+      this.parentTop = this.parentContainerElement.querySelector('.v-toast.v-toast--top');
+      this.parentBottom = this.parentContainerElement.querySelector('.v-toast.v-toast--bottom');
       // No need to create them, they already exists
       if (this.parentTop && this.parentBottom) return;
 
@@ -98,9 +102,8 @@ export default defineComponent({
         this.parentBottom.className = 'v-toast v-toast--bottom'
       }
 
-      const container = document.body;
-      container.appendChild(this.parentTop);
-      container.appendChild(this.parentBottom);
+      this.parentContainerElement.appendChild(this.parentTop);
+      this.parentContainerElement.appendChild(this.parentBottom);
     },
 
     shouldQueue() {
@@ -189,6 +192,9 @@ export default defineComponent({
           }
       }
     },
+    parentContainerElement() {
+      return this.parentContainer ? document.querySelector(this.parentContainer) : document.body
+    }
   },
   beforeUnmount() {
     eventBus.off('toast-clear', this.dismiss)
