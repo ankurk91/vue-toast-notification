@@ -79,7 +79,6 @@
                           id="checkbox-parentContainer" true-value="#app" :false-value="null">
                   <label class="custom-control-label" for="checkbox-parentContainer">Mount to #app instead of body</label>
                 </div>
-                <pre>{{ form }}</pre>
               </div>
 
               <hr>
