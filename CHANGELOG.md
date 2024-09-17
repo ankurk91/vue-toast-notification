@@ -1,5 +1,9 @@
 # Changelog
 
+### [3.1.3](https://github.com/ankurk91/vue-toast-notification/compare/3.1.1...3.1.3)
+
+* Fix Typescript types #94
+
 ### [3.1.2](https://github.com/ankurk91/vue-toast-notification/compare/3.1.1...3.1.2)
 
 * Fix: issue with z-index
