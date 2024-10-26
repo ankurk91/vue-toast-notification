@@ -1,10 +1,8 @@
 'use strict';
 
-const webpack = require('webpack');
 const path = require('path');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const HtmlBundlerPlugin = require('html-bundler-webpack-plugin');
 const {VueLoaderPlugin} = require('vue-loader');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const TerserPlugin = require('terser-webpack-plugin');
 
 const isProduction = process.env.NODE_ENV === 'production';
@@ -20,12 +18,10 @@ module.exports = {
       vue: "@vue/runtime-dom"
     },
   },
-  entry: './examples/index.js',
   output: {
     clean: true,
     path: path.resolve(__dirname, 'docs'),
     publicPath: '',
-    filename: 'js/[name]-[chunkhash].js'
   },
   module: {
     rules: [
@@ -41,38 +37,19 @@ module.exports = {
       },
       {
         test: /\.s?[ac]ss$/,
-        use: [
-          isProduction ? MiniCssExtractPlugin.loader :
-            {
-              loader: 'style-loader',
-              options: {}
-            },
-          {
-            loader: 'css-loader',
-            options: {
-              modules: false,
-              esModule: false,
-              sourceMap: !isProduction,
-            }
-          },
-          {
-            loader: 'sass-loader',
-            options: {
-              sourceMap: !isProduction,
-            }
-          },
-        ],
+        use: [ 'css-loader', 'sass-loader' ], // using HtmlBundlerPlugin no additiional options are required
       },
       {
-        test: /\.svg/,
-        use: [
-          {
-            loader: "svg-url-loader",
-            options: {
-              limit: 15000, // bytes
-            }
-          }
-        ]
+        test: /\.(ico|svg|jpg|png)$/,
+        type: 'asset', // auto inline image by size
+        parser: {
+          dataUrlCondition: {
+            maxSize: 15000,
+          },
+        },
+        generator: {
+          filename: 'img/[name].[hash:8][ext][query]', // save images bigger than 15kb into file
+        },
       },
     ]
   },
@@ -96,20 +73,32 @@ module.exports = {
     minimizer: [],
   },
   plugins: [
-    new HtmlWebpackPlugin({
-      inject: true,
-      hash: false,
-      template: './examples/index.html',
-      minify: {
-        removeComments: isProduction,
-        collapseWhitespace: isProduction,
-        removeAttributeQuotes: isProduction,
-        minifyJS: isProduction,
-        minifyCSS: isProduction,
-        minifyURLs: isProduction,
+    new VueLoaderPlugin(),
+    new HtmlBundlerPlugin({
+      entry: [
+        // here you can define many templates as entrypoint, 
+        // all source files of styles, scripts and favicon can be defined directly in template
+        {
+          import: './examples/index.html',
+          filename: 'index.html', // save generated HTML into docs/index.html
+        },
+      ],
+      js: {
+        filename: 'js/[name]-[contenthash:8].js', // JS output filename
+      },
+      css: {
+        filename: 'css/[name]-[contenthash:8].css', // CSS output filename
+      },
+      minify: 'auto', // minify HTML in production mode only
+      minifyOptions: {
+        removeComments: true,
+        collapseWhitespace: true,
+        removeAttributeQuotes: true,
+        minifyJS: true,
+        minifyCSS: true,
+        minifyURLs: true,
       }
     }),
-    new VueLoaderPlugin(),
   ],
   devServer: {
     host: 'localhost',
@@ -119,6 +108,13 @@ module.exports = {
       overlay: {
         warnings: false,
         errors: true
+      },
+    },
+    // enable live reload after changes in source files
+    watchFiles: {
+      paths: ['src/**/*.*', 'examples/**/*.*'],
+      options: {
+        usePolling: true,
       },
     },
     static: path.resolve(process.cwd(), 'docs'),
@@ -135,19 +131,10 @@ module.exports = {
 };
 
 if (isProduction) {
-  module.exports.plugins.push(
-    new MiniCssExtractPlugin({
-      filename: 'css/[name]-[chunkhash].css',
-    }),
-  );
   module.exports.optimization.minimizer.push(
     new TerserPlugin({
-      include: /\.min\.js$/,
-      extractComments: false,
+      include: /\.js$/,
       terserOptions: {
-        output: {
-          comments: false,
-        },
         compress: {
           drop_console: true,
         }
