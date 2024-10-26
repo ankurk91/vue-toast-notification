@@ -1,0 +1,5 @@
+// by importing CSS file with `@use` the `.css` extenstion must be omited
+@use 'bootstrap/dist/css/bootstrap.min';
+//@use '../src/themes/default/index.scss';
+//@use '../src/themes/sugar/index.scss';
+@use '../src/themes/bootstrap/index.scss'
