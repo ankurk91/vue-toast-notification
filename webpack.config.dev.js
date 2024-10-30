@@ -37,7 +37,7 @@ module.exports = {
       },
       {
         test: /\.s?[ac]ss$/,
-        use: [ 'css-loader', 'sass-loader' ], // using HtmlBundlerPlugin no additiional options are required
+        use: ['css-loader', 'sass-loader'], // using HtmlBundlerPlugin no additional options are required
       },
       {
         test: /\.(ico|svg|jpg|png)$/,
@@ -76,20 +76,18 @@ module.exports = {
     new VueLoaderPlugin(),
     new HtmlBundlerPlugin({
       entry: [
-        // here you can define many templates as entrypoint, 
-        // all source files of styles, scripts and favicon can be defined directly in template
         {
           import: './examples/index.html',
-          filename: 'index.html', // save generated HTML into docs/index.html
+          filename: 'index.html',
         },
       ],
       js: {
-        filename: 'js/[name]-[contenthash:8].js', // JS output filename
+        filename: 'js/[name]-[contenthash:8].js',
       },
       css: {
-        filename: 'css/[name]-[contenthash:8].css', // CSS output filename
+        filename: 'css/[name]-[contenthash:8].css',
       },
-      minify: 'auto', // minify HTML in production mode only
+      minify: 'auto',
       minifyOptions: {
         removeComments: true,
         collapseWhitespace: true,
